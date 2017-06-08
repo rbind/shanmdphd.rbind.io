@@ -1,7 +1,7 @@
 ---
 title: "ReporteRs vs Rmarkdown"
 date: "2017-05-31"
-categories: ''
+categories: "Rmarkdown"
 tags: ["R", "Rmarkdown"]
 ---
 
@@ -12,3 +12,4 @@ However `pandoc` (i.e. `Rmarkdown`)'s support for docx is not so great, so I had
 Now I get used to it and I should admit that it is actually a pretty powerful tool for reproducible generation of docx documents.
 
 ![](http://www.sthda.com/sthda/RDoc/images/r-reporters-word-document-format-text.png)
+
