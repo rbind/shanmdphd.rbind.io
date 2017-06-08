@@ -1,0 +1,361 @@
+---
+title: Solving Ordinary Differential Equation in R
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+This slide is what I presented in the Journal Club of AMC CPT.
+
+<https://asancpt.github.io>
+
+![](/assets/2017-04-21-shan-rxode-full.png)
+
+# RxODE
+
+RxODE is an easy ODE solver specialized in pharmacometric applications.
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(error = TRUE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(fig.path='{{ site.url }}/images/rxode-')
+```
+
+
+## Set up 
+
+```{r}
+# Load some data science tools
+library(knitr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(tibble)
+
+# Load RxODE
+library(RxODE)
+
+# Define model
+ode <- "
+C2 = centr/V2;	
+C3 = peri/V3;
+d/dt(depot) = -KA*depot;
+d/dt(centr) = KA*depot - CL*C2 - Q*C2 + Q*C3;
+d/dt(peri) = Q*C2 - Q*C3;
+d/dt(eff) = Kin*(1-C2/(EC50+C2)) - Kout*eff;
+"
+# Compile model
+mod1 <- RxODE(model = ode, modName = "mod1")
+
+# Define system parameters
+params <- 
+    c(KA = 0.3, CL = 7,                      # central 
+      V2 = 4.0E+01, Q = 1.0E+01, V3 = 3E+02, # peripheral
+      Kin = .2, Kout = .2, EC50 = 8)         # effects
+inits <- c(0, 0, 0, 1)   
+```
+
+## Simulate a single dose
+
+```{r}
+# Initialize event table
+ev <- eventTable()
+
+# Specify dose
+ev$add.dosing(dose = 10000, nbr.doses = 1)
+
+# Specify sampling
+ev$add.sampling(0:240)
+
+# Simulate
+x <- mod1$run(params, ev, inits)
+
+# Plot results
+matplot(x[,"C2"], type = "l", xlab = "time (hrs)", ylab = "Central Conc.")
+```
+
+### More comprehensive plot
+
+```{r}
+ggx <- as.tibble(x) %>% gather("compartment", "value", depot:C3)
+ggplot(ggx, aes(x = time, y = value, group = compartment, colour = compartment)) +
+    geom_line() +
+    facet_wrap(~compartment, scale = "free_y")
+```
+
+## Simulate 5 days BID followed by 5 days QD
+
+```{r}
+ev <- eventTable()
+
+# Specify 5 days BID dosing
+ev$add.dosing(dose = 10000, nbr.doses = 10, dosing.interval = 12)
+
+# Use “start.time” parameter to specify 5 days QD starting at the end of the 5 days BID period
+ev$add.dosing(dose = 20000, nbr.doses = 5, dosing.interval = 24, start.time = 120)
+ev$add.sampling(0:240)
+
+# Simulate and plot
+x <- mod1$run(params, ev, inits)
+matplot(x[,"C2"], type = "l", xlab = "time (hrs)", ylab = "Central Conc.")
+```
+
+### More comprehensive plot
+
+```{r}
+ggx <- as.tibble(x) %>% gather("compartment", "value", depot:C3)
+ggplot(ggx, aes(x = time, y = value, group = compartment, colour = compartment)) +
+    geom_line() +
+    facet_wrap(~compartment, scale = "free_y")
+```
+
+## Simulate with variability
+
+```{r}
+# Perform simulation 100 times
+nsub <- 100
+
+# Create a parameter matrix with correlated interindividual variability on CL and V2
+library(MASS)
+sigma= matrix(c(0.09,0.08,0.08,0.25),2,2)
+mv = mvrnorm(n=nsub, rep(0,2), sigma)
+CL = 7*exp(mv[,1])
+V2 = 40*exp(mv[,2])
+params.all <- cbind(KA=0.3, CL=CL, V2=V2, Q=10, V3=300, Kin=0.2, Kout=0.2, EC50=8)     
+
+# QD dosing for 2 days
+ev <- eventTable()
+ev$add.dosing(dose = 20000, nbr.doses = 10, dosing.interval = 24)   
+ev$add.sampling(0:48)
+
+res <- NULL #Create an empty matrix for storing results
+
+# Loop through each row of parameter values and simulate
+for (i in 1:nsub)  {
+    params <- params.all[i,]
+    x <- mod1$run(params, ev, inits = inits)
+    res <- cbind(res,x[,"eff"])
+}
+#The same can be achieved more efficiently by replacing the above for-loop with: 
+#    res <- apply(params.all, 1, function(params) mod$run(params, ev, inits)[, “eff”])  
+
+# Plot results
+par(mfrow = c(1,2), mar = c(4,4,1,1))
+matplot(res, type = "l",  ylab = "Effect", xlab = "Time (hrs)")
+
+# Calculate and plot quantiles 
+res.q.t <- apply(res, 1, quantile, prob = c(.05, .5, .95))
+matplot(t(res.q.t), type = "l", lty = c(2,1,2), col = c(2,1,2), ylab = "Effect", xlab = "Time (hrs)")
+legend("topright", c("median","5 and 95%"), lty = c(1,2), col = c("black","red"), cex = .8)
+
+```
+
+### More comprehensive plot
+
+```{r}
+resRaw <- list()
+resRaw <- lapply(1:nsub, function(x) mod1$run(params.all[x, ], ev, inits = inits) %>% 
+                  as.tibble %>% 
+                  mutate(SUBJID = x))
+ggres <- bind_rows(resRaw) %>% gather("compartment", "value", depot:C3)
+
+ggplot(ggres, aes(x = time, y = value, group = SUBJID, colour = SUBJID)) +
+    geom_line() +
+    facet_wrap(~compartment, scale = "free_y")
+```
+
+## Simulate Adaptive dosing for a single subject: Decision Rule #1 
+
+```{r}
+#Decision Rule:
+#	If trough effect <.4, cut dose in half
+#	If trough effect in [0.4, 0.6], do not change dose
+#	If trough effect > 0.6, double the dose.
+effect.limits <- c(0, .4, .6, 9)  #decision rule limits
+dose.multipliers <- c(.5, 1, 2)   #decision rule effects
+
+#simulation parameters 
+ndays <- 25				 #number of days to simulate
+unit.dose <- 10000
+start.dose <- 1
+sampling.frequency <- 1   		#sample every day
+
+# Define system parameters
+params <- 
+    c(KA = 0.3, CL = 7,             # central 
+      V2 = 4.0E+01, Q = 1.0E+01, V3 = 3E+02, # peripheral
+      Kin = .2, Kout = .2, EC50 = 8)              # effects
+inits <- c(0, 0, 0, 1)   
+
+#Initialize other variables
+vars <- c("depot", "centr", "peri", "eff")
+res <- NULL 		#results vector
+time.vec <- NULL	#time vector
+doses <- NULL	#doses vector
+
+#Simulate a  period of time (set by sampling.frequency), check dose and adjust according to decision rules, then simulate #next time period 
+for (i in seq(1, ndays, by = sampling.frequency)) {
+    if (i==1)  { # Initialize on first day
+        inits <- c(0, 0, 0, 1)      
+        last.multiplier <- start.dose
+        this.multiplier <- 1
+    } else { 				# Use end of previous day as initial conditions for next day
+        inits <- x[dim(x)[1], vars]    		# Use last value of state variables as new initial conditions
+        wh <- cut(inits["eff"], effect.limits)	# Compare trough effect with decision rule limits
+        this.multiplier <- dose.multipliers[wh]	# Determine dose multiplier accordingly
+    }
+    this.multiplier <- this.multiplier*last.multiplier	# Adjust dose
+    last.multiplier <- this.multiplier			# Store new dose	
+    ev <- eventTable()				# Generate event table
+    # Specify dosing
+    ev$add.dosing(dose = this.multiplier*unit.dose, dosing.interval = 24, nbr.doses = sampling.frequency)
+    ev$add.sampling(0:(24*sampling.frequency))			# Specify sampling	
+    x <- mod1$run(params, ev, inits)					# Run simulation
+    time.total <- ev$get.EventTable()[,"time"]+(i-1)*(24)		# Calculate time vector
+    doses <- rep(last.multiplier, length(time))
+    x <- cbind(x,time.total, doses)					# Compile and store results
+    res <- rbind(res, x)
+}
+
+# Plot results
+plot(res[,"time.total"]/24, res[,"eff"], type = "l", ylim = c(0,1), xlab = "Time (days)", ylab = "Effect / Dose Multiplier")
+rect(-200,0.4,1500,0.6,col = rgb(0.5,0.5,0.5,1/4))
+points(res[,"time.total"]/24,res[,"doses"], type = "s", xlab = "Time (days)", ylab = "Dose", col = "red", lty = 2)
+legend("topright", c("Effect","Dose Multiplier"), lty = c(1,2), col = c("black","red"))
+
+```
+
+## Simulate Adaptive dosing for a single subject: Decision Rule #2
+
+```{r}
+# Decision Rule:
+# If peak effect <0.4, cut dose in half
+# If effect at tmax < 0.4, cut the dose in half
+# If trough effect and effect at tmax in [0.4, 0.6], do not change dose
+# If trough effect > 0.6, double the dose.
+# If effect at tmax > 0.6, double the dose.
+
+effect.limits <- c(0, .4, .6, 9)  # decision rule limits
+dose.multipliers <- c(.5, 1, 2)   # decision rule effects
+
+# Simulation parameters 
+ndays <- 25				   #number of days to simulate
+unit.dose <- 10000
+start.dose <- 1
+
+# Initialize other variables
+vars <- c("depot", "centr", "peri", "eff")
+res <- NULL 		#results vector
+time.vec <- NULL	#time vector
+doses <- NULL	#doses vector
+
+for (i in 1:ndays) {
+    if (i==1) { 	#initialize on first day
+        inits <- c(0, 0, 0, 1)      
+        last.multiplier <- start.dose
+        this.multiplier <- 1
+    } else {	#use end of previous day as initial conditions for next day
+        inits <- x[dim(x)[1], vars]		# use last value of state variables as new initial conditions
+        wh <- cut(inits["eff"], effect.limits)		# compare trough effect with decision rule limits
+        this.multiplier <- dose.multipliers[wh]		# determine dose multiplier accordingly
+        if (x[13,"eff"]<effect.limits[2]) {		# compare effect at tmax with decision rule limits
+            this.multiplier <- dose.multipliers[1]	 	# determine dose multiplier accordingly
+        }
+    }
+    this.multiplier <- this.multiplier*last.multiplier		# adjust dose
+    last.multiplier <- this.multiplier				# store new dose	
+    ev <- eventTable()						# generate event table
+    ev$add.dosing(dose = this.multiplier*unit.dose, nbr.doses = 1)	# specify dosing
+    ev$add.sampling(1:24)						# specify sampling	
+    x <- mod1$run(params, ev, inits)					# run simulation
+    time.total <- ev$get.EventTable()[,"time"]+(i-1)*24		# calculate time vector
+    doses <- rep(last.multiplier, length(time))
+    x <- cbind(x, time.total, doses)
+    res <- rbind(res, x)
+}
+
+plot(res[,"time.total"]/24, res[,"eff"], type = "l", ylim = c(0,1), xlab = "Time (days)", ylab = "Effect / Dose Multiplier")
+rect(-200,0.4,1500,0.6,col = rgb(0.5,0.5,0.5,1/4))
+points(res[,"time.total"]/24,res[,"doses"], type = "s", xlab = "Time (days)", ylab = "Dose", col = "red", lty = 2)
+legend("topright",c("Effect","Dose Multiplier"), lty = c(1,2), col = c("black","red"))
+```
+
+## Simulating adaptive dosing with variability 
+
+```{r}
+# Perform simulation 100 times
+nsub <- 50;  
+
+# Create a parameter matrix with correlated interindividual variability on CL and V2
+library(MASS)
+sigma= matrix(c(0.09,0.08,0.08,0.25),2,2)
+mv = mvrnorm(n=nsub, rep(0,2), sigma)
+CL = 7*exp(mv[,1])
+V2 = 40*exp(mv[,2])
+params.all <- cbind(KA=0.3, CL=CL, V2=V2, Q=10, V3=300, Kin=0.2, Kout=0.2, EC50=8)     
+
+
+# Decision Rule:
+# If trough effect <.4, cut dose in half
+# If trough effect in [0.4, 0.6], do not change dose
+# If trough effect > 0.6, double the dose.
+effect.limits <- c(0, 0.4, 0.6, 9)   # decision rule limits
+dose.multipliers <- c(0.5, 1, 2)   # decision rule effects
+
+# Simulation parameters 
+ndays <- 25		 #number of days to simulate
+unit.dose <- 10000
+start.dose <- 1
+
+# Initialize other variables
+vars <- c("depot", "centr", "peri", "eff")
+res <- NULL
+time.vec <- NULL	
+doses <- NULL
+
+for (j in 1:nsub) { 	# Loop through each row of parameter values and simulate
+    this.run <- NULL	
+    DOSE <- NULL
+    for (i in 1:ndays) {   	# Simulate each day
+        if (i==1) {  		# Initialize on first day
+            inits <- c(0, 0, 0, 1)      
+            last.multiplier <- start.dose
+            this.multiplier <- 1
+        } else {				# Use end of previous day as initial conditions for next day
+            inits <- x[dim(x)[1], vars]        		# Use last value of state variables as new initial conditions
+            wh <- cut(inits["eff"], effect.limits)	# Compare trough effect with decision rule limits
+            this.multiplier <- dose.multipliers[wh]	# Determine dose multiplier accordingly
+        }
+        this.multiplier <- this.multiplier*last.multiplier 		# Adjust dose
+        last.multiplier <- this.multiplier				# Store new dose	
+        ev <- eventTable()					# Generate event table
+        # Specify dosing
+        ev$add.dosing(dose = this.multiplier*unit.dose, dosing.interval = 24, nbr.doses = sampling.frequency)
+        ev$add.sampling(0:(24*sampling.frequency))		# Specify sampling	
+        params <- params.all[j,]					# Specify parameters for the current subject
+        x <- mod1$run(params, ev, inits)				# Run simulation
+        time.total=ev$get.EventTable()[,"time"]+(i-1)*(24)	#calculate time vector
+        
+        #compile results for this subject, all days
+        DOSE <- rbind(DOSE, last.multiplier)
+        this.run <- rbind(this.run, cbind(x, time.total))
+    }
+    # Compile results for all subjects
+    res <- cbind(res, this.run[, "eff"])
+    time.vec <- this.run[, "time.total"]
+    doses <- cbind(doses, DOSE)
+}
+
+# Calculate and plot quantiles of effect levels
+res.q.t <- apply(res, 1, quantile, prob = c(.05, .5, .95))
+# Calculate distribution of doses on each day
+dose.list <- apply(doses, 1, function(x) table(factor(x, c(1, 0.5, 0.25, 0.125, 0.0625))))
+# Plot results
+par(mfrow = c(2,1), mar = c(4,4,1,1))
+matplot((1:dim(res)[1])/24, t(res.q.t), type = "l", lty = c(2, 1, 2), col = c(2, 1, 2), ylab = "Effect", xlab = "Time (days)")
+legend("topright", c("median", "5 and 95%"), lty = c(1, 2), col = c("black", "red"), cex=.8)
+rect(-200, 0.4, 1500, 0.6, col = rgb(0.5, 0.5, 0.5, 1/4))
+
+matplot(100*t(dose.list)/nsub, type = "l",  lty = 1,  ylab = "% subjects on each dose", xlab = "Time (Days)", lwd = 2, col = c(1:4, 6))
+legend("topright", c("1", "0.5", "0.25", "0.125", "0.0625"), lty=1, col=c(1:4, 6), horiz = TRUE, cex = 0.9, bty = 'n')
+```
+

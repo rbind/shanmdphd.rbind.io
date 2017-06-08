@@ -1,14 +1,8 @@
 ---
-layout: post
-title: ReporteRs vs Rmarkdown
-date: 2017-05-31
-categories: 
-share: true
-comments: true
-tag: [R, Rmarkdown ]
-output:
-  html_document:
-    keep_md: yes
+title: "ReporteRs vs Rmarkdown"
+date: "2017-05-31"
+categories: ''
+tags: ["R", "Rmarkdown"]
 ---
 
 I prefer `Rmarkdown` to `ReporteRs` because of its capability to convert one format to the other formats such as html and latex-pdf.
