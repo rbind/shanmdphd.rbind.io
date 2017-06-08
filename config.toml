@@ -2,7 +2,7 @@
 
 ###
 
-baseurl = "https://shanmdphd.github.io/"
+baseurl = "/"
 languageCode = "en-us"
 title = "Sungpil Han MD/PhD"
 # Enable comments by entering your Disqus shortname
@@ -27,7 +27,7 @@ theme = "hugo-icarus-theme"
     site_description = "Sungpil's blog"
     copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
     # avatar = "css/images/avatar.png"
-    avatar = "shan-rect-photo.png"
+    avatar = "profile-room.png"
     logo = "css/images/logo.png"
 
     # Format dates with Go's time formatting
