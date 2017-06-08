@@ -1,6 +1,15 @@
 ---
 title: "Solving Ordinary Differential Equation in R"
+author: ~
 date: "2017-05-05"
+slug: rxode
+categories: []
+tags: [R, hugo, jekyll]
+banner: ''
+description: 'rxode'
+images: []
+menu: ''
+draft: yes
 ---
 
 This slide is what I presented in the Journal Club of AMC CPT.
@@ -17,7 +26,6 @@ RxODE is an easy ODE solver specialized in pharmacometric applications.
 knitr::opts_chunk$set(error = TRUE, warning = FALSE, message = FALSE)
 #knitr::opts_chunk$set(fig.path='{{ site.url }}/images/rxode-')
 ```
-
 
 ## Set up 
 

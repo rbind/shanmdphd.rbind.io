@@ -1,0 +1,67 @@
+---
+title: ggsci Examples
+author: ~
+date: '2017-06-08'
+slug: ''
+categories: []
+tags: []
+banner: ''
+description: 'What is this description?'
+images: []
+menu: ''
+draft: true
+---
+
+I really like `ggsci` package.
+
+<!--more-->
+
+It generates such a beautiful figures.
+
+```{r}
+library("ggsci")
+library("ggplot2")
+library("gridExtra")
+
+data("diamonds")
+
+p1 = ggplot(subset(diamonds, carat >= 2.2),
+       aes(x = table, y = price, colour = cut)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
+  theme_bw()
+
+p2 = ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
+       aes(x = depth, fill = cut)) +
+  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
+  theme_bw()
+
+p1_npg = p1 + scale_color_npg()
+p2_npg = p2 + scale_fill_npg()
+grid.arrange(p1_npg, p2_npg, ncol = 2)
+```
+
+```{r}
+library("reshape2")
+
+data("mtcars")
+cor = cor(unname(cbind(mtcars, mtcars, mtcars, mtcars)))
+cor_melt = melt(cor)
+
+p3 = ggplot(cor_melt,
+            aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(colour = "black", size = 0.3) +
+  theme_bw()
+
+p3_gsea = p3 + scale_fill_gsea()
+p3_gsea
+```
+
+```{r}
+mypal = pal_npg("nrc", alpha = 0.7)(9)
+mypal
+
+library("scales")
+show_col(mypal)
+```
+
