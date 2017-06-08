@@ -1,0 +1,59 @@
+---
+title: Migration
+author: ~
+date: '2017-06-07'
+slug: migrating
+categories: [Announce]
+tags: [R, hugo, jekyll]
+banner: 'https://d33wubrfki0l68.cloudfront.net/e36d72ca19b66901c78efc753e0a3dac35c95010/66d20/img/hugo-logo.png'
+description: 'This blog is migrating from Jekyll to Hugo using blogdown.'
+images: []
+menu: ''
+---
+
+
+<!--more-->
+<p>This blog is migrating from Jekyll to Hugo using blogdown.</p>
+<p>블로그가 이전 중입니다.</p>
+<pre class="r"><code>library(&quot;ggsci&quot;)
+library(&quot;ggplot2&quot;)
+library(&quot;gridExtra&quot;)
+
+data(&quot;diamonds&quot;)
+
+p1 = ggplot(subset(diamonds, carat &gt;= 2.2),
+       aes(x = table, y = price, colour = cut)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = &quot;loess&quot;, alpha = 0.05, size = 1, span = 1) +
+  theme_bw()
+
+p2 = ggplot(subset(diamonds, carat &gt; 2.2 &amp; depth &gt; 55 &amp; depth &lt; 70),
+       aes(x = depth, fill = cut)) +
+  geom_histogram(colour = &quot;black&quot;, binwidth = 1, position = &quot;dodge&quot;) +
+  theme_bw()
+
+p1_npg = p1 + scale_color_npg()
+p2_npg = p2 + scale_fill_npg()
+grid.arrange(p1_npg, p2_npg, ncol = 2)</code></pre>
+<p><img src="/post/2017-06-07-migrating_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>library(&quot;reshape2&quot;)
+
+data(&quot;mtcars&quot;)
+cor = cor(unname(cbind(mtcars, mtcars, mtcars, mtcars)))
+cor_melt = melt(cor)
+
+p3 = ggplot(cor_melt,
+            aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(colour = &quot;black&quot;, size = 0.3) +
+  theme_bw()
+
+p3_gsea = p3 + scale_fill_gsea()
+p3_gsea</code></pre>
+<p><img src="/post/2017-06-07-migrating_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>mypal = pal_npg(&quot;nrc&quot;, alpha = 0.7)(9)
+mypal</code></pre>
+<pre><code>## [1] &quot;#E64B35B2&quot; &quot;#4DBBD5B2&quot; &quot;#00A087B2&quot; &quot;#3C5488B2&quot; &quot;#F39B7FB2&quot; &quot;#8491B4B2&quot;
+## [7] &quot;#91D1C2B2&quot; &quot;#DC0000B2&quot; &quot;#7E6148B2&quot;</code></pre>
+<pre class="r"><code>library(&quot;scales&quot;)
+show_col(mypal)</code></pre>
+<p><img src="/post/2017-06-07-migrating_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
