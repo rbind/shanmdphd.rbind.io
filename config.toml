@@ -2,7 +2,7 @@
 
 ###
 
-baseurl = "/"
+baseurl = "https://shanmdphd.netlify.com/"
 languageCode = "en-us"
 title = "Sungpil Han MD/PhD"
 # Enable comments by entering your Disqus shortname
