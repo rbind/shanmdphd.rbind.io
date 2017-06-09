@@ -11,7 +11,7 @@ images: []
 menu: 'main'
 ---
 
-
+<!--more-->
 EDUCATION
 =========
 
