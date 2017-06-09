@@ -6,7 +6,7 @@ tags: [NONMEM, jekyll]
 banner: "banners/NONMEM7.png"
 description: "Pubmed"
 images: []
-menu: 'main'
+menu: ''
 bibliography: "nonmemPubmed.bib"
 ---
 
