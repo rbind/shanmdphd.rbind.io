@@ -28,7 +28,7 @@ theme = "hugo-icarus-theme"
     copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
     # avatar = "css/images/avatar.png"
     avatar = "profile-room.png"
-    logo = "css/images/logo.png"
+    logo = "assets/shmp.png"
 
     # Format dates with Go's time formatting
     date_format = "2006-01-02"
