@@ -1,8 +1,13 @@
 ---
 title: "Pubmed Search Results of NONMEM"
 author: ~
-date: 2017-04-27
-bibliography: "packages.bib"
+date: "2017-04-27"
+tags: [NONMEM, jekyll]
+banner: "banners/NONMEM7.png"
+description: "Pubmed"
+images: []
+menu: 'main'
+bibliography: "nonmemPubmed.bib"
 ---
 
 
@@ -30,8 +35,8 @@ ggplot(data=timeline, aes(x=year, y=count)) +
   geom_bar(stat=&quot;identity&quot;) + guides(fill=FALSE) +
   xlab(&quot;Year&quot;) + ylab(&quot;Number of Articles&quot;) +
   ggtitle(&quot;Increase of Articles Using NONMEM&quot;)</code></pre>
-<div class="figure"><span id="fig:unnamed-chunk-2"></span>
-<img src="/post/nonmemPubmed_files/figure-html/unnamed-chunk-2-1.png" alt="Publications utilizing NONMEM" width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="/post/nonmemPubmed_files/figure-html/unnamed-chunk-1-1.png" alt="Publications utilizing NONMEM" width="672" />
 <p class="caption">
 Figure 1: Publications utilizing NONMEM
 </p>
@@ -43,7 +48,7 @@ Figure 1: Publications utilizing NONMEM
 <p>Results from a PubMed search for the term, NONMEM were listed.</p>
 <pre class="r"><code>knitr::kable(timeline, caption = &quot;Raw data of the number of publications utilizing NONMEM.&quot;)</code></pre>
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 1: </span>Raw data of the number of publications utilizing NONMEM.</caption>
+<caption><span id="tab:unnamed-chunk-2">Table 1: </span>Raw data of the number of publications utilizing NONMEM.</caption>
 <thead>
 <tr class="header">
 <th align="right">year</th>

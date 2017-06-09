@@ -1,14 +1,14 @@
 ---
 title: "Pubmed Search Results of NONMEM"
 author: ~
-date: 2017-04-27
-bibliography: "packages.bib"
+date: "2017-04-27"
+tags: [NONMEM, jekyll]
+banner: "banners/NONMEM7.png"
+description: "Pubmed"
+images: []
+menu: 'main'
+bibliography: "nonmemPubmed.bib"
 ---
-
-
-```{r include = FALSE}
-# knitr::opts_chunk$set(fig.path='{{ site.url }}/images/pubmed-')
-```
 
 # Introduction and Methods
 
@@ -56,6 +56,5 @@ The number of publications utilizing NONMEM tends to increase.
 # References
 
 ```{r include = FALSE}
-knitr::write_bib(file = "packages.bib")
+knitr::write_bib(file = "nonmemPubmed.bib")
 ```
-
