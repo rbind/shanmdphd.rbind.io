@@ -12,6 +12,10 @@ menu: 'main'
 ---
 
 <!--more-->
+
+[CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
+
+
 EDUCATION
 =========
 
