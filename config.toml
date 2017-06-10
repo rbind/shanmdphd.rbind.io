@@ -10,7 +10,7 @@ disqusShortname = "hugoshanmdphd"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 # Define the number of posts per page
-paginate = 10
+paginate = 99
 footnotereturnlinkcontents = "↩"
 theme = "hugo-icarus-theme"
 
@@ -26,8 +26,7 @@ theme = "hugo-icarus-theme"
     location = "Seoul, Korea"
     site_description = "Sungpil's blog"
     copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
-    # avatar = "css/images/avatar.png"
-    avatar = "profile-room.png"
+    avatar = "assets/profile-room.png"
     logo = "assets/shmp.png"
 
     # Format dates with Go's time formatting
