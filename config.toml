@@ -8,7 +8,7 @@ title = "Sungpil Han MD/PhD"
 # Enable comments by entering your Disqus shortname
 disqusShortname = "hugoshanmdphd"
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
+googleAnalytics = "UA-100793628-1"
 # Define the number of posts per page
 paginate = 10
 footnotereturnlinkcontents = "↩"
