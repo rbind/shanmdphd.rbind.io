@@ -13,7 +13,7 @@ lightgallery: true
 
     {{< gallery
         "assets/profile-room.png"
-        "banners/placeholder.png"
+        "assets/shan-photo.png"
     >}}
 
 
