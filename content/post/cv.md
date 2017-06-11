@@ -6,8 +6,6 @@ slug: cv
 categories: [about]
 tags: [CV, about]
 banner: 'banners/cv.jpg'
-description: 'CV'
-images: []
 menu: 'main'
 ---
 

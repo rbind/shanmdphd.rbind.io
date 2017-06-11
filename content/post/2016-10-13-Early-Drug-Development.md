@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Early Drug Development
-categories: 
-share: true
-comments: true
-tag: [Clinical Pharmacology]
+categories: [medicine]
+banner: "https://pkdcure.org/wp-content/uploads/2016/04/drug-development-timeline.png"
+tag: [Clinical-Pharmacology]
 ---
 
 이전 학기에 Tozer를 마치고 새로운 책으로 Book reading을 시작하게 되었습니다. 아래와 같이 요약하고자 합니다.
