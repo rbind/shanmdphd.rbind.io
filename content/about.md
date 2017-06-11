@@ -9,7 +9,6 @@ banner: 'banners/welcome.jpg'
 description: 'TL;DR'
 images: []
 menu: 'main'
-draft: no
 ---
 
 ## Introduction
@@ -21,9 +20,9 @@ I enjoy studying medicine, and am especially interested in new drug development.
 I release most of my work as open source software under my GitHub profile. 
 I’m always looking to learn from and collaborate with new people, so feel free to contact me via twitter (@shanmdphd) or email (pil.han AT gmail.com).
 
-<a href="https://shanmdphd.github.io/cv/cv-shan.pdf" class="btn">Curriculum Vitae</a> 
-<a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Publication</a>
-<a href="/about/physicianscientist/" class="btn">Pathway to the physician-scientist</a>
+- <a href="https://shanmdphd.github.io/cv/cv-shan.pdf" class="btn">Curriculum Vitae</a> 
+- <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Publication</a>
+- <a href="/about/physicianscientist/" class="btn">Pathway to the physician-scientist</a>
 
 ##### Academic interest
 

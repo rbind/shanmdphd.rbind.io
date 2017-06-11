@@ -8,12 +8,13 @@ tags: [CV, about]
 banner: 'banners/cv.jpg'
 menu: 'main'
 ---
+
 [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->
 
-    {{< gallery
-        "assets/profile-room.png"
-        "banners/placeholder.png"
-    >}}
+{{< gallery
+    "assets/profile-room.png"
+    "assets/shan-photo.png"
+>}}
 
 
 
