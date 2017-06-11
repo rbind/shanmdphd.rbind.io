@@ -7,6 +7,7 @@ categories: [about]
 tags: [CV, about]
 banner: 'banners/cv.jpg'
 menu: 'main'
+lightgallery: true
 ---
 [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->
 
