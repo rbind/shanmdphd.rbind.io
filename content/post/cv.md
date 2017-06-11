@@ -10,6 +10,13 @@ menu: 'main'
 ---
 [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->
 
+    {{< gallery
+        "assets/profile-room.png"
+        "banners/placeholder.png"
+    >}}
+
+
+
 
 EDUCATION
 =========
