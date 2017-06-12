@@ -2,6 +2,8 @@
 title: "Plots with Errorbar"
 date: 2017-05-26
 tags: ["R", "ggplot2"]
+categories: ["R"]
+banner: 'post/errorbar_files/figure-html/unnamed-chunk-2-1.png'
 ---
 
 ```{r setup, include = FALSE}

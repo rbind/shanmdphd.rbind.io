@@ -32,3 +32,10 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - Programming (RStudio, LaTeX, SQL, git)
 - Statistics (R, SAS, ANOVA, regression, PCA, time series)
 
+##### R packages I love
+
+- `tidyverse`
+- `blogdown`, `bookdown`
+- `ggplot2`
+- `NonCompart`, `pkr`, `ncar`
+

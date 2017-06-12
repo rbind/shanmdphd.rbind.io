@@ -1,6 +1,8 @@
 # publishdir = "../"
 
 baseurl = "https://shanmdphd.rbind.io/"
+enableEmoji = true
+hasCJKLanguage = true
 
 languageCode = "en-us"
 title = "Sungpil Han MD/PhD"
