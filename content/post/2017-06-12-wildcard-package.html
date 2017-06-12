@@ -1,0 +1,68 @@
+---
+title: wildcard package
+author: ~
+date: '2017-06-12'
+slug: ''
+categories: [R, Korean]
+tags: [R]
+banner: ''
+description: '와일드 카드를 사용해서 데이타프레임을 조작할 수 있습니다.'
+images: []
+menu: ''
+---
+
+<!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
+
+<!-- BLOGDOWN-BODY-BEFORE -->
+<!-- /BLOGDOWN-BODY-BEFORE -->
+<p><a href="http://will-landau.com/2017/05/21/wildcard/" class="uri">http://will-landau.com/2017/05/21/wildcard/</a> 의 글을 보고 시도해 봅니다. 어디에 쓰게 될지는 모르겠지만 알아두면 언젠가 한번은 사용하게 될 것 같습니다.</p>
+<pre class="r"><code>install.packages(&quot;wildcard&quot;)</code></pre>
+<pre class="r"><code>library(wildcard)</code></pre>
+<pre class="r"><code>myths &lt;- data.frame(myth = c(&quot;Bigfoot&quot;, &quot;UFO&quot;, &quot;Loch Ness Monster&quot;),
+                    claim = c(&quot;various&quot;, &quot;day&quot;, &quot;day&quot;),
+                    note = c(&quot;various&quot;, &quot;pictures&quot;, &quot;reported day&quot;))
+myths</code></pre>
+<pre><code>##                myth   claim         note
+## 1           Bigfoot various      various
+## 2               UFO     day     pictures
+## 3 Loch Ness Monster     day reported day</code></pre>
+<pre class="r"><code>out = wildcard(myths, wildcard = &quot;day&quot;, values = c(&quot;today&quot;, &quot;yesterday&quot;))
+out</code></pre>
+<pre><code>##                myth     claim               note
+## 1           Bigfoot   various            various
+## 2               UFO     today           pictures
+## 3               UFO yesterday           pictures
+## 4 Loch Ness Monster     today     reported today
+## 5 Loch Ness Monster yesterday reported yesterday</code></pre>
+<pre class="r"><code>wildcard(myths, wildcard = &quot;day&quot;, values = c(&quot;today&quot;, &quot;yesterday&quot;), expand = FALSE)</code></pre>
+<pre><code>##                myth     claim           note
+## 1           Bigfoot   various        various
+## 2               UFO     today       pictures
+## 3 Loch Ness Monster yesterday reported today</code></pre>
+<pre class="r"><code>locations &lt;- data.frame(myth = c(&quot;Bigfoot&quot;, &quot;UFO&quot;, &quot;Loch Ness Monster&quot;), origin = &quot;where&quot;)
+locations</code></pre>
+<pre><code>##                myth origin
+## 1           Bigfoot  where
+## 2               UFO  where
+## 3 Loch Ness Monster  where</code></pre>
+<pre class="r"><code>rules &lt;- list(where = c(&quot;North America&quot;, &quot;various&quot;, &quot;Scotland&quot;), UFO = c(&quot;spaceship&quot;, &quot;saucer&quot;))
+rules</code></pre>
+<pre><code>## $where
+## [1] &quot;North America&quot; &quot;various&quot;       &quot;Scotland&quot;     
+## 
+## $UFO
+## [1] &quot;spaceship&quot; &quot;saucer&quot;</code></pre>
+<pre class="r"><code>wildcard(locations, rules = rules, expand = c(FALSE, TRUE))</code></pre>
+<pre><code>##                myth        origin
+## 1           Bigfoot North America
+## 2         spaceship       various
+## 3            saucer       various
+## 4 Loch Ness Monster      Scotland</code></pre>
+<pre class="r"><code>numbers &lt;- data.frame(x = 4, y = 3, z = 4444, w = 4.434)
+numbers</code></pre>
+<pre><code>##   x y    z     w
+## 1 4 3 4444 4.434</code></pre>
+<pre class="r"><code>wildcard(numbers, wildcard = 4, values = 7)</code></pre>
+<pre><code>##   x y    z     w
+## 1 7 3 7777 7.737</code></pre>

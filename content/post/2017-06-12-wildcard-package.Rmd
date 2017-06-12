@@ -1,0 +1,42 @@
+---
+title: wildcard package
+author: ~
+date: '2017-06-12'
+slug: ''
+categories: [R, Korean]
+tags: [R]
+banner: ''
+description: '와일드 카드를 사용해서 데이타프레임을 조작할 수 있습니다.'
+images: []
+menu: ''
+---
+
+<http://will-landau.com/2017/05/21/wildcard/> 의 글을 보고 시도해 봅니다. 
+어디에 쓰게 될지는 모르겠지만 알아두면 언젠가 한번은 사용하게 될 것 같습니다.
+
+```{r eval = FALSE}
+install.packages("wildcard")
+```
+
+```{r}
+library(wildcard)
+```
+
+```{r}
+myths <- data.frame(myth = c("Bigfoot", "UFO", "Loch Ness Monster"),
+                    claim = c("various", "day", "day"),
+                    note = c("various", "pictures", "reported day"))
+myths
+out = wildcard(myths, wildcard = "day", values = c("today", "yesterday"))
+out
+wildcard(myths, wildcard = "day", values = c("today", "yesterday"), expand = FALSE)
+locations <- data.frame(myth = c("Bigfoot", "UFO", "Loch Ness Monster"), origin = "where")
+locations
+rules <- list(where = c("North America", "various", "Scotland"), UFO = c("spaceship", "saucer"))
+rules
+wildcard(locations, rules = rules, expand = c(FALSE, TRUE))
+numbers <- data.frame(x = 4, y = 3, z = 4444, w = 4.434)
+numbers
+wildcard(numbers, wildcard = 4, values = 7)
+```
+
