@@ -1,3 +1,0 @@
-```{r include = FALSE}
-knitr::opts_chunk$set(fig.path='{{ site.url }}/images/rxode-')
-```
