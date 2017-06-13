@@ -24,11 +24,16 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Publication</a>
 - <a href="/about/physicianscientist/" class="btn">Pathway to the physician-scientist</a>
 
+### Softwares I love
+
+- `R` and `Rstudio`
+- `vim` but not `gvim`
+- `git` and `github`
+- `MacOS` and `Ubuntu`
+
 ### R packages I love
 
-- `tidyverse`
-- `blogdown`, `bookdown`
-- `ggplot2`
+- `tidyverse`, `blogdown`, `bookdown`, `ggplot2`
 - `NonCompart`, `pkr`, `ncar`
 
 ### Interests
