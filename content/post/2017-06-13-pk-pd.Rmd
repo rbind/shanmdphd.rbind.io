@@ -1,0 +1,62 @@
+---
+date: 2017-06-13
+title: Summary of PKPD of biotech drugs chapter 12
+categories: [medicine, english, pharmacology]
+tags: [medicine, biothch-drug, pk, pd, new-drug-development]
+banner: 'http://www.nature.com/nrd/journal/v9/n4/images/nrd3003-f1.jpg'
+bibliography: 'bib/biotechch12.bib'
+---
+
+```{r include = FALSE}
+library(knitcitations)
+cleanbib()
+cite_options(citation_format = "pandoc", style = "markdown")
+```
+
+This is a summary of the book chapter 12. `r citep(read.bibtex("bib/biotechdrugs.bib"))`
+<!--more-->
+
+## Hormones
+
+- Homeostatic feedback systems
+- example: insulin, PTH, cytokines
+- insulin: stimulating glucose update into cells
+    - half-life: 5-6
+    - SC dosing - flip-flop kinetics: C~max~, T~max~
+- PTH
+    - Teriparatide (N-terminal 34-mer of full-length PTH, approved)
+    - Anabolic effect - stimulation of osteoblasts
+    - PTH1R
+
+## Cytokine
+
+- HGF - nonlinearity
+- Thrombopoietin analogue (PEG-rHuMGDF) - Modeling of thrombopoietic effects
+
+## Soluble Receptors
+
+- Etanercept - TNF receptor binding fusion protein
+    - PASI (Psoriasis Area and Severity Index)
+    - Sigmoid E~max~-model - EC50 2ug/ml
+
+## Monoclonal antibodies
+
+- Table 12.2, Table 12.3, Table 12.3 - **Approved therapeutic monoclonal antibodies**
+- Anti-TNF-$\alpha$ antibodies
+    - infliximab (chimeric antibody)
+    - fully humanized (adalimumab)
+    - RA biomarker: ACR20 and EULAR improvement
+- Therapeutic Antibodies in Oncology
+    - Rituximab - anti-CD20 -> B cells (ADCC, CDC, apoptosis)
+    - PK of rituximab - nonlinear in multiple dose
+    - CLL dose > NHL dose: larger tumor burden and antigen sink
+    - Bevacizumab: humanized IgG1 monoclonal antibody that binds and inhibits VEGF interaction with its receptor Flt-1 and KDR -> angiogenesis.
+    - Trastuzumab: targeting HER2 receptor
+
+\* The banner is inserted from the article `r citep("10.1038/nrd3003")`.
+
+![Comparison of PK](/assets/smallvsbio.jpg)
+
+## Reference
+
+`r write.bibtex(file="bib/biotechch12.bib")`
