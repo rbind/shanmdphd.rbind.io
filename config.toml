@@ -3,6 +3,7 @@
 baseurl = "https://shanmdphd.rbind.io/"
 enableEmoji = true
 hasCJKLanguage = true
+PygmentsCodeFences = true
 
 languageCode = "en-us"
 title = "Sungpil Han MD/PhD"

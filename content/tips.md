@@ -272,7 +272,7 @@ Reference: [Wikia](http://vim.wikia.com/wiki/Changing_case_with_regular_expressi
 
 ##### Repeat Header Row in Word
 
-```VBA
+```
 Sub RepeatTableHeadings()
 
   Dim tbl As Table
@@ -288,7 +288,7 @@ Reference: [BeyondVBA](http://vba.relief.jp/word-macro-repeat-table-headings/)
 
 ##### Image resize
 
-```VBA
+```
 Sub resize()
 Dim i As Long
 With ActiveDocument
