@@ -1,10 +1,8 @@
 ---
-layout: post
+date: 2016-07-20
 title: Nonlinear Mixed Effects Models 번역본 수령!
-categories: 
-share: true
-comments: true
-tag: [NONMEM, Clinical Pharmacology]
+categories: [pharmacometrics]
+tags: [pharmacometrics, NONMEM]
 ---
 
 가톨릭대 임동석 교수님, 한승훈 교수님의 Owen, Fiedler-Kelly 책의 번역본이 출간되었습니다.
