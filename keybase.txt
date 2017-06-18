@@ -1,0 +1,52 @@
+https://keybase.io/shanmdphd
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://shanmdphd.rbind.io
+  * I am shanmdphd (https://keybase.io/shanmdphd) on keybase.
+  * I have a public key ASDCj5MUcuhQPmEUJ3kVhR8Mu7MJlgYvbnbol73sU-t1IQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101b1a490068a1f5c3695827776310908f5457a9a596970147cf3962dbfd6b81ab20a",
+            "host": "keybase.io",
+            "kid": "0120c28f931472e8503e6114277915851f0cbbb30996062f6e76e897bdec53eb75210a",
+            "uid": "95e502582cefa90d52c624d9bd3dd119",
+            "username": "shanmdphd"
+        },
+        "service": {
+            "hostname": "shanmdphd.rbind.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.20"
+    },
+    "ctime": 1497758573,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1497758541,
+        "hash": "99d3814d2945afe9eeab777c14408f9d8341eb423f43177284c145d648c74832fe34ffa6c3400329585e167d54c1af9768676188913252f745dd8cb45d35a37f",
+        "seqno": 1177896
+    },
+    "prev": "9caae807fb3b79af2dbc61dd063c54c4eeb6a0c8d4ae94b21c00ae073e27ec95",
+    "seqno": 19,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgwo+TFHLoUD5hFCd5FYUfDLuzCZYGL2526Je97FPrdSEKp3BheWxvYWTFAv17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxYjFhNDkwMDY4YTFmNWMzNjk1ODI3Nzc2MzEwOTA4ZjU0NTdhOWE1OTY5NzAxNDdjZjM5NjJkYmZkNmI4MWFiMjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYzI4ZjkzMTQ3MmU4NTAzZTYxMTQyNzc5MTU4NTFmMGNiYmIzMDk5NjA2MmY2ZTc2ZTg5N2JkZWM1M2ViNzUyMTBhIiwidWlkIjoiOTVlNTAyNTgyY2VmYTkwZDUyYzYyNGQ5YmQzZGQxMTkiLCJ1c2VybmFtZSI6InNoYW5tZHBoZCJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoic2hhbm1kcGhkLnJiaW5kLmlvIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjAifSwiY3RpbWUiOjE0OTc3NTg1NzMsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ5Nzc1ODU0MSwiaGFzaCI6Ijk5ZDM4MTRkMjk0NWFmZTllZWFiNzc3YzE0NDA4ZjlkODM0MWViNDIzZjQzMTc3Mjg0YzE0NWQ2NDhjNzQ4MzJmZTM0ZmZhNmMzNDAwMzI5NTg1ZTE2N2Q1NGMxYWY5NzY4Njc2MTg4OTEzMjUyZjc0NWRkOGNiNDVkMzVhMzdmIiwic2Vxbm8iOjExNzc4OTZ9LCJwcmV2IjoiOWNhYWU4MDdmYjNiNzlhZjJkYmM2MWRkMDYzYzU0YzRlZWI2YTBjOGQ0YWU5NGIyMWMwMGFlMDczZTI3ZWM5NSIsInNlcW5vIjoxOSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxECsdwXTNnVd4eXNUjYtdbeioeGi4LHovijRLF9SXre+h9wEBq4vFaoEA0jA5LcfWL9HZbbQHyFzectt6Ea82bsKqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQg+ZH31+siEtFXlB3AB2ZtnXj4fmVJ53V0ZbGFrCcamJSjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/shanmdphd
+
