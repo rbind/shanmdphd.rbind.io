@@ -13,7 +13,7 @@ tags: [R, Bash, Git]
 
 If value is a character vector then the element of ‘...’ with a name that exactly matches value is evaluated. If there is no match a single unnamed argument will be used as a default. If no default is specified, NULL is returned.
 
-```r
+``` r
 > y <- "fruit"
 > switch(y, fruit = "banana", vegetable = "broccoli", "Neither")
 [1] "banana"
