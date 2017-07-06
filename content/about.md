@@ -44,6 +44,17 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - Programming (RStudio, LaTeX, SQL, git)
 - Statistics (R, SAS, ANOVA, regression, PCA, time series)
 
+### Presentation
+
+**2017-03-22**, Speaker: shan, [<i class="fa fa-file-pdf-o"></i>PDF](ftp://172.21.61.202/cpt%20documents/BookJournal/2017/Presentation/2017-03-22-shan-Edison/2017-03-22-shan-Edison.pdf)
+
+![](/assets/2017-03-22-shan-Edison.png)
+
+### Books (on going)
+
+- Noncompartmental analysis by R <https://asancpt.github.io/ncarBook>
+
+
 
 ### Video Clips
 
@@ -74,10 +85,4 @@ R의 console size, font style, size를 Rconsole 파일을 변경함으로서 조
 - 해외 실습/연수 나가는 법 (정보 얻기, Email 쓰기) / 15분
 - 의대생을 위한 클라우드 저장소(PC & App) 활용법 (Simplenote, Evernote, Google Drive, Dropbox, Github 등) / 30분
 - AMC 인턴 되는 법, 인턴 점수 잘 받는 법 / 15분
-
-### Presentation
-
-**2017-03-22**, Speaker: shan, [<i class="fa fa-file-pdf-o"></i>PDF](ftp://172.21.61.202/cpt%20documents/BookJournal/2017/Presentation/2017-03-22-shan-Edison/2017-03-22-shan-Edison.pdf)
-
-![](/assets/2017-03-22-shan-Edison.png)
 
