@@ -22,6 +22,7 @@ I’m always looking to learn from and collaborate with new people, so feel free
 
 - <a href="https://shanmdphd.github.io/cv/cv-shan.pdf" class="btn">Curriculum Vitae</a> 
 - <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Publication</a>
+- <a href="https://orcid.org/0000-0002-4674-7682" target="_blank" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0002-4674-7682</a>
 - <a href="/about/physicianscientist/" class="btn">Pathway to the physician-scientist</a>
 
 ### Softwares I love
