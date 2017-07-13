@@ -22,7 +22,6 @@ menu: 'main'
     "https://shanmdphd.github.io/cv/cv-4.png" 
     "https://shanmdphd.github.io/cv/cv-5.png" 
     "https://shanmdphd.github.io/cv/cv-6.png" 
-    "https://shanmdphd.github.io/cv/cv-7.png" 
 >}}
 
 EDUCATION
