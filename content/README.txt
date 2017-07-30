@@ -96,25 +96,25 @@ Han, S, J. Kim, M. Han, H. Sim, K. Kim, S. Yoon, S. Baek, B. Kim and S. Oh (2011
 PUBLISHED PROCEEDINGS
 =====================
 
-Han, S, Y. Kim, H. Y. Choi, D. Soh, J. Kim, J. Nam, J. Kim, K. Bae and H. Lim (2017). "Safety, Tolerability, and Pharmacokinetics of Single and Multiple Dose JPI-289, A Novel Poly (ADP-Ribose) Polymerase-1 Inhibitor in First-In-Human Study of Healthy Volunteers". In: *Clinical Therapeutics* 39.8, p. e48.
+Han, S, Y. Kim, H. Y. Choi, D. Soh, J. Kim, J. Nam, J. Kim, K. Bae and H. Lim (2017). "Safety, Tolerability, and Pharmacokinetics of Single and Multiple Dose JPI-289, A Novel Poly (ADP-Ribose) Polymerase-1 Inhibitor in First-In-Human Study of Healthy Volunteers". In: *Clinical Therapeutics* 39.8, p. e48. DOI: [10.1016/j.clinthera.2017.05.148](http://dx.doi.org/10.1016/j.clinthera.2017.05.148).
 
-Han, S, H. Y. Choi, Y. H. Kim, W. J. Kim, K. Bae and H. Lim (2017). "Pharmacokinetic and Pharmacodynamic Modeling and Simulation Analysis of CTB-001, Recently Developed Bivalirudin". In: *Clinical Therapeutics* 39.8, p. e54.
+Han, S, H. Y. Choi, Y. H. Kim, W. J. Kim, K. Bae and H. Lim (2017). "Pharmacokinetic and Pharmacodynamic Modeling and Simulation Analysis of CTB-001, Recently Developed Bivalirudin". In: *Clinical Therapeutics* 39.8, p. e54. DOI: [10.1016/j.clinthera.2017.05.169](http://dx.doi.org/10.1016/j.clinthera.2017.05.169).
 
-Han, S, H. Y. Choi, Y. H. Kim, J. Y. Nam, G. S. Song, H. Lim and K. Bae (2017). "Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Escalating Single and Multiple Oral Doses of CJ-12420 (Tegoprazan), A Novel Potassium-Competitive Acid Blocker (P-CAB) in Healthy Male Subjects". In: *Clinical Therapeutics* 39.8, pp. e97-e98.
+Han, S, H. Y. Choi, Y. H. Kim, J. Y. Nam, G. S. Song, H. Lim and K. Bae (2017). "Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Escalating Single and Multiple Oral Doses of CJ-12420 (Tegoprazan), A Novel Potassium-Competitive Acid Blocker (P-CAB) in Healthy Male Subjects". In: *Clinical Therapeutics* 39.8, pp. e97-e98. DOI: [10.1016/j.clinthera.2017.05.306](http://dx.doi.org/10.1016/j.clinthera.2017.05.306).
 
-Han, S, K. Lim, S. Cho, J. Kim, S. Choe, J. Jung, J. Ghim, H. Jeong, T. Yoo, S. Kim and others (2016). "Effects of single oral administration of SKI2670, gonadotropin-releasing hormone (GnRH) antagonist, in healthy pre-menopausal women". In: *Fertility and Sterility* 106.3, p. e273.
+Han, S, K. Lim, S. Cho, J. Kim, S. Choe, J. Jung, J. Ghim, H. Jeong, T. Yoo, S. Kim and others (2016). "Effects of single oral administration of SKI2670, gonadotropin-releasing hormone (GnRH) antagonist, in healthy pre-menopausal women". In: *Fertility and Sterility* 106.3, p. e273. DOI: [10.1016/j.fertnstert.2016.07.785](http://dx.doi.org/10.1016/j.fertnstert.2016.07.785).
 
-Han, S, A. D. Salgado, E. Romm and B. Bielekova (2012). "Comprehensive monitoring of intrathecal immune cells in patients with multiple sclerosis by 12-color flow cytometric immunophenotyping". In: *Journal of Neuroimmunology* 253.1-2, pp. 98-98.
+Han, S, A. D. Salgado, E. Romm and B. Bielekova (2012). "Comprehensive monitoring of intrathecal immune cells in patients with multiple sclerosis by 12-color flow cytometric immunophenotyping". In: *Journal of Neuroimmunology* 253.1-2, pp. 98-98. DOI: [10.1016/j.jneuroim.2012.10.001](http://dx.doi.org/10.1016/j.jneuroim.2012.10.001).
 
-Han, S, J. S. Perry, Q. Xu, L. B. Kennedy and B. Bielekova (2012). "Inhibitory effects of CD25 blockade on development of pro-inflammatory innate lymphoid cells is associated with decreased intrathecal inflammation in MS". In: *Journal of Neuroimmunology* 253.1-2, pp. 67-67.
+Han, S, J. S. Perry, Q. Xu, L. B. Kennedy and B. Bielekova (2012). "Inhibitory effects of CD25 blockade on development of pro-inflammatory innate lymphoid cells is associated with decreased intrathecal inflammation in MS". In: *Journal of Neuroimmunology* 253.1-2, pp. 67-67. DOI: [10.1016/j.jneuroim.2012.10.001](http://dx.doi.org/10.1016/j.jneuroim.2012.10.001).
 
 Han, S, A. Salgado, T. Alfahad and B. Bielekova (2012). "Flow Cytometric Immunophenotyping of the Blood and CSF of Patients with Multiple Sclerosis". In: *Neurology* 78.1 Supplement, pp. P02-081.
 
-Han, S, I. Cortese and B. Bielekova (2011). "Effects of Long-Term (&gt; 5 Years) Daclizumab Therapy on Lymphocyte Subpopulations-Comparison of Immediate Ex-Vivo Immunophenotyping with Commercially-Available Assay". In: *Neurology* 76.9, pp. A239-A240.
-
 Wuest, S, S. Han, J. Martin, D. Maric and B. Bielekova (2011). "Daclizumab Inhibits Expansion of Antigen (Ag)-Specific T Cells by Blocking IL-2 Transpresentation by Dendritic Cells". In: *Neurology* 76.9, pp. A240-A240.
 
-Perry, J, S. Han, L. B. Kennedy and B. Bielekova (2010). "Opposing regulation between lymphoid tissue inducer cells and immunoregulatory CD56bright NK cells underlies therapeutic benefit of daclizumab in MS". In: *Journal of Neuroimmunology* 228.1-2, pp. 111-112.
+Han, S, I. Cortese and B. Bielekova "Effects of Long-Term (&gt; 5 Years) Daclizumab Therapy on Lymphocyte Subpopulations - Comparison of Immediate Ex-Vivo Immunophenotyping with Commercially-Available Assay". English. In: *NEUROLOGY* 76.9, 4. 63rd AAN Annual Meeting, Honolulu, HI, APR 09-16, 2011, pp. A239-A240. ISSN: 0028-3878.
+
+Perry, J, S. Han, L. B. Kennedy and B. Bielekova "Opposing regulation between lymphoid tissue inducer cells and immunoregulatory CD56bright NK cells underlies therapeutic benefit of daclizumab in MS". English. In: *JOURNAL OF NEUROIMMUNOLOGY* 228.1-2, SI. 10th Congress of the International-Society-of-Neuroimmunology (ISNI), Sitges, SPAIN, OCT 26-30, 2010, pp. 111-112. ISSN: 0165-5728. DOI: [10.1016/j.jneuroim.2010.08.001](http://dx.doi.org/10.1016/j.jneuroim.2010.08.001).
 
 OTHER PROCEEDINGS
 =================
