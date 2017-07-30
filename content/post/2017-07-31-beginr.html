@@ -1,0 +1,28 @@
+---
+title: 'beginr이란 좋은 패키지를 발견했네요.'
+author: ~
+date: '2017-07-31'
+slug: ''
+categories: [korean]
+tags: [r, beginr]
+banner: ''
+description: ''
+images: []
+menu: ''
+---
+
+
+<pre class="r"><code>x &lt;- 1:10 
+y &lt;- 1:10 + rnorm(10)
+
+beginr::plotlm(x, y, xlim = range(as.numeric(x), na.rm = TRUE), 
+       ylim = range(as.numeric(y), na.rm = TRUE), plot.title = &quot;linear regression&quot;, xlab = &quot;x&quot;, ylab = &quot;y&quot;, 
+       refline = TRUE, slope = 1, intercept = 0, showr2 = TRUE, showleg = TRUE)</code></pre>
+<p><img src="/post/2017-07-31-beginr_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre><code>## [[1]]
+##               Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) -0.6911543  0.8040481 -0.8595931 4.150278e-01
+## x            1.0375079  0.1295841  8.0064449 4.341584e-05
+## 
+## [[2]]
+## [1] 0.8890479</code></pre>

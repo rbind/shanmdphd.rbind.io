@@ -1,0 +1,21 @@
+---
+title: 'beginr이란 좋은 패키지를 발견했네요.'
+author: ~
+date: '2017-07-31'
+slug: ''
+categories: [korean]
+tags: [r, beginr]
+banner: ''
+description: ''
+images: []
+menu: ''
+---
+
+```{r}
+x <- 1:10 
+y <- 1:10 + rnorm(10)
+
+beginr::plotlm(x, y, xlim = range(as.numeric(x), na.rm = TRUE), 
+       ylim = range(as.numeric(y), na.rm = TRUE), plot.title = "linear regression", xlab = "x", ylab = "y", 
+       refline = TRUE, slope = 1, intercept = 0, showr2 = TRUE, showleg = TRUE)
+```
