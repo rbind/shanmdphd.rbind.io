@@ -22,7 +22,6 @@ menu: 'main'
     "https://shanmdphd.github.io/cv/cv-4.png" 
     "https://shanmdphd.github.io/cv/cv-5.png" 
     "https://shanmdphd.github.io/cv/cv-6.png" 
-    "https://shanmdphd.github.io/cv/cv-7.png" 
 >}}
 
 EDUCATION
@@ -69,11 +68,12 @@ CLINICAL TRIALS INVOLVED
 
 | Duration            | Role       | Study | Therapeutic area/Phase                                                       |
 |:--------------------|:-----------|:------|:-----------------------------------------------------------------------------|
+| Jul 2017 -          | Sub-I      | SIT   | CPT/Phase I (Dermal fibrosis treatment drug)                                 |
 | Mar 2017 -          | Sub-I      | SIT   | CPT/Phase I (GH deficiency treatment drug)                                   |
 | Feb 2017 -          | Sub-I      | SIT   | CPT/Phase I (Osteoporosis treatment drug)                                    |
 | Feb 2017 -          | Sub-I      | IIT   | CPT/Retrospective (Vancomycin TDM)                                           |
 | Jan 2017 -          | Sub-I      | SIT   | CPT/Phase I (BPH treatment drug)                                             |
-| Aug.2016 -          | Sub-I      | SIT   | CPT/Phase I (Tuberculosis treatment drug)                                    |
+| Aug 2016 -          | Sub-I      | SIT   | CPT/Phase I (Tuberculosis treatment drug)                                    |
 | Apr 2016 -          | Sub-I      | SIT   | CPT/Phase I (BPH treatment drug)                                             |
 | Mar 2016 -          | Sub-I      | SIT   | CPT/Phase I (Endometriosis treatment drug)                                   |
 | Mar 2016 -          | Sub-I      | SIT   | CPT/Phase I (Osteoporosis treatment drug)                                    |
@@ -88,7 +88,8 @@ RESEARCH EXPERIENCES
 
 -   Advisor: Kyun-Seop Bae, M.D.,Ph.D., Hyeong-Suk Lim, M.D.,Ph.D.
 -   Plan, conduct, and report clinical trials
--   Perform population modeling, simulation, and model-based drug development (ITP treatment drug, endometriosis drug, oral anticancer drug)
+-   Develop statistical softwares using R
+-   Perform population modeling and simulation, and design model-based drug development
 
 **Predoctoral Fellow** Jan 2010 - Dec 2012
 *Neuroimmunology branch, NINDS, National Institutes of Health* Bethesda, MD
@@ -102,7 +103,7 @@ RESEARCH EXPERIENCES
 *Pusan National University, School of Medicine* Pusan, Korea
 
 -   Advisor: Saeock Oh, M.D., Ph.D.
--   Investigated a role of Epithelial-Mesenchymal Transition(EMT)-related transcription factor, Snail in metastastic potential of glioblastoma multiforme
+-   Investigated a role of Epithelial-Mesenchymal Transition(EMT)-related transcription factor, Snai1 in metastastic potential of glioblastoma multiforme
 
 [PUBLICATIONS](https://scholar.google.com/citations?user=TUK927cAAAAJ&hl=en)
 ============================================================================
@@ -117,11 +118,49 @@ Wuest, S. C, J. H. Edwan, J. F. Martin, S. Han, J. S. A. Perry, C. M. Cartagena,
 
 Han, S, J. Kim, M. Han, H. Sim, K. Kim, S. Yoon, S. Baek, B. Kim and S. Oh (2011). "SNAI1 is involved in the proliferation and migration of glioblastoma cells". Eng. In: *Cellular and molecular neurobiology* 31.3, pp. 489-96. ISSN: 1573-6830. DOI: [10.1007/s10571-010-9643-4](http://dx.doi.org/10.1007/s10571-010-9643-4). PMID: [21225336](http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=21225336).
 
+PUBLISHED PROCEEDINGS
+=====================
+
+Han, S, Y. Kim, H. Y. Choi, D. Soh, J. Kim, J. Nam, J. Kim, K. Bae and H. Lim (2017). "Safety, Tolerability, and Pharmacokinetics of Single and Multiple Dose JPI-289, A Novel Poly (ADP-Ribose) Polymerase-1 Inhibitor in First-In-Human Study of Healthy Volunteers". In: *Clinical Therapeutics* 39.8, p. e48.
+
+Han, S, H. Y. Choi, Y. H. Kim, W. J. Kim, K. Bae and H. Lim (2017). "Pharmacokinetic and Pharmacodynamic Modeling and Simulation Analysis of CTB-001, Recently Developed Bivalirudin". In: *Clinical Therapeutics* 39.8, p. e54.
+
+Han, S, H. Y. Choi, Y. H. Kim, J. Y. Nam, G. S. Song, H. Lim and K. Bae (2017). "Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Escalating Single and Multiple Oral Doses of CJ-12420 (Tegoprazan), A Novel Potassium-Competitive Acid Blocker (P-CAB) in Healthy Male Subjects". In: *Clinical Therapeutics* 39.8, pp. e97-e98.
+
+Han, S, K. Lim, S. Cho, J. Kim, S. Choe, J. Jung, J. Ghim, H. Jeong, T. Yoo, S. Kim and others (2016). "Effects of single oral administration of SKI2670, gonadotropin-releasing hormone (GnRH) antagonist, in healthy pre-menopausal women". In: *Fertility and Sterility* 106.3, p. e273.
+
+Han, S, A. D. Salgado, E. Romm and B. Bielekova (2012). "Comprehensive monitoring of intrathecal immune cells in patients with multiple sclerosis by 12-color flow cytometric immunophenotyping". In: *Journal of Neuroimmunology* 253.1-2, pp. 98-98.
+
+Han, S, J. S. Perry, Q. Xu, L. B. Kennedy and B. Bielekova (2012). "Inhibitory effects of CD25 blockade on development of pro-inflammatory innate lymphoid cells is associated with decreased intrathecal inflammation in MS". In: *Journal of Neuroimmunology* 253.1-2, pp. 67-67.
+
+Han, S, A. Salgado, T. Alfahad and B. Bielekova (2012). "Flow Cytometric Immunophenotyping of the Blood and CSF of Patients with Multiple Sclerosis". In: *Neurology* 78.1 Supplement, pp. P02-081.
+
+Han, S, I. Cortese and B. Bielekova (2011). "Effects of Long-Term (&gt; 5 Years) Daclizumab Therapy on Lymphocyte Subpopulations-Comparison of Immediate Ex-Vivo Immunophenotyping with Commercially-Available Assay". In: *Neurology* 76.9, pp. A239-A240.
+
+Wuest, S, S. Han, J. Martin, D. Maric and B. Bielekova (2011). "Daclizumab Inhibits Expansion of Antigen (Ag)-Specific T Cells by Blocking IL-2 Transpresentation by Dendritic Cells". In: *Neurology* 76.9, pp. A240-A240.
+
+Perry, J, S. Han, L. B. Kennedy and B. Bielekova (2010). "Opposing regulation between lymphoid tissue inducer cells and immunoregulatory CD56bright NK cells underlies therapeutic benefit of daclizumab in MS". In: *Journal of Neuroimmunology* 228.1-2, pp. 111-112.
+
+OTHER PROCEEDINGS
+=================
+
+Sungpil Han (2016), First-in-human Study Assessing Safety, Tolerability, and Pharmacokinetics of JPI-289, a Novel Poly (ADP-ribose) Polymerase-1 (PARP-1) Inhibitor in Healthy Male Volunteers, Korean Society of Clinical Pharmacology and Therapeutics Fall Symposium, 2016, Jeonju, Korea
+
+Simone Wuest, SungPil Han, Jayne Martin, Dragan Maric, Bibiana Bielekova (2011) "Anti-CD25 Antibody Inhibits Antigen-specific T cell Expansion by Blocking IL-2 Transpresentation by Dendritic Cells", Federation of Clinical Immunology Societies 2011, Washington DC
+
+Justin Perry, SungPil Han, Lucy Kennedy, Bibiana Bielekova (2011) "Opposing Developmental Regulation Between Lymphoid Tissue Inducer Cells and Immunoregulatory CD56bright NK Cells Contributes to Therapeutic Benefit of Daclizumab in Multiple Sclerosis", Federation of Clinical Immunology Societies 2011, Washington DC
+
+SungPil Han, Justin Perry, Kory Johnson, Bibiana Bielekova (2011) "Signaling Though High- versus Intermediate-affinity Interleukin-2 (IL-2) Receptor Provides Qualitatively Different Signals to T cells", Annual conference of National Institute of Neurological Disorders and Stroke 2011, VA
+
+Simone Wuest, Jayne Martin, SungPil Han, Justin Perry, Thomas Waldmann, Bibiana Bielekova (2011) "Important role for IL-2 transpresentation in the induction of antigen-specific T cell responses by dendritic cells.", Keystone Symposia on Molecular and Cellular Biology: Dendritic cells and the initiation of adaptive immunity. Santa Fe, NM
+
+SungPil Han, Bibiana Bielekova (2010) "Comprehensive investigation of the mechanism of action of CD25-blocking Ab DAC-HYP in multiple sclerosis", Annual Bioscience and Engineering Symposium 2010, Bethesda, MD
+
 ACADEMIC PRESENTATIONS
 ======================
 
-**Young Clinical Pharmacologists Session, The 13<sup>th</sup> Congress of EACPT** Prague, Czech | Jun 2017
-*Safety, Tolerability, and Pharmacokinetics of Single and Multiple Dose JPI-289, a Novel Poly (ADP-ribose) Polymerase-1 Inhibitor in First-in-human Study of Healthy Volunteers*
+**The 13<sup>th</sup> Congress of EACPT** Prague, Czech | Jun 2017
+Young Clinical Pharmacologists Session: *Safety, Tolerability, and Pharmacokinetics of Single and Multiple Dose JPI-289, a Novel Poly (ADP-ribose) Polymerase-1 Inhibitor in First-in-human Study of Healthy Volunteers*
 
 **Expert Meeting, KFDA** Seoul, Korea | Apr 2017
 *ICH E18: Guideline on Genomic Sampling and Management of Genomic Data*
@@ -144,43 +183,14 @@ ACADEMIC PRESENTATIONS
 **PNU Research Festival** Gyeongju, Korea | Dec 2009
 *Genome-wide identification of Gli3 direct target genes during neurodevelopment*
 
-[PROCEEDINGS](https://scholar.google.com/citations?user=TUK927cAAAAJ&hl=en)
-===========================================================================
-
-*Safety, tolerability, pharmacokinetics, and pharmacodynamics of escalating single and multiple oral doses of cj-12420 (tegoprazan), a novel potassium-competitive acid blocker (p-cab) in healthy male subjects*
-
-*Pharmacokinetic and pharmacodynamic modeling and simulation analysis of ctb-001, recently developed bivalirudin*, 13th Congress of the European Association for Clinical Pharmacology and Therapeutics (EACPT), 2017, Prague, Czech Republic
-
-Sungpil Han, Yo Han Kim, Hee Youn Choi, Dong-Jun Soh, Jung-Min Kim, Joon-Woo Nam, Jong-Woo Kim, Kyun-Seop Bae, Hyeong-Seok Lim (2017) *Safety, tolerability, and pharmacokinetics of single and multiple dose jpi-289, a novel poly (adp-ribose) polymerase-1 inhibitor in first-in-human study of healthy volunteers*, 13th Congress of the European Association for Clinical Pharmacology and Therapeutics (EACPT), 2017, Prague, Czech Republic
-
-Sungpil Han (2016), First-in-human Study Assessing Safety, Tolerability, and Pharmacokinetics of JPI-289, a Novel Poly (ADP-ribose) Polymerase-1 (PARP-1) Inhibitor in Healthy Male Volunteers, Korean Society of Clinical Pharmacology and Therapeutics Fall Symposium, 2016, Jeonju, Korea
-
-Sungpil Han (2016), Effects Of Single Oral Administration Of Ski2670, Gonadotropin-Releasing Hormone(Gnrh) Antagonist, In Healthy Pre-Menopausal Women, American Society for Reproductive Medicine Scientific Congress 2016, Salt Lake City, Utah
-
-Sungpil Han, Alan Salgado, Tariq Alfahad and Bibiana Bielekova (2012) "Flow Cytometric Immunophenotyping of the Blood and CSF of Patients with Multiple Sclerosis" 64th American Academy of Neurology 2012, New Orleans, LA
-
-Simone Wuest, SungPil Han, Jayne Martin, Dragan Maric, Bibiana Bielekova (2011) "Anti-CD25 Antibody Inhibits Antigen-specific T cell Expansion by Blocking IL-2 Transpresentation by Dendritic Cells", Federation of Clinical Immunology Societies 2011, Washington DC
-
-Justin Perry, SungPil Han, Lucy Kennedy, Bibiana Bielekova (2011) "Opposing Developmental Regulation Between Lymphoid Tissue Inducer Cells and Immunoregulatory CD56bright NK Cells Contributes to Therapeutic Benefit of Daclizumab in Multiple Sclerosis", Federation of Clinical Immunology Societies 2011, Washington DC
-
-SungPil Han, Justin Perry, Kory Johnson, Bibiana Bielekova (2011) "Signaling Though High- versus Intermediate-affinity Interleukin-2 (IL-2) Receptor Provides Qualitatively Different Signals to T cells", Annual conference of National Institute of Neurological Disorders and Stroke 2011, VA
-
-Simone Wuest, SungPil Han, Jayne Martin, Dragan Maric, Bibiana Bielekova (2011) "Daclizumab inhibits Expansion of Antigen (Ag)-specific T cells by blocking IL-2 Transpresentation by Dendritic Cells", 63rd American Academy of Neurology 2011, Honolulu, HI
-
-SungPil Han, Irene Cortese, Bibiana Bielekova (2011) "Effects of long-term (&gt;5 years) daclizumab therapy on lymphocyte subpopulations - comparison of immediate ex-vivo immunophenotyping with commercially-available assay", 63rd American Academy of Neurology 2011, Honolulu, HI
-
-Simone Wuest, Jayne Martin, SungPil Han, Justin Perry, Thomas Waldmann, Bibiana Bielekova (2011) "Important role for IL-2 transpresentation in the induction of antigen-specific T cell responses by dendritic cells.", Keystone Symposia on Molecular and Cellular Biology: Dendritic cells and the initiation of adaptive immunity. Santa Fe, NM
-
-SungPil Han, Bibiana Bielekova (2010) "Comprehensive investigation of the mechanism of action of CD25-blocking Ab DAC-HYP in multiple sclerosis", Annual Bioscience and Engineering Symposium 2010, Bethesda, MD
-
-Justin Perry, SungPil Han, Lucy Boyd Kennedy, Bibiana Bielekova (2010) "Opposing regulation between lymphoid tissue inducer cells and immunoregulatory CD56bright NK cells underlies therapeutic benefit of daclizumab in multiple sclerosis", International Society of Neuroimmunology 2010, Sitges, Italy
-
 STATISTICAL SOFTWARES
 =====================
 
 Han, S. (2017a). *caffsim: Monte Carlo Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.1.0. URL: <https://github.com/asancpt/caffsim>.
 
 Han, S. (2017b). *crftools: Tools for Creating, Editing, and Managing Case Report Forms of AsanCPT*. R package version 0.3.1. URL: <https://github.com/asancpt/crftools>.
+
+Han, S. (2017c). *glasgowcoma: Glasgow Coma Scale Report*. R package version 0.0.0.9000.
 
 Han, S. (2017) *pkrshiny: Noncompartmental Analysis using pkr R package* Shiny application. URL: <https://asan.shinyapps.io/pkrshiny>
 
@@ -235,9 +245,9 @@ TEACHING EXPERIENCE
 **Lecturer and Teaching Assistant** Spring 2017
 *College of Medicine, University of Ulsan* Seoul, Korea
 
--   [R Programming](https://asancpt.github.io/Rprogramming)
+-   [WA5493: R Programming](https://asancpt.github.io/Rprogramming)
 
-**Lecturer and Mentor** Summer 2016
+**Lecturer and Mentor** Summer 2016, 2017
 *College of Medicine, University of Ulsan* Seoul, Korea
 
 -   [Clinical Elective in Clinical Pharmacology, Asan Medical Center](https://github.com/asancpt/subintern)
@@ -257,7 +267,7 @@ TEACHING EXPERIENCE
 SCIENTIFIC SOCIETY AND CONSORTIA MEMBERSHIP
 ===========================================
 
-**Member** 2016 - Present
+**Member** 2017 - Present
 *European Association of Clinical Pharmacology and Therapeutics (EACPT)*
 
 **Member** 2016 - Present

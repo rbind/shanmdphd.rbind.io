@@ -21,7 +21,8 @@ I release most of my work as open source software under my GitHub profile.
 I’m always looking to learn from and collaborate with new people, so feel free to contact me via twitter (@shanmdphd) or email (pil.han AT gmail.com).
 
 - <a href="https://shanmdphd.github.io/cv/cv-shan.pdf" class="btn">Curriculum Vitae</a> 
-- <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Publication</a>
+- <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Google Scholar</a>
+- <a href="https://orcid.org/0000-0002-4674-7682"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png">orcid.org/0000-0002-4674-7682</a>
 - <a href="/about/physicianscientist/" class="btn">Pathway to the physician-scientist</a>
 
 ### Softwares I love
@@ -43,6 +44,17 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - Data science, Big Data, Visualization (ggplot2)
 - Programming (RStudio, LaTeX, SQL, git)
 - Statistics (R, SAS, ANOVA, regression, PCA, time series)
+
+### Presentation
+
+**2017-03-22**, Speaker: shan, [<i class="fa fa-file-pdf-o"></i>PDF](ftp://172.21.61.202/cpt%20documents/BookJournal/2017/Presentation/2017-03-22-shan-Edison/2017-03-22-shan-Edison.pdf)
+
+![](/assets/2017-03-22-shan-Edison.png)
+
+### Books (on going)
+
+- Noncompartmental analysis by R <https://asancpt.github.io/ncarBook>
+
 
 
 ### Video Clips
@@ -74,10 +86,4 @@ R의 console size, font style, size를 Rconsole 파일을 변경함으로서 조
 - 해외 실습/연수 나가는 법 (정보 얻기, Email 쓰기) / 15분
 - 의대생을 위한 클라우드 저장소(PC & App) 활용법 (Simplenote, Evernote, Google Drive, Dropbox, Github 등) / 30분
 - AMC 인턴 되는 법, 인턴 점수 잘 받는 법 / 15분
-
-### Presentation
-
-**2017-03-22**, Speaker: shan, [<i class="fa fa-file-pdf-o"></i>PDF](ftp://172.21.61.202/cpt%20documents/BookJournal/2017/Presentation/2017-03-22-shan-Edison/2017-03-22-shan-Edison.pdf)
-
-![](/assets/2017-03-22-shan-Edison.png)
 
