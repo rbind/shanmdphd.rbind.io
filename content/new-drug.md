@@ -11,7 +11,7 @@ images: []
 menu: 'main'
 ---
 
-# New Drug Development
+# 신약개발
 
 신약과 관련된 정보를 적어내려 갈 예정입니다.
 
