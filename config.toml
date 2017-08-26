@@ -1,3 +1,5 @@
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
 # publishdir = "../"
 
 baseurl = "https://shanmdphd.rbind.io/"
