@@ -1,0 +1,300 @@
+---
+date: 2017-08-26
+title: "PKNCA 패키지를 사용하여 NCA 파라메터 계산하는 방법"
+categories: [임상약리학, 패키지]
+slug: pknca-theoph
+tags: [R, pk, nca]
+editor_options: 
+  chunk_output_type: console
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+<p>PKNCA 패키지를 사용하는 방법을 알아보겠습니다.</p>
+<div id="-." class="section level1">
+<h1>데이타 불러오기.</h1>
+<p>다음과 같이 두개의 패키지를 먼저 불러옵니다.</p>
+<pre class="r"><code>library(PKNCA) # devtools::install_github(&#39;billdenney/PKNCA&#39;)
+library(tidyverse) # devtools::install_github(&#39;tidyverse/tidyverse&#39;)
+library(knitr) # for kable</code></pre>
+<p>먼저 <code>Theoph</code> 데이타를 살짝 손보고자 합니다. Tibble형태로 바꾸고 factor화된 <code>Subject</code> 열을 숫자로 바꾸고 정렬할 것입니다.</p>
+<pre class="r"><code>rawTheoph &lt;- datasets::Theoph %&gt;% 
+  as_tibble() %&gt;% 
+  mutate_at(vars(Subject), as.numeric) %&gt;% 
+  arrange(Subject, Time)
+rawTheoph %&gt;% head %&gt;% kable</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Subject</th>
+<th align="right">Wt</th>
+<th align="right">Dose</th>
+<th align="right">Time</th>
+<th align="right">conc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">4</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">4</td>
+<td align="right">0.27</td>
+<td align="right">1.29</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">4</td>
+<td align="right">0.58</td>
+<td align="right">3.08</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">4</td>
+<td align="right">1.15</td>
+<td align="right">6.44</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">4</td>
+<td align="right">2.03</td>
+<td align="right">6.32</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">80</td>
+<td align="right">4</td>
+<td align="right">3.57</td>
+<td align="right">5.53</td>
+</tr>
+</tbody>
+</table>
+<p>농도 데이타를 <code>concTheoph</code>에 넣고, 투약 데이타를 <code>doseTheoph</code>에 넣었습니다. <code>concTheoph</code>는 plot으로 볼 수 있습니다.</p>
+<pre class="r"><code>concTheoph &lt;- PKNCAconc(rawTheoph, conc~Time|Subject)</code></pre>
+<pre><code>## Assuming point rather than interval concentration measurement</code></pre>
+<pre class="r"><code>concTheoph</code></pre>
+<pre><code>## Formula for concentration:
+##  conc ~ Time | Subject
+## With 12 subjects defined in the &#39;Subject&#39; column.
+## Nominal time column is not specified.
+## 
+## First 6 rows of concentration data:
+##  Subject Wt Dose Time conc exclude duration
+##        1 80    4 0.00 0.00    &lt;NA&gt;        0
+##        1 80    4 0.27 1.29    &lt;NA&gt;        0
+##        1 80    4 0.58 3.08    &lt;NA&gt;        0
+##        1 80    4 1.15 6.44    &lt;NA&gt;        0
+##        1 80    4 2.03 6.32    &lt;NA&gt;        0
+##        1 80    4 3.57 5.53    &lt;NA&gt;        0</code></pre>
+<pre class="r"><code>plot(concTheoph)</code></pre>
+<p><img src="/post/2017-08-26-pknca_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>## Dosing data needs to only have one row per dose, so subset for that first.
+
+doseRawTheoph &lt;- rawTheoph %&gt;% 
+  filter(Time == 0) %&gt;% 
+  select(Subject, Dose, Time)
+doseRawTheoph %&gt;% kable</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Subject</th>
+<th align="right">Dose</th>
+<th align="right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">4.00</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">4.95</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">4.53</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">4.92</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">4.53</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">4.40</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">4.40</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">3.10</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">5.30</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">5.50</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">4.02</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">5.86</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>doseTheoph &lt;- PKNCAdose(doseRawTheoph, Dose~Time|Subject)</code></pre>
+<pre><code>## Assuming route of administration is extravascular</code></pre>
+<pre><code>## Assuming instant dosing (duration=0)</code></pre>
+<pre class="r"><code>doseTheoph</code></pre>
+<pre><code>## Formula for dosing:
+##  Dose ~ Time | Subject
+## Nominal time column is not specified.
+## 
+## First 6 rows of dosing data:
+##  Subject Dose Time exclude         route duration
+##        1 4.00    0    &lt;NA&gt; extravascular        0
+##        2 4.95    0    &lt;NA&gt; extravascular        0
+##        3 4.53    0    &lt;NA&gt; extravascular        0
+##        4 4.92    0    &lt;NA&gt; extravascular        0
+##        5 4.53    0    &lt;NA&gt; extravascular        0
+##        6 4.40    0    &lt;NA&gt; extravascular        0</code></pre>
+<p>농도와 투약 정보를 합치는 것은 <code>PKNCAdata</code> 함수를 사용합니다.</p>
+<pre class="r"><code>dataTheoph &lt;- PKNCAdata(concTheoph, doseTheoph)</code></pre>
+<p>파라메터는 <code>pk.nca</code> 함수를 통해 구할 수 있습니다.</p>
+<pre class="r"><code>ncaTheoph &lt;- pk.nca(dataTheoph)
+ncaTheoph$result %&gt;% head %&gt;% kable</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">start</th>
+<th align="right">end</th>
+<th align="right">Subject</th>
+<th align="left">PPTESTCD</th>
+<th align="right">PPORRES</th>
+<th align="left">exclude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">24</td>
+<td align="right">1</td>
+<td align="left">auclast</td>
+<td align="right">71.6970150</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">Inf</td>
+<td align="right">1</td>
+<td align="left">cmax</td>
+<td align="right">6.4400000</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">Inf</td>
+<td align="right">1</td>
+<td align="left">tmax</td>
+<td align="right">1.1500000</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">Inf</td>
+<td align="right">1</td>
+<td align="left">tlast</td>
+<td align="right">23.8500000</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">Inf</td>
+<td align="right">1</td>
+<td align="left">clast.obs</td>
+<td align="right">0.9200000</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">Inf</td>
+<td align="right">1</td>
+<td align="left">lambda.z</td>
+<td align="right">0.0877957</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>summary(ncaTheoph) %&gt;% kable</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">start</th>
+<th align="right">end</th>
+<th align="left">N</th>
+<th align="left">auclast</th>
+<th align="left">cmax</th>
+<th align="left">tmax</th>
+<th align="left">half.life</th>
+<th align="left">aucinf.obs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">24</td>
+<td align="left">12</td>
+<td align="left">74.6 [24.3]</td>
+<td align="left">.</td>
+<td align="left">.</td>
+<td align="left">.</td>
+<td align="left">.</td>
+</tr>
+<tr class="even">
+<td align="right">0</td>
+<td align="right">Inf</td>
+<td align="left">12</td>
+<td align="left">.</td>
+<td align="left">8.65 [17.0]</td>
+<td align="left">1.14 [0.630, 3.55]</td>
+<td align="left">8.18 [2.12]</td>
+<td align="left">115 [28.4]</td>
+</tr>
+</tbody>
+</table>
+</div>

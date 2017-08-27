@@ -1,0 +1,67 @@
+---
+date: 2017-08-26
+title: "PKNCA 패키지를 사용하여 NCA 파라메터 계산하는 방법"
+categories: [임상약리학, 패키지]
+slug: pknca-theoph
+tags: [R, pk, nca]
+editor_options: 
+  chunk_output_type: console
+output:
+  html_document:
+    df_print: paged
+---
+
+PKNCA 패키지를 사용하는 방법을 알아보겠습니다.
+
+# 데이타 불러오기.
+
+다음과 같이 두개의 패키지를 먼저 불러옵니다.
+
+```{r, message = FALSE}
+library(PKNCA) # devtools::install_github('billdenney/PKNCA')
+library(tidyverse) # devtools::install_github('tidyverse/tidyverse')
+library(knitr) # for kable
+```
+
+먼저 `Theoph` 데이타를 살짝 손보고자 합니다. Tibble형태로 바꾸고 factor화된 `Subject` 열을 숫자로 바꾸고 정렬할 것입니다.
+
+```{r}
+rawTheoph <- datasets::Theoph %>% 
+  as_tibble() %>% 
+  mutate_at(vars(Subject), as.numeric) %>% 
+  arrange(Subject, Time)
+rawTheoph %>% head %>% kable
+```
+
+농도 데이타를 `concTheoph`에 넣고, 투약 데이타를 `doseTheoph`에 넣었습니다. `concTheoph`는 plot으로 볼 수 있습니다.
+
+```{r}
+concTheoph <- PKNCAconc(rawTheoph, conc~Time|Subject)
+concTheoph
+
+plot(concTheoph)
+
+## Dosing data needs to only have one row per dose, so subset for that first.
+
+doseRawTheoph <- rawTheoph %>% 
+  filter(Time == 0) %>% 
+  select(Subject, Dose, Time)
+doseRawTheoph %>% kable
+
+doseTheoph <- PKNCAdose(doseRawTheoph, Dose~Time|Subject)
+doseTheoph
+```
+
+농도와 투약 정보를 합치는 것은 `PKNCAdata` 함수를 사용합니다.
+
+```{r}
+dataTheoph <- PKNCAdata(concTheoph, doseTheoph)
+```
+
+파라메터는 `pk.nca` 함수를 통해 구할 수 있습니다.
+
+```{r}
+ncaTheoph <- pk.nca(dataTheoph)
+ncaTheoph$result %>% head %>% kable
+summary(ncaTheoph) %>% kable
+```
