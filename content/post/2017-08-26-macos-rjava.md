@@ -25,6 +25,8 @@ sudo ln -f -s $(/usr/libexec/java_home)/jre/lib/server/libjvm.dylib /usr/local/l
 brew install cairo
 ```
 
+{{< tweet 895741807933259776 >}}
+
 **출처**
 
 - <http://www.lonecpluspluscoder.com/2017/04/27/installing-java-8-jdk-os-x-using-homebrew>

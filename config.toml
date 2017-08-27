@@ -1,7 +1,5 @@
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-# publishdir = "../"
-
 baseurl = "https://shanmdphd.rbind.io/"
 enableEmoji = true
 hasCJKLanguage = true
@@ -9,15 +7,16 @@ PygmentsCodeFences = true
 
 languageCode = "en-us"
 title = "Sungpil Han MD/PhD"
+
 # Enable comments by entering your Disqus shortname
 disqusShortname = "hugoshanmdphd"
+
 # Enable Google Analytics by entering your tracking code
 #googleAnalytics = "UA-100793628-1"
 # Define the number of posts per page
 paginate = 99
 footnotereturnlinkcontents = "↩"
 theme = "hugo-icarus-theme"
-
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
@@ -105,3 +104,4 @@ theme = "hugo-icarus-theme"
     categories = true
     tags = false
     tag_cloud = true
+

@@ -1,16 +1,11 @@
 ---
-title: "Plots with Errorbar"
-date: 2017-05-26
-tags: ["R", "ggplot2"]
-categories: ["R"]
+title: '에러바 만드는 법'
+slug: plot-errorbar
+date: '2017-05-26'
+categories: [R]
+tags: [R, ggplot2]
 banner: 'post/errorbar_files/figure-html/unnamed-chunk-2-1.png'
 ---
-
-```{r setup, include = FALSE}
-#knitr::opts_chunk$set(fig.path='{{ site.url }}/images/errorbar-')
-```
-
-# 에러바 만드는 법
 
 R에 기본적으로 내장된 Indometh (Indomethacin IV bolus 시의 PK) 의 concentration-time curve를 ggplot2와 Hmisc 패키지를 사용해 각각 그려보겠습니다.
 
@@ -57,3 +52,4 @@ with(Indometh2,
                    yminus = Concentration-StandardDev,
                    col ="red", type = "b"))
 ```
+

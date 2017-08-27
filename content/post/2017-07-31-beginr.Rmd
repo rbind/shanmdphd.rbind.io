@@ -2,14 +2,20 @@
 title: 'beginr이란 좋은 패키지를 발견했네요.'
 author: ~
 date: '2017-07-31'
-slug: ''
-categories: [korean]
+slug: 'beginr'
+categories: [패키지, 한국어]
 tags: [r, beginr]
-banner: ''
+banner: 'http://images.roadtrafficsigns.com/img/lg/X/Begin-Sign-X-M4-11.gif'
 description: ''
 images: []
 menu: ''
 ---
+
+오늘 소개해 드릴 `beginr` <https://github.com/pzhaonet/beginr> 은 R을 처음 사용하는 사람들을 위해 여러가지 유용한 함수들을 모아놓은 패키지입니다.
+
+<!--more-->
+
+그 중 `plotlm` 함수는 정말 유용한 것 같습니다.
 
 ```{r}
 x <- 1:10 
@@ -19,3 +25,4 @@ beginr::plotlm(x, y, xlim = range(as.numeric(x), na.rm = TRUE),
        ylim = range(as.numeric(y), na.rm = TRUE), plot.title = "linear regression", xlab = "x", ylab = "y", 
        refline = TRUE, slope = 1, intercept = 0, showr2 = TRUE, showleg = TRUE)
 ```
+

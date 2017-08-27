@@ -1,7 +1,8 @@
 ---
-date: 2017-06-13
-title: Summary of PKPD of biotech drugs chapter 12
-categories: [medicine, english, pharmacology]
+title: 'Summary of PKPD of biotech drugs chapter 12'
+author: ~
+date: '2017-06-13'
+categories: [임상약리학]
 tags: [medicine, biothch-drug, pk, pd, new-drug-development]
 banner: 'http://www.nature.com/nrd/journal/v9/n4/images/nrd3003-f1.jpg'
 bibliography: 'bib/biotechch12.bib'
@@ -14,6 +15,7 @@ cite_options(citation_format = "pandoc", style = "markdown")
 ```
 
 This is a summary of the book chapter 12. `r citep(read.bibtex("bib/biotechdrugs.bib"))`
+
 <!--more-->
 
 ## Hormones
