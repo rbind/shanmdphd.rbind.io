@@ -1,6 +1,7 @@
 ---
-date: 2017-08-26
+date: 2017-08-27
 title: "PKNCA 패키지를 사용하여 NCA 파라메터 계산하는 방법"
+description: "상용 소프트웨어를 실행하지 않고 NCA 분석을 R에서 손쉽게 할 수 있습니다."
 categories: [임상약리학, 패키지]
 slug: pknca-theoph
 tags: [R, pk, nca]
@@ -10,11 +11,12 @@ editor_options:
 output:
   html_document:
     df_print: paged
+bibliography: bib/pknca.bib
 ---
 
-PKNCA 패키지를 사용하는 방법을 알아보겠습니다.
+PKNCA 패키지를 사용하는 방법을 알아보겠습니다.  [@R-PKNCA] 상용 소프트웨어를 실행하지 않고 NCA 분석을 R에서 손쉽게 할 수 있습니다.
 
-# 데이타 불러오기.
+# 데이타 불러오기
 
 다음과 같이 두개의 패키지를 먼저 불러옵니다.
 
@@ -34,30 +36,40 @@ rawTheoph <- datasets::Theoph %>%
 rawTheoph %>% head %>% kable
 ```
 
-농도 데이타를 `concTheoph`에 넣고, 투약 데이타를 `doseTheoph`에 넣었습니다. `concTheoph`는 plot으로 볼 수 있습니다.
+농도 데이타를 `concTheoph`에 넣고, 투약 데이타를 `doseTheoph`에 넣었습니다. 
 
 ```{r}
 concTheoph <- PKNCAconc(rawTheoph, conc~Time|Subject)
 concTheoph
-
-plot(concTheoph)
 
 ## Dosing data needs to only have one row per dose, so subset for that first.
 
 doseRawTheoph <- rawTheoph %>% 
   filter(Time == 0) %>% 
   select(Subject, Dose, Time)
-doseRawTheoph %>% kable
+doseRawTheoph %>% head %>% kable
 
 doseTheoph <- PKNCAdose(doseRawTheoph, Dose~Time|Subject)
 doseTheoph
 ```
+
+## 그림 그리기
+
+`concTheoph`는 plot으로 볼 수 있습니다.
+
+```{r plotConcTheoph}
+plot(concTheoph)
+```
+
+## 농도와 투약 합치기
 
 농도와 투약 정보를 합치는 것은 `PKNCAdata` 함수를 사용합니다.
 
 ```{r}
 dataTheoph <- PKNCAdata(concTheoph, doseTheoph)
 ```
+
+## 계산하기
 
 파라메터는 `pk.nca` 함수를 통해 구할 수 있습니다.
 
@@ -66,3 +78,13 @@ ncaTheoph <- pk.nca(dataTheoph)
 ncaTheoph$result %>% head %>% kable
 summary(ncaTheoph) %>% kable
 ```
+
+# References
+
+```{r echo = FALSE, results = 'asis'}
+bibFile <- 'bib/pknca.bib'
+knitr::write_bib('PKNCA', bibFile)
+# print(RefManageR::ReadBib(bibFile), list(style = 'markdown'))
+# --test #
+```
+

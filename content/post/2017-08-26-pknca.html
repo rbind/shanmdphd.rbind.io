@@ -1,6 +1,7 @@
 ---
-date: 2017-08-26
+date: 2017-08-27
 title: "PKNCA 패키지를 사용하여 NCA 파라메터 계산하는 방법"
+description: "상용 소프트웨어를 실행하지 않고 NCA 분석을 R에서 손쉽게 할 수 있습니다."
 categories: [임상약리학, 패키지]
 slug: pknca-theoph
 tags: [R, pk, nca]
@@ -10,13 +11,14 @@ editor_options:
 output:
   html_document:
     df_print: paged
+bibliography: bib/pknca.bib
 ---
 
 
 
-<p>PKNCA 패키지를 사용하는 방법을 알아보겠습니다.</p>
-<div id="-." class="section level1">
-<h1>데이타 불러오기.</h1>
+<p>PKNCA 패키지를 사용하는 방법을 알아보겠습니다. <span class="citation">(Denney and Buckeridge 2017)</span> 상용 소프트웨어를 실행하지 않고 NCA 분석을 R에서 손쉽게 할 수 있습니다.</p>
+<div id="-" class="section level1">
+<h1>데이타 불러오기</h1>
 <p>다음과 같이 두개의 패키지를 먼저 불러옵니다.</p>
 <pre class="r"><code>library(PKNCA) # devtools::install_github(&#39;billdenney/PKNCA&#39;)
 library(tidyverse) # devtools::install_github(&#39;tidyverse/tidyverse&#39;)
@@ -82,31 +84,28 @@ rawTheoph %&gt;% head %&gt;% kable</code></pre>
 </tr>
 </tbody>
 </table>
-<p>농도 데이타를 <code>concTheoph</code>에 넣고, 투약 데이타를 <code>doseTheoph</code>에 넣었습니다. <code>concTheoph</code>는 plot으로 볼 수 있습니다.</p>
-<pre class="r"><code>concTheoph &lt;- PKNCAconc(rawTheoph, conc~Time|Subject)</code></pre>
-<pre><code>## Assuming point rather than interval concentration measurement</code></pre>
-<pre class="r"><code>concTheoph</code></pre>
+<p>농도 데이타를 <code>concTheoph</code>에 넣고, 투약 데이타를 <code>doseTheoph</code>에 넣었습니다.</p>
+<pre class="r"><code>concTheoph &lt;- PKNCAconc(rawTheoph, conc~Time|Subject)
+concTheoph</code></pre>
 <pre><code>## Formula for concentration:
 ##  conc ~ Time | Subject
 ## With 12 subjects defined in the &#39;Subject&#39; column.
 ## Nominal time column is not specified.
 ## 
 ## First 6 rows of concentration data:
-##  Subject Wt Dose Time conc exclude duration
-##        1 80    4 0.00 0.00    &lt;NA&gt;        0
-##        1 80    4 0.27 1.29    &lt;NA&gt;        0
-##        1 80    4 0.58 3.08    &lt;NA&gt;        0
-##        1 80    4 1.15 6.44    &lt;NA&gt;        0
-##        1 80    4 2.03 6.32    &lt;NA&gt;        0
-##        1 80    4 3.57 5.53    &lt;NA&gt;        0</code></pre>
-<pre class="r"><code>plot(concTheoph)</code></pre>
-<p><img src="/post/2017-08-26-pknca_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+##  Subject Wt Dose Time conc exclude
+##        1 80    4 0.00 0.00    &lt;NA&gt;
+##        1 80    4 0.27 1.29    &lt;NA&gt;
+##        1 80    4 0.58 3.08    &lt;NA&gt;
+##        1 80    4 1.15 6.44    &lt;NA&gt;
+##        1 80    4 2.03 6.32    &lt;NA&gt;
+##        1 80    4 3.57 5.53    &lt;NA&gt;</code></pre>
 <pre class="r"><code>## Dosing data needs to only have one row per dose, so subset for that first.
 
 doseRawTheoph &lt;- rawTheoph %&gt;% 
   filter(Time == 0) %&gt;% 
   select(Subject, Dose, Time)
-doseRawTheoph %&gt;% kable</code></pre>
+doseRawTheoph %&gt;% head %&gt;% kable</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -146,36 +145,6 @@ doseRawTheoph %&gt;% kable</code></pre>
 <td align="right">4.40</td>
 <td align="right">0</td>
 </tr>
-<tr class="odd">
-<td align="right">7</td>
-<td align="right">4.40</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="right">8</td>
-<td align="right">3.10</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="right">5.30</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="right">10</td>
-<td align="right">5.50</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="right">11</td>
-<td align="right">4.02</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="right">5.86</td>
-<td align="right">0</td>
-</tr>
 </tbody>
 </table>
 <pre class="r"><code>doseTheoph &lt;- PKNCAdose(doseRawTheoph, Dose~Time|Subject)</code></pre>
@@ -194,8 +163,19 @@ doseRawTheoph %&gt;% kable</code></pre>
 ##        4 4.92    0    &lt;NA&gt; extravascular        0
 ##        5 4.53    0    &lt;NA&gt; extravascular        0
 ##        6 4.40    0    &lt;NA&gt; extravascular        0</code></pre>
+<div id="-" class="section level2">
+<h2>그림 그리기</h2>
+<p><code>concTheoph</code>는 plot으로 볼 수 있습니다.</p>
+<pre class="r"><code>plot(concTheoph)</code></pre>
+<p><img src="/post/2017-08-26-pknca_files/figure-html/plotConcTheoph-1.png" width="672" /></p>
+</div>
+<div id="--" class="section level2">
+<h2>농도와 투약 합치기</h2>
 <p>농도와 투약 정보를 합치는 것은 <code>PKNCAdata</code> 함수를 사용합니다.</p>
 <pre class="r"><code>dataTheoph &lt;- PKNCAdata(concTheoph, doseTheoph)</code></pre>
+</div>
+<div class="section level2">
+<h2>계산하기</h2>
 <p>파라메터는 <code>pk.nca</code> 함수를 통해 구할 수 있습니다.</p>
 <pre class="r"><code>ncaTheoph &lt;- pk.nca(dataTheoph)
 ncaTheoph$result %&gt;% head %&gt;% kable</code></pre>
@@ -298,4 +278,13 @@ ncaTheoph$result %&gt;% head %&gt;% kable</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-R-PKNCA">
+<p>Denney, Bill, and Clare Buckeridge. 2017. <em>PKNCA: Perform Pharmacokinetic Non-Compartmental Analysis</em>. <a href="https://CRAN.R-project.org/package=PKNCA" class="uri">https://CRAN.R-project.org/package=PKNCA</a>.</p>
+</div>
+</div>
 </div>
