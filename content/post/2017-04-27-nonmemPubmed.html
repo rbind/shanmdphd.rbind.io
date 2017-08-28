@@ -2,13 +2,15 @@
 title: "Pubmed Search Results of NONMEM"
 author: ~
 date: "2017-04-27"
-tags: [NONMEM, jekyll]
+categories: [임상약리학]
+tags: [NONMEM]
 banner: "banners/NONMEM7.png"
 description: "Pubmed"
 images: []
 menu: ''
-bibliography: "nonmemPubmed.bib"
+bibliography: "bib/nonmemPubmed.bib"
 ---
+
 
 
 <div id="introduction-and-methods" class="section level1">
@@ -27,7 +29,7 @@ bibliography: "nonmemPubmed.bib"
 <pre class="r"><code>library(knitr)
 library(ggplot2)
 library(dplyr)</code></pre>
-<pre class="r"><code>timeline &lt;- read.csv(&quot;timeline.csv&quot;, skip = 1, stringsAsFactors = FALSE) %&gt;% 
+<pre class="r"><code>timeline &lt;- read.csv(&quot;data-raw/timeline.csv&quot;, skip = 1, stringsAsFactors = FALSE) %&gt;% 
   mutate(percentage = round(count/sum(count)*100, 2)) %&gt;%
   arrange(year) %&gt;%
   mutate(cum_percent = cumsum(percentage))
@@ -36,7 +38,7 @@ ggplot(data=timeline, aes(x=year, y=count)) +
   xlab(&quot;Year&quot;) + ylab(&quot;Number of Articles&quot;) +
   ggtitle(&quot;Increase of Articles Using NONMEM&quot;)</code></pre>
 <div class="figure"><span id="fig:unnamed-chunk-1"></span>
-<img src="/post/nonmemPubmed_files/figure-html/unnamed-chunk-1-1.png" alt="Publications utilizing NONMEM" width="672" />
+<img src="/post/2017-04-27-nonmemPubmed_files/figure-html/unnamed-chunk-1-1.png" alt="Publications utilizing NONMEM" width="672" />
 <p class="caption">
 Figure 1: Publications utilizing NONMEM
 </p>
