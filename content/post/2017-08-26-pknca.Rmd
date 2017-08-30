@@ -18,7 +18,7 @@ PKNCA 패키지를 사용하는 방법을 알아보겠습니다.  [@R-PKNCA] 상
 
 # 데이타 불러오기
 
-다음과 같이 두개의 패키지를 먼저 불러옵니다.
+다음과 같은 패키지를 먼저 불러옵니다.
 
 ```{r, message = FALSE}
 library(PKNCA) # devtools::install_github('billdenney/PKNCA')

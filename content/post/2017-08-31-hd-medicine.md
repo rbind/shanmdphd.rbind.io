@@ -15,7 +15,12 @@ menu: ''
 
 <!--more-->
 
-![](assets/hd-medicine/asset.png)
-![](assets/hd-medicine/asset-2.png)
-![](assets/hd-medicine/asset-3.png)
-![](assets/hd-medicine/asset-4.png)
+![](/assets/hd-medicine/asset.png)
+
+![](/assets/hd-medicine/asset-2.png)
+
+![](/assets/hd-medicine/asset-3.png)
+
+![](/assets/hd-medicine/asset-4.png)
+
+앞으로 의학의 미래가 어떻게 펼쳐질지 기대됩니다.
