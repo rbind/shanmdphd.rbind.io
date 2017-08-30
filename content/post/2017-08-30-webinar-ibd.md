@@ -1,10 +1,10 @@
 ---
-title: 단일클론항체를 사용한 IBD의 치료: 계량약리학의 응용
+title: '단일클론항체를 사용한 IBD의 치료: 계량약리학의 응용'
 author: ~
 date: '2017-08-30'
 slug: 'webinar-ibd'
-categories: [임상약리학]
-tags: [계량약리학]
+categories: ['임상약리학']
+tags: ['계량약리학']
 banner: 'banners/webinar-ibd.png'
 description: ''
 images: []
