@@ -5,7 +5,7 @@ date: '2017-08-31'
 slug: ''
 categories: [QuickTake]
 tags: [논문, 고해상도의학, high definition medicine]
-banner: 'assets/hd-medicine/assets.png'
+banner: 'assets/hd-medicine/asset.png'
 description: ''
 images: []
 menu: ''
@@ -15,7 +15,7 @@ menu: ''
 
 <!--more-->
 
-![](assets/hd-medicine/assets.png)
-![](assets/hd-medicine/assets-2.png)
-![](assets/hd-medicine/assets-3.png)
-![](assets/hd-medicine/assets-4.png)
+![](assets/hd-medicine/asset.png)
+![](assets/hd-medicine/asset-2.png)
+![](assets/hd-medicine/asset-3.png)
+![](assets/hd-medicine/asset-4.png)
