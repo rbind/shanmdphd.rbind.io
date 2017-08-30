@@ -2,7 +2,7 @@
 title: '고해상도 의학 - High definition medicine'
 author: ~
 date: '2017-08-31'
-slug: ''
+slug: 'hd-medicine'
 categories: [QuickTake]
 tags: [논문, 고해상도의학, high definition medicine]
 banner: 'assets/hd-medicine/asset.png'
