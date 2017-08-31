@@ -5,7 +5,7 @@ date: '2017-08-31'
 slug: 'sci-c'
 categories: [계량약리학]
 tags: [계량약리학, 임상약리학]
-banner: ''
+banner: 'assets/2017-sci-c/sci-c.png'
 description: ''
 images: []
 menu: ''
@@ -99,7 +99,6 @@ Dose proportionality가 없다는 것은 absorption의 saturation 때문이며, 
 
 enterohepatic circulation이 있다면 반영을 해야 하고 생리학적 원인이 불분명할때 고려해야 할 것이다.
 
-![](/assets/2017-sci-c/sci-c.png)
 
 # 3강
 
