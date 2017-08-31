@@ -117,4 +117,52 @@ CTL file을 쓴다.
 
 ![](/assets/2017-sci-c/asset-ctlFile.jpg)
 
-ADVAN2 TRANS2를 쓰는 경우를 살펴본다. depot compartment가 있는 1st order absorption이 있는 것이다. 그런데 CWRES가 뒤집어진 U shape으로 나왔기 때문에 모델을 바꾸고자 한다.
+ADVAN2 TRANS2를 쓰는 경우를 살펴본다. depot compartment가 있는 1st order absorption이 있는 것이다. 그런데 CWRES가 뒤집어진 U shape으로 나왔기 때문에 모델을 바꾸고자 한다. 그래서 zero-order로 바꿨고 더 나아가 lag time까지 추가했더니 더 좋아졌다.
+
+```
+F1*Dose, Ka # First order absorption
+F2*Dose, D2, ALAG2 # F2 = 1-F1 # zero order absortion
+```
+
+First-order를 쓰려면 depot compartment가 필요한 것이다. 미분방정식을 살펴보면 다음과 같다.
+
+```
+dA/dt = -Ka * A1
+```
+
+Application을 몇개 살펴볼 수 있고 같은 약물, 다른 상황에서  weibull 혹은 first order 섞어서 할 수 있다.
+
+```
+COMP(DEPOT, DEFDOSE)
+COMP(CENTRAL, DEFOBS)
+```
+
+# 4강 - 전상일 선생님 (Q-fitter) -
+
+Sigmoid curve를 그리는 두가지 방법: 
+numerical하게 풀거냐 아니면 compartment 추가하면서 할거냐?
+
+https://www.ncbi.nlm.nih.gov/pubmed/22555854
+https://link.springer.com/article/10.1007%2Fs10928-012-9247-3
+
+Erlang-type absorption, transit compartment model에 대해서 배운다.
+일련의 transit cmt가 있는데 얼랑에서는 트랜싯의 개수가 manually 정해져있고 정수개 일것이다. 트랜짓에는 트랜짓 개수를 추정을 한다. 얼랑에서는 ka가 없다. 그 대신 Ktr로 많이 쓴다. vs 트랜짓에서는 Ka를 추정하게 된다.
+
+트랜짓에서는 감마분포를 따르게 된다. https://en.wikipedia.org/wiki/Gamma_distribution
+
+> 감마 분포는 연속 확률분포로, 두 개의 매개변수를 받으며 양의 실수를 가질 수 있다.
+> 감마 분포는 지수 분포나 푸아송 분포 등의 매개변수에 대한 켤레 사전 확률 분포이며, 이에 따라 베이즈 확률론에서 사전 확률 분포로 사용된다.
+> 매개변수 {\displaystyle k} k가 정수인 경우 감마 분포는 **얼랑 분포**가 된다.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gamma_distribution_pdf.svg/325px-Gamma_distribution_pdf.svg.png)
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Gamma_distribution_cdf.svg/325px-Gamma_distribution_cdf.svg.png)
+
+TCM에서는 그냥 식보다 지수함수로 바꿔서 하는게 더 빠르다.
+ADVAN5를 사용한 얼랑 모델을 시험해보자. (다만 ADVAN5는 느리다. ADVAN6를 쓰는게 더 나을 것이다.)
+Erlang과 TCM 두가지 모델의 차이점을 아는 것이 중요하다.
+
+![](http://i.imgur.com/XVqQ2gz.png)
+
+# 5강 - Weibull-type Absorption
+
