@@ -99,6 +99,22 @@ Dose proportionality가 없다는 것은 absorption의 saturation 때문이며, 
 
 enterohepatic circulation이 있다면 반영을 해야 하고 생리학적 원인이 불분명할때 고려해야 할 것이다.
 
-![](/assets/2017-sci-c.png)
+![](/assets/2017-sci-c/sci-c.png)
 
+# 3강
 
+zero-order absorption이 나타나는 상황은 다음과 같은 고려점이 있다. 
+1) High permeability를 가진 약물에서 잘 나타난다.
+2) solubility가 좋으면 lag time이 없어지기도 한다.
+zero-order에 first-order를 적용하면 Cmax가 어그러지기 때문에 주의해야 한다.
+
+lag time 마저도 estimation 할 수 있다. 
+
+IV model을 사용할 수 있다. D1 (duration), R1 (rate) 두개가 필요하다. ADVAN, TRANS를 정한다.
+ADVAN1 TRANS1 (microconstant k 같은 것을 가져온다.) TRANS2 (CL, V를 추정한다.)
+
+CTL file을 쓴다.
+
+![](/assets/2017-sci-c/asset-ctlFile.jpg)
+
+ADVAN2 TRANS2를 쓰는 경우를 살펴본다. depot compartment가 있는 1st order absorption이 있는 것이다. 그런데 CWRES가 뒤집어진 U shape으로 나왔기 때문에 모델을 바꾸고자 한다.

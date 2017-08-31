@@ -19,7 +19,7 @@ bibliography: bib/pknca.bib
 <p>PKNCA 패키지를 사용하는 방법을 알아보겠습니다. <span class="citation">(Denney and Buckeridge 2017)</span> 상용 소프트웨어를 실행하지 않고 NCA 분석을 R에서 손쉽게 할 수 있습니다.</p>
 <div id="-" class="section level1">
 <h1>데이타 불러오기</h1>
-<p>다음과 같이 두개의 패키지를 먼저 불러옵니다.</p>
+<p>다음과 같은 패키지를 먼저 불러옵니다.</p>
 <pre class="r"><code>library(PKNCA) # devtools::install_github(&#39;billdenney/PKNCA&#39;)
 library(tidyverse) # devtools::install_github(&#39;tidyverse/tidyverse&#39;)
 library(knitr) # for kable</code></pre>
@@ -85,21 +85,22 @@ rawTheoph %&gt;% head %&gt;% kable</code></pre>
 </tbody>
 </table>
 <p>농도 데이타를 <code>concTheoph</code>에 넣고, 투약 데이타를 <code>doseTheoph</code>에 넣었습니다.</p>
-<pre class="r"><code>concTheoph &lt;- PKNCAconc(rawTheoph, conc~Time|Subject)
-concTheoph</code></pre>
+<pre class="r"><code>concTheoph &lt;- PKNCAconc(rawTheoph, conc~Time|Subject)</code></pre>
+<pre><code>## Assuming point rather than interval concentration measurement</code></pre>
+<pre class="r"><code>concTheoph</code></pre>
 <pre><code>## Formula for concentration:
 ##  conc ~ Time | Subject
 ## With 12 subjects defined in the &#39;Subject&#39; column.
 ## Nominal time column is not specified.
 ## 
 ## First 6 rows of concentration data:
-##  Subject Wt Dose Time conc exclude
-##        1 80    4 0.00 0.00    &lt;NA&gt;
-##        1 80    4 0.27 1.29    &lt;NA&gt;
-##        1 80    4 0.58 3.08    &lt;NA&gt;
-##        1 80    4 1.15 6.44    &lt;NA&gt;
-##        1 80    4 2.03 6.32    &lt;NA&gt;
-##        1 80    4 3.57 5.53    &lt;NA&gt;</code></pre>
+##  Subject Wt Dose Time conc exclude duration
+##        1 80    4 0.00 0.00    &lt;NA&gt;        0
+##        1 80    4 0.27 1.29    &lt;NA&gt;        0
+##        1 80    4 0.58 3.08    &lt;NA&gt;        0
+##        1 80    4 1.15 6.44    &lt;NA&gt;        0
+##        1 80    4 2.03 6.32    &lt;NA&gt;        0
+##        1 80    4 3.57 5.53    &lt;NA&gt;        0</code></pre>
 <pre class="r"><code>## Dosing data needs to only have one row per dose, so subset for that first.
 
 doseRawTheoph &lt;- rawTheoph %&gt;% 
@@ -284,7 +285,7 @@ ncaTheoph$result %&gt;% head %&gt;% kable</code></pre>
 <h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-R-PKNCA">
-<p>Denney, Bill, and Clare Buckeridge. 2017. <em>PKNCA: Perform Pharmacokinetic Non-Compartmental Analysis</em>. <a href="https://CRAN.R-project.org/package=PKNCA" class="uri">https://CRAN.R-project.org/package=PKNCA</a>.</p>
+<p>Denney, Bill, and Clare Buckeridge. 2017. <em>PKNCA: Perform Pharmacokinetic Non-Compartmental Analysis</em>. <a href="https://github.com/billdenney/pknca" class="uri">https://github.com/billdenney/pknca</a>.</p>
 </div>
 </div>
 </div>
