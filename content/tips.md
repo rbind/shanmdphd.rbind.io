@@ -7,6 +7,14 @@ tags: [R, Bash, Git]
 
 > Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc)
 
+# Mathematics
+
+*Statistics*
+
+![](/assets-math/discrete.png)
+
+![](/assets-math/continuous.png)
+
 # R
 
 #### switch
