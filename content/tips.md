@@ -17,6 +17,14 @@ tags: [R, Bash, Git]
 
 # R
 
+#### Remove columns with all NAs or all blank values
+
+```
+naRemove <- function(df) Filter(function(x) !all(is.na(x)) & !all(trimws(x) == ''), df)
+```
+
+Reference: <https://stackoverflow.com/questions/2643939/remove-columns-from-dataframe-where-all-values-are-na>
+
 #### switch
 
 If value is a character vector then the element of ‘...’ with a name that exactly matches value is evaluated. If there is no match a single unnamed argument will be used as a default. If no default is specified, NULL is returned.
