@@ -1,7 +1,7 @@
 baseURL = "http://shanmdphd.rbind.io/"
 languageCode = "en"
 defaultContentLanguage = "en"
-title = "Even"
+title = "Sungpil Han, M.D/Ph.D"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "even"
