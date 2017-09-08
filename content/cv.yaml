@@ -9,6 +9,7 @@ banner: 'banners/cv.jpg'
 description: 'CV'
 images: []
 menu: 'main'
+weight: 2
 ---
 
 [CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->

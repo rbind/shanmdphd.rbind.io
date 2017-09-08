@@ -9,20 +9,10 @@ banner: 'banners/cv.jpg'
 description: 'CV'
 images: []
 menu: 'main'
+weight: 2
 ---
 
 [CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->
-
-
-{{< gallery
-    "https://shanmdphd.github.io/cv/cv-0.png" 
-    "https://shanmdphd.github.io/cv/cv-1.png" 
-    "https://shanmdphd.github.io/cv/cv-2.png" 
-    "https://shanmdphd.github.io/cv/cv-3.png" 
-    "https://shanmdphd.github.io/cv/cv-4.png" 
-    "https://shanmdphd.github.io/cv/cv-5.png" 
-    "https://shanmdphd.github.io/cv/cv-6.png" 
->}}
 
 EDUCATION
 =========

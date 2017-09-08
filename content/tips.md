@@ -3,6 +3,7 @@ date: 2017-06-01
 title: Tips
 menu: 'main'
 tags: [R, Bash, Git]
+weight: 3
 ---
 
 > Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc)

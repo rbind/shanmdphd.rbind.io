@@ -8,11 +8,16 @@ tags: [toxicology, pk, cro, early-drug-development]
 banner: ''
 description: ''
 images: []
-menu: ''
-draft: false
+menu: 'main'
+weight: 999
 ---
 
-> Some useful links are collected here from various resources ([Asan CND](http://asancnd.com), [Daijiang's blog](https://daijiang.name) etc). 
+> Some useful links are collected here from various resources.
+
+<!--more-->
+
+([Asan CND](http://asancnd.com), [Daijiang's blog](https://daijiang.name) etc). 
+
 
 ## R
 
