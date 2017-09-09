@@ -1,14 +1,20 @@
+# Sungpil Han added: start ----
+
 baseURL = "http://shanmdphd.rbind.io/"
+title = "Sungpil Han, M.D/Ph.D"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+disqusShortname = "hugoshanmdphd"      # disqus_shortname
+
+# Sungpil Han added: end ----
+
 languageCode = "en"
 defaultContentLanguage = "en"
-title = "Sungpil Han, M.D/Ph.D"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "even"
 
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 100                                              # （可选）首页显示的文章条目数量，默认为10
-disqusShortname = "hugoshanmdphd"      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 

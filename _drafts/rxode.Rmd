@@ -22,20 +22,12 @@ This slide is what I presented in the Journal Club of AMC CPT.
 
 RxODE is an easy ODE solver specialized in pharmacometric applications.
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(error = TRUE, warning = FALSE, message = FALSE)
-#knitr::opts_chunk$set(fig.path='{{ site.url }}/images/rxode-')
-```
-
 ## Set up 
 
 ```{r}
 # Load some data science tools
 library(knitr)
-library(dplyr)
-library(ggplot2)
-library(tidyr)
-library(tibble)
+library(tidyverse)
 
 # Load RxODE
 library(RxODE)
