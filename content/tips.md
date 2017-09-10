@@ -3,11 +3,28 @@ date: 2017-06-01
 title: Tips
 menu: 'main'
 tags: [R, Bash, Git]
+weight: 3
 ---
 
 > Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc)
 
+# Mathematics
+
+*Statistics*
+
+![](/assets-math/discrete.png)
+
+![](/assets-math/continuous.png)
+
 # R
+
+#### Remove columns with all NAs or all blank values
+
+```
+naRemove <- function(df) Filter(function(x) !all(is.na(x)) & !all(trimws(x) == ''), df)
+```
+
+Reference: <https://stackoverflow.com/questions/2643939/remove-columns-from-dataframe-where-all-values-are-na>
 
 #### switch
 

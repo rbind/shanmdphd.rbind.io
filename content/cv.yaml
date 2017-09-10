@@ -9,9 +9,12 @@ banner: 'banners/cv.jpg'
 description: 'CV'
 images: []
 menu: 'main'
+weight: 2
 ---
 
-[CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->
+[CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
+
+<!--more-->
 
 {{< gallery
     "https://shanmdphd.github.io/cv/cv-0.png" 
@@ -22,3 +25,4 @@ menu: 'main'
     "https://shanmdphd.github.io/cv/cv-5.png" 
     "https://shanmdphd.github.io/cv/cv-6.png" 
 >}}
+

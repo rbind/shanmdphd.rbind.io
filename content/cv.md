@@ -9,10 +9,12 @@ banner: 'banners/cv.jpg'
 description: 'CV'
 images: []
 menu: 'main'
+weight: 2
 ---
 
-[CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)<!--more-->
+[CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
 
+<!--more-->
 
 {{< gallery
     "https://shanmdphd.github.io/cv/cv-0.png" 
@@ -23,6 +25,7 @@ menu: 'main'
     "https://shanmdphd.github.io/cv/cv-5.png" 
     "https://shanmdphd.github.io/cv/cv-6.png" 
 >}}
+
 
 EDUCATION
 =========
@@ -186,9 +189,11 @@ Young Clinical Pharmacologists Session: *Safety, Tolerability, and Pharmacokinet
 STATISTICAL SOFTWARES
 =====================
 
-Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.1. URL: <https://github.com/asancpt/caffsim>.
+Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.3. URL: <https://github.com/asancpt/caffsim>.
 
 Han, S. (2017b). *crftools: Tools for Creating, Editing, and Managing Case Report Forms of AsanCPT*. R package version 0.3.1. URL: <https://github.com/asancpt/crftools>.
+
+Han, S. (2017c). *glasgowcoma: A Reference of Glasgow Coma Scale*. R package version 0.0.1. URL: <https://github.com/shanmdphd/glasgowcoma>.
 
 Han, S. (2017) *pkrshiny: Noncompartmental Analysis using pkr R package* Shiny application. URL: <https://asan.shinyapps.io/pkrshiny>
 
