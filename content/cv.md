@@ -16,7 +16,6 @@ weight: 2
 
 <!--more-->
 
-
 EDUCATION
 =========
 

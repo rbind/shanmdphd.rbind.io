@@ -1,16 +1,14 @@
 ---
 date: 2017-04-19
-title: R package 만드는 법
-categories: []
+title: 'R package 만드는 법'
+categories: ['R 패키지']
 tag: [R]
-output:
-  html_document:
-    keep_md: yes
 ---
 
-R 패키지를 만드는 법은 처음에 참 어렵지만 몇번 해 보면 익숙해집니다.
 
-이 자료들을 읽으면 누구나 만들 수 있습니다.
+> R 패키지를 만드는 법은 처음에 참 어렵지만 몇번 해 보면 익숙해집니다. 여러 좋은 자료가 있지만 이 자료들을 읽으면 누구나 만들 수 있습니다.
+
+<!--more-->
 
 ![](http://r-pkgs.had.co.nz/cover.png)
 

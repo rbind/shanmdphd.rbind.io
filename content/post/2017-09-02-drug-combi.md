@@ -11,6 +11,9 @@ images: []
 menu: ''
 ---
 
+복합제 개발에서 isobologram의 개념을 이해하는 것은 매우 중요합니다. <!--more-->
+
+
 *Isobologram*
 
 - Synergistic
