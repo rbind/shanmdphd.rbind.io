@@ -16,6 +16,7 @@ weight: 2
 
 <!--more-->
 
+
 EDUCATION
 =========
 
@@ -178,7 +179,7 @@ Young Clinical Pharmacologists Session: *Safety, Tolerability, and Pharmacokinet
 STATISTICAL SOFTWARES
 =====================
 
-Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.3. URL: <https://github.com/asancpt/caffsim>.
+Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.2. URL: <https://github.com/asancpt/caffsim>.
 
 Han, S. (2017b). *crftools: Tools for Creating, Editing, and Managing Case Report Forms of AsanCPT*. R package version 0.3.1. URL: <https://github.com/asancpt/crftools>.
 
