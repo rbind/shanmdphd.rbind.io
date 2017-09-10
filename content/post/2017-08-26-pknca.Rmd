@@ -5,16 +5,15 @@ description: "상용 소프트웨어를 실행하지 않고 NCA 분석을 R에�
 categories: [임상약리학, 패키지]
 slug: pknca-theoph
 tags: [R, pk, nca]
-banner: 'http://nebula.wsimg.com/146cc241e02c1d13814d31326139837b?AccessKeyId=B1DA3201CA0E71AC7442&disposition=0&alloworigin=1'
-editor_options: 
-  chunk_output_type: console
-output:
-  html_document:
-    df_print: paged
 bibliography: bib/pknca.bib
 ---
 
+
+![](http://nebula.wsimg.com/146cc241e02c1d13814d31326139837b?AccessKeyId=B1DA3201CA0E71AC7442&disposition=0&alloworigin=1)
+
 PKNCA 패키지를 사용하는 방법을 알아보겠습니다.  [@R-PKNCA] 상용 소프트웨어를 실행하지 않고 NCA 분석을 R에서 손쉽게 할 수 있습니다.
+
+<!--more-->
 
 # 데이타 불러오기
 
@@ -78,6 +77,8 @@ ncaTheoph <- pk.nca(dataTheoph)
 ncaTheoph$result %>% head %>% kable
 summary(ncaTheoph) %>% kable
 ```
+
+이상으로 `PKNCA` 패키지에 대해 간략히 살펴보았습니다.
 
 # References
 
