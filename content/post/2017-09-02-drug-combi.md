@@ -1,5 +1,5 @@
 ---
-title: '복합제 Durg Combination'
+title: '복합제 Drug Combination'
 author: ~
 date: '2017-09-02'
 slug: 'drug-combi'
