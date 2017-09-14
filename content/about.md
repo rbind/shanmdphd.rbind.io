@@ -8,8 +8,6 @@ tags: [about]
 banner: 'banners/welcome.jpg'
 description: 'TL;DR'
 images: []
-menu: 'main'
-weight: 2
 ---
 
 ## Introduction

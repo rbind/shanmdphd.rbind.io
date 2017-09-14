@@ -8,8 +8,6 @@ tags: [toxicology, pk, cro, early-drug-development]
 banner: ''
 description: ''
 images: []
-menu: 'main'
-weight: 999
 ---
 
 > Some useful links are collected here from various resources.

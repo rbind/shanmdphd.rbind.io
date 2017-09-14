@@ -4,6 +4,10 @@ md
 newmd
 sue.sh
 
+themes/hugo-icarus-theme
+themes/even
+
+
 # History files
 .Rhistory
 .Rapp.history

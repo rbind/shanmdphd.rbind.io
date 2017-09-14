@@ -7,8 +7,6 @@ categories: [about]
 tags: [CV, about]
 description: 'CV'
 images: []
-menu: 'main'
-weight: 2
 ---
 
 ![](/banners/cv.jpg)
