@@ -1,18 +1,19 @@
 ---
 title: Early Drug Development
 date: 2016-10-13
+author: Sungpil Han
 categories: [medicine]
-banner: "https://s3.amazonaws.com/givetocure2/posts/promo_images/000/000/017/original/Give-To-CureDRUG.DEV_.PRIMER2.png?1447101895"
 tag: [Clinical-Pharmacology, new-drug-deveolpment]
 ---
+
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/51mstpfe5qL._SX329_BO1,204,203,200_.jpg" style='max-width:20%;float:right;'>
 
 이전 학기에 Tozer를 마치고 새로운 책으로 Book reading을 시작하게 되었습니다. 
 약물 개발의 성패를 좌우할 수 있는 초기 단계의 전반적인 이해와 활용에 대해 굉장히 유용한 책입니다.
 아래와 같이 요약하고자 합니다. <!--more-->
 
 [Early Drug Development - Strategies and Routes to First-in-Human Trials by Mitchell N. Cayen](https://www.amazon.com/Early-Drug-Development-First-Human/dp/0470170867)
-
-![](https://images-na.ssl-images-amazon.com/images/I/51mstpfe5qL._SX329_BO1,204,203,200_.jpg)
 
 ![](http://www.drugstorenews.com/sites/drugstorenews.com/files/field_main_image/2016-04/NovelNewDrugs_main.jpg)
 

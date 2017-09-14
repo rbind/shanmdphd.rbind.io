@@ -3,7 +3,7 @@ title: 'Useful Links'
 author: ~
 date: '2015-01-01'
 slug: 'links'
-categories: [임상약리학,R]
+categories: [Featured]
 tags: [toxicology, pk, cro, early-drug-development]
 banner: ''
 description: ''

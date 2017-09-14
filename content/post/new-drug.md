@@ -3,7 +3,7 @@ title: 'New Drug'
 author: ~
 date: '2017-07-04'
 slug: 'new-drug'
-categories: [new-drug]
+categories: [Featured]
 tags: []
 banner: 'http://cen.acs.org/content/dam/cen/91/5/09105-bus1-numbers.gif'
 description: ''

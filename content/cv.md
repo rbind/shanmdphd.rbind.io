@@ -1,15 +1,9 @@
 ---
 title: CV
-author: ~
+author: Sungpil Han
 date: '2017-06-09'
 slug: cv
-categories: [about]
-tags: [CV, about]
-description: 'CV'
-images: []
 ---
-
-![](/banners/cv.jpg)
 
 [CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
 
@@ -178,7 +172,7 @@ Young Clinical Pharmacologists Session: *Safety, Tolerability, and Pharmacokinet
 STATISTICAL SOFTWARES
 =====================
 
-Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.3. URL: <https://github.com/asancpt/caffsim>.
+Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.2. URL: <https://github.com/asancpt/caffsim>.
 
 Han, S. (2017b). *crftools: Tools for Creating, Editing, and Managing Case Report Forms of AsanCPT*. R package version 0.3.1. URL: <https://github.com/asancpt/crftools>.
 

@@ -3,7 +3,7 @@
 baseURL = "http://shanmdphd.rbind.io/"
 title = "Sungpil Han, M.D/Ph.D"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-disqusShortname = "hugoshanmdphd"      # disqus_shortname
+disqusShortname = "hugoshanmdphd"
 
 # Sungpil Han added: end ----
 
@@ -38,16 +38,51 @@ footnotereturnlinkcontents = "↩"
     url = "/tags/"
     weight = 4
 [[menu.main]]
-    name = "Links"
-    url = "/links/"
-    weight = 5
-[[menu.main]]
     name = "Subscribe"
     url = "/index.xml"
 
 [params]
-    since = "2016"    # Site creation time                  # 站点建立时间
+    since = "2016"
     keywords = ["Sungpil Han", "Clinical Pharmacology","Medicine"]
     description = "Sungpil Han's Blog. A website built through Hugo and blogdown using xmin theme."
-    footer = "&copy; [Sungpil Han](https://shanmdphd.rbind.io) 2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
+    footer = "&copy; [Sungpil Han](./) 2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
 
+# baseurl = "/"
+# languageCode = "en-us"
+# title = "A minimal Hugo website"
+# theme = "hugo-xmin"
+# googleAnalytics = ""
+# disqusShortname = ""
+# ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+# preserveTaxonomyNames = true
+# footnotereturnlinkcontents = "↩"
+# 
+# [permalinks]
+#     post = "/post/:year/:month/:day/:slug/"
+#     note = "/note/:year/:month/:day/:slug/"
+# 
+# [[menu.main]]
+#     name = "Home"
+#     url = "/"
+#     weight = 1
+# [[menu.main]]
+#     name = "About"
+#     url = "/about/"
+#     weight = 2
+# [[menu.main]]
+#     name = "Categories"
+#     url = "/categories/"
+#     weight = 3
+# [[menu.main]]
+#     name = "Tags"
+#     url = "/tags/"
+#     weight = 4
+# [[menu.main]]
+#     name = "Subscribe"
+#     url = "/index.xml"
+# 
+# [params]
+#     description = "A website built through Hugo and blogdown."
+#     footer = "&copy; [Yihui Xie](https://yihui.name) 2017 | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+#
+#
