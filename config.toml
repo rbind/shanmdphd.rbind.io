@@ -8,7 +8,7 @@ disqusShortname = "hugoshanmdphd"
 # Sungpil Han added: end ----
 
 languageCode = "en-us"
-theme = "hugo-xmin"
+theme = "shan-xmin"
 googleAnalytics = ""
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
