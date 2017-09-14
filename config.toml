@@ -4,13 +4,6 @@ baseURL = "http://shanmdphd.rbind.io/"
 title = "Sungpil Han, M.D/Ph.D"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 disqusShortname = "hugoshanmdphd"      # disqus_shortname
-hasCJKLanguage = true
-
-[params]
-    since = "2016"    # Site creation time                  # 站点建立时间
-    keywords = ["Sungpil Han", "Clinical Pharmacology","Medicine"]
-    description = "Sungpil Han's Blog. A website built through Hugo and blogdown using xmin theme."
-    footer = "&copy; [Sungpil Han](https://shanmdphd.rbind.io) 2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
 
 # Sungpil Han added: end ----
 
@@ -51,4 +44,10 @@ footnotereturnlinkcontents = "↩"
 [[menu.main]]
     name = "Subscribe"
     url = "/index.xml"
+
+[params]
+    since = "2016"    # Site creation time                  # 站点建立时间
+    keywords = ["Sungpil Han", "Clinical Pharmacology","Medicine"]
+    description = "Sungpil Han's Blog. A website built through Hugo and blogdown using xmin theme."
+    footer = "&copy; [Sungpil Han](https://shanmdphd.rbind.io) 2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
 
