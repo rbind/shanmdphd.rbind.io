@@ -46,6 +46,7 @@ footnotereturnlinkcontents = "↩"
     keywords = ["Sungpil Han", "Clinical Pharmacology","Medicine"]
     description = "Sungpil Han's Blog. A website built through Hugo and blogdown using xmin theme."
     footer = "&copy; [Sungpil Han](./) 2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
+    GithubEdit = "https://github.com/rbind/shanmdphd.rbind.io/edit/master/content/"
 
 # baseurl = "/"
 # languageCode = "en-us"
