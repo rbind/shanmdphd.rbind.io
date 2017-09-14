@@ -8,3 +8,4 @@ title: Home
 
 ## _Just random writings. Nothing special._
 
+I'm a physician-scientist interested in data science and new drug development. You may find me through [Keybase](https://keybase.io/shanmdphd/).
