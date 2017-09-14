@@ -9,7 +9,7 @@ disqusShortname = "hugoshanmdphd"
 
 languageCode = "en-us"
 theme = "shan-xmin"
-googleAnalytics = ""
+googleAnalytics = "UA-100793628-1"
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
