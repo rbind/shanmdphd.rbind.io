@@ -1,14 +1,12 @@
 ---
-date: 2017-06-01
 title: Tips
-tags: [R, Bash, Git]
 ---
 
 > Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc)
 
 # Mathematics
 
-*Statistics*
+## Commonly Used Distribution 
 
 ![](/assets-math/discrete.png)
 
@@ -16,7 +14,7 @@ tags: [R, Bash, Git]
 
 # R
 
-#### Remove columns with all NAs or all blank values
+## Remove columns with all NAs or all blank values
 
 ```
 naRemove <- function(df) Filter(function(x) !all(is.na(x)) & !all(trimws(x) == ''), df)
@@ -24,7 +22,7 @@ naRemove <- function(df) Filter(function(x) !all(is.na(x)) & !all(trimws(x) == '
 
 Reference: <https://stackoverflow.com/questions/2643939/remove-columns-from-dataframe-where-all-values-are-na>
 
-#### switch
+## switch
 
 If value is a character vector then the element of ‘...’ with a name that exactly matches value is evaluated. If there is no match a single unnamed argument will be used as a default. If no default is specified, NULL is returned.
 
@@ -53,7 +51,7 @@ A common use of switch is to branch according to the character value of one of t
 ```
 
 Reference: [R language definition](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#switch)
-#### stars.pval {gtools}
+## stars.pval {gtools}
 
 This will convert p-value to stars (\*).
 
@@ -65,7 +63,7 @@ stars.pval <- function (p.value) {
 }
 ```
 
-#### identifying os
+## identifying os
 
 ```r
 get_os <- function(){
@@ -89,13 +87,13 @@ Reference: [conjugateprior.org](http://conjugateprior.org/2015/06/identifying-th
 
 
 
-#### math styles in R plots
+## math styles in R plots
 
 ```r
 demo(plotmath)
 ```
 
-#### Converting a matrix of characters into numeric
+## Converting a matrix of characters into numeric
 
 ```r
 mat <- matrix(c("5","6","7","8","hello","world"),ncol=3)
@@ -106,7 +104,7 @@ class(mat) <- "numeric"
 
 # Git
 
-##### Reducing size
+## Reducing size
 
 ```bash
 git reflog expire --expire=now --all
@@ -116,7 +114,7 @@ git gc --aggressive --prune=now
 
 Reference: [npteam](https://www.npteam.net/954)
 
-##### Github open
+## Github open
 
 ```bash
 # Opens the github page for the current git repository in your browser
@@ -141,7 +139,7 @@ function gh() {
 ```
 
 
-##### Git initializing
+## Git initializing
 
 ```bash
 echo "# REPONAME" >> README.md
@@ -152,7 +150,7 @@ git remote add origin https://github.com/shanmdphd/REPONAME.git
 git push -u origin master
 ```
 
-##### .gitignore
+## .gitignore
 
 **Ignore 되어야 하지만 이미 add된 파일 표시**
 
@@ -166,7 +164,7 @@ git ls-files -ci --exclude-standard
 git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 ```
 
-##### Syncing a fork
+## Syncing a fork
 
 ```bash
 git remote add --track master upstream https://github.com/mmistakes/so-simple-theme.git
@@ -178,20 +176,20 @@ git checkout --theirs README.md
 
 Reference: [Dogfeet](http://dogfeet.github.io/)
 
-##### Diagram
+## Diagram
 
 ![](http://cfile7.uf.tistory.com/image/161305504DBE8DD22BBD45)
 
 Reference: [bunhere.tistory.com](http://bunhere.tistory.com/37)
 
-##### In case of fire
+## In case of fire
 ![](https://hikaruzone.files.wordpress.com/2015/10/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png?w=1200)
 
 ---
 
 # Bash
 
-##### Convert PDF to PNG - multiple files
+## Convert PDF to PNG - multiple files
 
 ```bash
 for file in *_PK_Model_DV_vs_PRED.pdf; do
@@ -199,13 +197,13 @@ for file in *_PK_Model_DV_vs_PRED.pdf; do
 done
 ```
 
-##### Replace string across directories
+## Replace string across directories
 
 ```bash
 grep -rl 'NonCompart' * | xargs sed -i '' -e 's/NonCompart/ncar/g'
 ```
 
-##### Lazygit : git add, commit, push for lazy people like me. 
+## Lazygit : git add, commit, push for lazy people like me. 
 
 Copy & paste this lines to your `~/.bash_profile`
 
@@ -225,7 +223,7 @@ lazygit "Update README.md"
 
 # Vim
 
-##### find all the word 'foo' where there is no 'bar' following, we can do:
+## find all the word 'foo' where there is no 'bar' following, we can do:
 
 ```vim
 /foo\(.*bar\)\@!
@@ -233,7 +231,7 @@ lazygit "Update README.md"
 
 Reference: [Wikia](http://vim.wikia.com/wiki/Search_for_lines_not_containing_pattern#Using_the_:v_command)
 
-##### Word count
+## Word count
 
 ```vim
 %s/[^ ]\+//gn
@@ -241,7 +239,7 @@ Reference: [Wikia](http://vim.wikia.com/wiki/Search_for_lines_not_containing_pat
 
 Reference: [Wikia](http://vim.wikia.com/wiki/Word_count)
 
-##### Title case
+## Title case
 
 ```vim
 s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g
@@ -249,7 +247,7 @@ s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g
 
 Reference: [Wikia](http://vim.wikia.com/wiki/Switching_case_of_characters)
 
-##### Quote
+## Quote
 
 **줄의 앞뒤로 따옴표 붙이기**
 
@@ -275,7 +273,7 @@ cat foo.txt | sed s/^\(.*\)$/"\1"/g
 
 Reference: [Stackoverflow](http://stackoverflow.com/questions/3218789/adding-characters-at-the-start-and-end-of-each-line-in-a-file)
 
-##### Markdown 에서 bullet 맨 앞에 대문자로
+## Markdown 에서 bullet 맨 앞에 대문자로
 
 ```vim
 :%s/\(- [a-z]\)/\U\1/
@@ -285,7 +283,7 @@ Reference: [Wikia](http://vim.wikia.com/wiki/Changing_case_with_regular_expressi
 
 # VB
 
-##### Repeat Header Row in Word
+## Repeat Header Row in Word
 
 ```
 Sub RepeatTableHeadings()
@@ -301,7 +299,7 @@ End Sub
 
 Reference: [BeyondVBA](http://vba.relief.jp/word-macro-repeat-table-headings/)
 
-##### Image resize
+## Image resize
 
 ```
 Sub resize()

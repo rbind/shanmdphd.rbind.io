@@ -1,8 +1,6 @@
 ---
 title: CV
 author: Sungpil Han
-date: '2017-06-09'
-slug: cv
 ---
 
 [CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)

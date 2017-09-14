@@ -1,12 +1,5 @@
 ---
 title: About
-author: ~
-date: '2017-06-08'
-slug: about
-tags: [about]
-banner: 'banners/welcome.jpg'
-description: 'TL;DR'
-images: []
 ---
 
 ## Introduction
