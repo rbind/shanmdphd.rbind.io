@@ -5,10 +5,10 @@ date: '2017-06-12'
 slug: ''
 categories: [R, Korean]
 tags: [R]
-banner: ''
 description: '와일드 카드를 사용해서 데이타프레임을 조작할 수 있습니다.'
-images: []
-menu: ''
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 <http://will-landau.com/2017/05/21/wildcard/> 의 글을 보고 시도해 봅니다. 

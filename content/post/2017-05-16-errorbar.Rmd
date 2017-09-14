@@ -4,8 +4,14 @@ slug: plot-errorbar
 date: '2017-05-26'
 categories: [R]
 tags: [R, ggplot2]
-banner: 'post/errorbar_files/figure-html/unnamed-chunk-2-1.png'
+output:
+  blogdown::html_page:
+    toc: true
 ---
+
+<img src='post/errorbar_files/figure-html/unnamed-chunk-2-1.png' style='float:right;max-width:20%'>
+
+# 서론 
 
 R에 기본적으로 내장된 Indometh (Indomethacin IV bolus 시의 PK) 의 concentration-time curve를 ggplot2와 Hmisc 패키지를 사용해 각각 그려보겠습니다.
 
