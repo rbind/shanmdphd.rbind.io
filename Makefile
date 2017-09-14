@@ -1,3 +1,6 @@
+rproj:
+	open shanmdphd.rbind.io.Rproj
+
 build:
 	Rscript -e "blogdown::hugo_build(local = TRUE)"
 
