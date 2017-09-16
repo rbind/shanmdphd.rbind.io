@@ -19,3 +19,4 @@ tibble(txt = read_lines('drafts/old.txt')) %>%
   # simplify date ymd
   mutate(date = sprintf('date: %s', gsub('\\.', '-', sub(' .*$', '', date)))) %>% 
   View
+
