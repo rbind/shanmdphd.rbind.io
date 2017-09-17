@@ -1,16 +1,17 @@
 ---
 title: Tips
+date: 2017-09-15
+author: ~
+categories:
+  - Featured
+tags: 
+  - mathematics
+  - R
+  - bash
+toc: true
 ---
 
 > Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc)
-
-# Mathematics
-
-## Commonly Used Distribution 
-
-![](/assets-math/discrete.png)
-
-![](/assets-math/continuous.png)
 
 # R
 
@@ -103,6 +104,15 @@ class(mat) <- "numeric"
 ---
 
 # Git
+
+## submodule
+
+```bash
+git clone https://github.com/aikiframework/json.git --recursive
+git submodule update --init # fetch submodules if you already cloned but forgot --recursive
+```
+
+Reference: [Stackoverflow](https://stackoverflow.com/questions/11358082/empty-git-submodule-folder-when-repo-cloned)
 
 ## Reducing size
 
@@ -316,4 +326,12 @@ End Sub
 ```
 
 Reference: [superuser](http://superuser.com/questions/940771/how-can-i-resize-multiple-images-in-a-ms-word-document)
+
+# Mathematics
+
+## Commonly Used Distribution 
+
+![](/assets-math/discrete.png)
+
+![](/assets-math/continuous.png)
 

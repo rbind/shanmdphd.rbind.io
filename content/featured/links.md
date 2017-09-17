@@ -1,13 +1,10 @@
 ---
 title: 'Useful Links'
 author: ~
-date: '2015-01-01'
+date: '2017-09-01'
 slug: 'links'
 categories: [Featured]
 tags: [toxicology, pk, cro, early-drug-development]
-banner: ''
-description: ''
-images: []
 ---
 
 > Some useful links are collected here from various resources.
