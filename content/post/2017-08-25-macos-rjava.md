@@ -3,16 +3,18 @@ title: MacOS에서 rjava 문제
 author: ~
 date: '2017-08-26'
 slug: macos-rjava
-categories: [R]
-tags: [R]
+categories: 
+  - R
+tags: 
+  - rjava
+  - MacOS
 banner: 'http://younggates.com/files/editor/462456_ee8d_3.jpg'
 description: ''
 images: []
 menu: ''
 ---
 
-새로 산 iMac의 MacOS에서 `ReporteRs`를 사용하려고 했더니 `rjava`의 문제가 일어났습니다.
-
+새로 산 iMac의 MacOS에서 `ReporteRs`를 사용하려고 했더니 `rjava`의 문제가 일어났습니다. 
 <!--more-->
 
 다음과 같은 명령어를 zsh 터미널에서 입력하면 해결 가능합니다.
