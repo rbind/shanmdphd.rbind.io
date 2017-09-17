@@ -15,7 +15,8 @@ footnotereturnlinkcontents = "↩"
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
-    note = "/note/:year/:month/:day/:slug/"
+    featured = "/featured/:year/:month/:day/:slug/"
+    personal = "/personal/:year/:month/:day/:slug/"
 
 [[menu.main]]
     name = "Home"
@@ -26,8 +27,8 @@ footnotereturnlinkcontents = "↩"
     url = "/about/"
     weight = 2
 [[menu.main]]
-    name = "Tips"
-    url = "/tips/"
+    name = "Featured"
+    url = "/featured/"
     weight = 2
 [[menu.main]]
     name = "Categories"
