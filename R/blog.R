@@ -1,7 +1,9 @@
 # setup ----
 
 library(tidyverse)
+#install.packages('zoo')
 excluded <- '2007-07-06-10-17.md'
+
 yamlformat <- '---
 %s
 %s
