@@ -6,7 +6,7 @@ yamlformat <- '---
 %s
 %s
 author: ~
-draft: true
+#draft: true
 categories:
   - personal
 tag:
@@ -17,7 +17,7 @@ tag:
 
 # main ----
 
-old <- tibble(txt = read_lines('drafts/old-1.txt')) %>% 
+old <- tibble(txt = read_lines('data-raw/old-1.txt')) %>% 
   mutate(title = ifelse(c(grepl('share this post', txt)[c(-1, -2)], FALSE, FALSE), txt, NA)) %>% 
   mutate(title = zoo::na.locf(title, na.rm = FALSE)) %>% 
   filter(!is.na(title)) %>% 
@@ -33,7 +33,7 @@ old <- tibble(txt = read_lines('drafts/old-1.txt')) %>%
   # simplify date ymd
   group_by(filename, title, date) %>% 
   summarise(content = paste(txt, collapse = '\n')) %>% 
-  mutate(content = gsub('.*share this post|신고\nWRITTEN BY.*트랙백이 없고 ,|name.*submit|댓글이 없습니다\\.', 
+  mutate(content = gsub('.*share this post|신고\nWRITTEN BY.*트랙백이 없고 ,|name.*submit|댓글이 없습니다\\.|prevnext.*\\[sungpilhan\\]', 
                         '\n\n', content)) %>% 
   mutate(all = sprintf(yamlformat, title, date, content)) %>% 
   filter(!filename %in% excluded) %>% 
