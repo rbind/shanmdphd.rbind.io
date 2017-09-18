@@ -1,3 +1,9 @@
+---
+title: 임상약리학회 워크샵 TMDD
+date: 2016-01-01
+---
+
+# 서론
 
 - Berkeley Madonna
 - MM equation
@@ -23,10 +29,8 @@ $$ L+R = LR $$
 
 ![스크린샷 2016-06-14 오전 11.31.44](http://i.imgur.com/A41g2qw.png)
 
-$$
 One can distinguish four different phases in the dynamics
 of the system in which different processes are dominant:
-
 
 - Runge-Kutta 4 | Stop time 5
 - Kon 0.5
@@ -39,7 +43,6 @@ of the system in which different processes are dominant:
 
 - (Phase A가 짧아서 의미는 없지만) phase A의 경사가 급하고 시간이 짧아지는 이유는?
 - 왜 농도가 급격히 떨어지는가? 두가지 농도의 곱이기 때문에 second order kinetics이다.
--
 
 - Lapprox (24) 그래서 초록색 커브가 올라가는 것임.
 
