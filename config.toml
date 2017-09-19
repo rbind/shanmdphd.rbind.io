@@ -14,9 +14,12 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-    post = "/post/:year/:month/:day/:slug/"
-    featured = "/featured/:year/:month/:day/:slug/"
-    personal = "/personal/:year/:month/:day/:slug/"
+    post = "/post/:filename/"
+    featured = "/featured/:filename/"
+    personal = "/personal/:filename/"
+    # post = "/post/:year/:month/:day/:slug/"
+    # featured = "/featured/:year/:month/:day/:slug/"
+    # personal = "/personal/:year/:month/:day/:slug/"
 
 [[menu.main]]
     name = "Home"
