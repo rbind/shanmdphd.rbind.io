@@ -37,13 +37,21 @@ old <- tibble(txt = read_lines('data-raw/old-1.txt')) %>%
   summarise(content = paste(txt, collapse = '\n')) %>% 
   mutate(content = gsub('.*share this post|신고\nWRITTEN BY.*트랙백이 없고 ,|name.*submit|댓글이 없습니다\\.|prevnext.*\\[sungpilhan\\]', 
                         '\n\n', content)) %>% 
+  mutate(content = gsub(' 신고   ', ': ', content)) %>% 
   mutate(all = sprintf(yamlformat, title, date, content)) %>% 
   filter(!filename %in% excluded) %>% 
   print()
 
-oldblog <- lapply(old$filename, function(x){
-  blog <- old %>%
-    filter(filename == x) %>% 
-    .$all
-  write_lines(blog, sprintf('./content/personal/%s', x))
-})
+oldblog <- old$filename %>% 
+  map(~ write_lines(x = old %>% 
+                      filter(filename == .x) %>% 
+                      .$all, 
+                    path = sprintf('./content/personal/%s', .x)))
+oldblog %>% head
+# oldblog <- lapply(old$filename, function(x){
+#   blog <- old %>%
+#     filter(filename == x) %>% 
+#     .$all
+#   write_lines(blog, sprintf('./content/personal/%s', x))
+# })
+

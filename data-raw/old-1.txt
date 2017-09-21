@@ -13882,7 +13882,7 @@ WRITTEN BY
 name password 
 secret
 submit
-[05.05.13] !
+[05.05.13] '!'
 분류없음 2005.05.13 16:11
 share this post
 생활이 말이 아니다
@@ -18512,7 +18512,8 @@ submit
 [01.08.27] 잉이의 3년전 편지
 분류없음 2001.08.27 02:28
 share this post
-Array
+
+![Byungjo's birthday gifts for me](/personal/010826.jpg)
 
 아마 고2때 독서실에서 받은거 같따
 잉이의 멋진 증명사진과
