@@ -1,0 +1,170 @@
+---
+title: NonCompart - Long format
+author: ~
+date: '2017-09-21'
+slug: noncompart-long-format
+categories: [R]
+tags: [R, NCA]
+---
+
+
+
+<p><code>NonCompart</code> 패키지의 <code>tblNCA()</code>함수를 사용해서 비구획분석 결과를 내면 문자형식의 행렬이 생성되고 그 attr로 <code>dimnames</code>와 <code>units</code>를 갖는데 이를 long format의 tidy data로 변환하는 방법은 다음과 같습니다.</p>
+<pre class="r"><code>library(tidyverse)
+library(NonCompart)</code></pre>
+<pre class="r"><code>ncares &lt;- NonCompart::tblNCA(Theoph, key=&quot;Subject&quot;, dose=320, concUnit=&quot;mg/L&quot;)
+str(ncares)</code></pre>
+<pre><code>##  chr [1:12, 1:37] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot; &quot;7&quot; &quot;8&quot; &quot;9&quot; &quot;10&quot; &quot;11&quot; &quot;12&quot; ...
+##  - attr(*, &quot;dimnames&quot;)=List of 2
+##   ..$ : NULL
+##   ..$ : chr [1:37] &quot;Subject&quot; &quot;b0&quot; &quot;CMAX&quot; &quot;CMAXD&quot; ...
+##  - attr(*, &quot;units&quot;)= chr [1:37] &quot;&quot; &quot;&quot; &quot;mg/L&quot; &quot;mg/L/mg&quot; ...</code></pre>
+<pre class="r"><code>left_join(as_tibble(ncares) %&gt;% gather(PPTESTCD, PPORRES, -Subject),
+          tibble(PPTESTCD = attr(ncares, &#39;dimnames&#39;)[[2]], UNIT = attr(ncares, &#39;units&#39;))) %&gt;% 
+  arrange(Subject, PPTESTCD) %&gt;% 
+  head(20) %&gt;%
+  knitr::kable()</code></pre>
+<pre><code>## Joining, by = &quot;PPTESTCD&quot;</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Subject</th>
+<th align="left">PPTESTCD</th>
+<th align="left">PPORRES</th>
+<th align="left">UNIT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUCALL</td>
+<td align="left">148.92305</td>
+<td align="left">h*mg/L</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">AUCIFO</td>
+<td align="left">216.611933038226</td>
+<td align="left">h*mg/L</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUCIFOD</td>
+<td align="left">0.676912290744456</td>
+<td align="left">h*mg/L/mg</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">AUCIFP</td>
+<td align="left">216.614955803818</td>
+<td align="left">h*mg/L</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUCIFPD</td>
+<td align="left">0.67692173688693</td>
+<td align="left">h*mg/L/mg</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">AUCLST</td>
+<td align="left">148.92305</td>
+<td align="left">h*mg/L</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUCPEO</td>
+<td align="left">31.2489169404534</td>
+<td align="left">%</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">AUCPEP</td>
+<td align="left">31.2498763313113</td>
+<td align="left">%</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUMCIFO</td>
+<td align="left">4505.53481941065</td>
+<td align="left">h2*mg/L</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">AUMCIFP</td>
+<td align="left">4505.67086458209</td>
+<td align="left">h2*mg/L</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUMCLST</td>
+<td align="left">1459.0711035</td>
+<td align="left">h2*mg/L</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">AUMCPEO</td>
+<td align="left">67.6160286851172</td>
+<td align="left">%</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">AUMCPEP</td>
+<td align="left">67.6170064935417</td>
+<td align="left">%</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">b0</td>
+<td align="left">2.36878509420585</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">CLFO</td>
+<td align="left">1.47729626669981</td>
+<td align="left">L/h</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">CLFP</td>
+<td align="left">1.47727565168591</td>
+<td align="left">L/h</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">CLST</td>
+<td align="left">3.28</td>
+<td align="left">mg/L</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">CLSTP</td>
+<td align="left">3.28014647414312</td>
+<td align="left">mg/L</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">CMAX</td>
+<td align="left">10.5</td>
+<td align="left">mg/L</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">CMAXD</td>
+<td align="left">0.0328125</td>
+<td align="left">mg/L/mg</td>
+</tr>
+</tbody>
+</table>
+<div id="reference" class="section level1">
+<h1>Reference</h1>
+<ul>
+<li><p>
+Bae K (2017). <em>NonCompart: Noncompartmental Analysis for Pharmacokinetic Data</em>. R package version 0.3.3, <a href="https://CRAN.R-project.org/package=NonCompart">https://CRAN.R-project.org/package=NonCompart</a>.
+</p></li>
+<li><p>
+Wickham H (????). <em>tidyverse: Easily Install and Load the ‘Tidyverse’</em>. <a href="http://tidyverse.tidyverse.org" class="uri">http://tidyverse.tidyverse.org</a>, <a href="https://github.com/tidyverse/tidyverse" class="uri">https://github.com/tidyverse/tidyverse</a>.
+</p></li>
+</ul>
+</div>

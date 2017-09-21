@@ -1,0 +1,30 @@
+---
+title: NonCompart - Long format
+author: ~
+date: '2017-09-21'
+slug: noncompart-long-format
+categories: [R]
+tags: [R, NCA]
+---
+
+`NonCompart` 패키지의 `tblNCA()`함수를 사용해서 비구획분석 결과를 내면 문자형식의 행렬이 생성되고 그 attr로 `dimnames`와 `units`를 갖는데 이를 long format의 tidy data로 변환하는 방법은 다음과 같습니다.
+
+```{r, message = FALSE}
+library(tidyverse)
+library(NonCompart)
+```
+
+```{r}
+ncares <- NonCompart::tblNCA(Theoph, key="Subject", dose=320, concUnit="mg/L")
+str(ncares)
+left_join(as_tibble(ncares) %>% gather(PPTESTCD, PPORRES, -Subject),
+          tibble(PPTESTCD = attr(ncares, 'dimnames')[[2]], UNIT = attr(ncares, 'units'))) %>% 
+  arrange(Subject, PPTESTCD) %>% 
+  head(20) %>%
+  knitr::kable()
+```
+
+# Reference
+
+- `r format(citation('NonCompart'), style = 'html')`
+- `r format(citation('tidyverse'), style = 'html')`
