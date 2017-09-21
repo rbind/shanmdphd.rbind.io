@@ -37,7 +37,8 @@ old <- tibble(txt = read_lines('data-raw/old-1.txt')) %>%
   summarise(content = paste(txt, collapse = '\n')) %>% 
   mutate(content = gsub('.*share this post|신고\nWRITTEN BY.*트랙백이 없고 ,|name.*submit|댓글이 없습니다\\.|prevnext.*\\[sungpilhan\\]', 
                         '\n\n', content)) %>% 
-  mutate(content = gsub(' 신고   ', ': ', content)) %>% 
+  mutate(content = gsub('(................) 신고   ', '`\\1`: ', content)) %>% 
+  mutate(content = gsub('달렸습니다.', '달렸습니다.\n\n- ', content)) %>% 
   mutate(all = sprintf(yamlformat, title, date, content)) %>% 
   filter(!filename %in% excluded) %>% 
   print()
