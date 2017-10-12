@@ -80,8 +80,12 @@ RESEARCH EXPERIENCES
 -   Advisor: Saeock Oh, M.D., Ph.D.
 -   Investigated a role of Epithelial-Mesenchymal Transition(EMT)-related transcription factor, Snai1 in metastastic potential of glioblastoma multiforme
 
-[PUBLICATIONS](https://scholar.google.com/citations?user=TUK927cAAAAJ&hl=en)
-============================================================================
+PUBLICATIONS
+============
+
+[*Link to Google Scholar*](https://scholar.google.com/citations?user=TUK927cAAAAJ&hl=en)
+
+Han, S, Y. Cho, S. Yoon, H. Kim and K. Bae (2017). "Caffsim: simulation of plasma caffeine concentrations implemented as an R package and Web-applications". In: *Translational and Clinical Pharmacology* 25.3, p. 141. DOI: [10.12793/tcp.2017.25.3.141](http://dx.doi.org/10.12793/tcp.2017.25.3.141). URL: <https://doi.org/10.12793/tcp.2017.25.3.141>.
 
 Waters, R. S, J. S. A. Perry, S. Han, B. Bielekova and T. Gedeon (2017). "The effects of interleukin-2 on immune response regulation". Eng. In: *Mathematical medicine and biology : a journal of the IMA*. ISSN: 1477-8602. DOI: [10.1093/imammb/dqw021](http://dx.doi.org/10.1093/imammb/dqw021). PMID: [28339682](http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=28339682).
 
@@ -89,9 +93,9 @@ Han, S, Y. C. Lin, T. Wu, A. D. Salgado, I. Mexhitaj, S. C. Wuest, E. Romm, J. O
 
 Perry, J. S. A, S. Han, Q. Xu, M. L. Herman, L. B. Kennedy, G. Csako and B. Bielekova (2012). "Inhibition of LTi cell development by CD25 blockade is associated with decreased intrathecal inflammation in multiple sclerosis". Eng. In: *Science translational medicine* 4.145, p. 145ra106. ISSN: 1946-6242. DOI: [10.1126/scitranslmed.3004140](http://dx.doi.org/10.1126/scitranslmed.3004140). PMID: [22855463](http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=22855463).
 
-Wuest, S. C, J. H. Edwan, J. F. Martin, S. Han, J. S. A. Perry, C. M. Cartagena, E. Matsuura, D. Maric, T. A. Waldmann and B. Bielekova (2011). "A role for interleukin-2 trans-presentation in dendritic cell-mediated T cell activation in humans, as revealed by daclizumab therapy". Eng. In: *Nature medicine* 17.5, pp. 604-9. ISSN: 1546-170X. DOI: [10.1038/nm.2365](http://dx.doi.org/10.1038/nm.2365). PMID: [21532597](http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=21532597).
-
 Han, S, J. Kim, M. Han, H. Sim, K. Kim, S. Yoon, S. Baek, B. Kim and S. Oh (2011). "SNAI1 is involved in the proliferation and migration of glioblastoma cells". Eng. In: *Cellular and molecular neurobiology* 31.3, pp. 489-96. ISSN: 1573-6830. DOI: [10.1007/s10571-010-9643-4](http://dx.doi.org/10.1007/s10571-010-9643-4). PMID: [21225336](http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=21225336).
+
+Wuest, S. C, J. H. Edwan, J. F. Martin, S. Han, J. S. A. Perry, C. M. Cartagena, E. Matsuura, D. Maric, T. A. Waldmann and B. Bielekova (2011). "A role for interleukin-2 trans-presentation in dendritic cell-mediated T cell activation in humans, as revealed by daclizumab therapy". Eng. In: *Nature medicine* 17.5, pp. 604-9. ISSN: 1546-170X. DOI: [10.1038/nm.2365](http://dx.doi.org/10.1038/nm.2365). PMID: [21532597](http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=21532597).
 
 PUBLISHED PROCEEDINGS
 =====================
@@ -161,11 +165,13 @@ Young Clinical Pharmacologists Session: *Safety, Tolerability, and Pharmacokinet
 STATISTICAL SOFTWARES
 =====================
 
-Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.2. URL: <https://github.com/asancpt/caffsim>.
+Han, S. (2017a). *caffsim: Simulation of Plasma Caffeine Concentrations by Using Population Pharmacokinetic Model*. R package version 0.2.2. URL: <https://CRAN.R-project.org/package=caffsim>.
 
-Han, S. (2017b). *crftools: Tools for Creating, Editing, and Managing Case Report Forms of AsanCPT*. R package version 0.3.1. URL: <https://github.com/asancpt/crftools>.
+Han, S. (2017b). *crftools: CRF tools for Asan CPT*. R package version 0.2.0. URL: <https://github.com/asancpt/crftools>.
 
-Han, S. (2017c). *glasgowcoma: A Reference of Glasgow Coma Scale*. R package version 0.0.1. URL: <https://github.com/shanmdphd/glasgowcoma>.
+Han, S. (2017c). *glasgowcoma: Glasgow Coma Scale Report*. R package version 0.0.0.9000.
+
+Han, S. (2017d). *puresas: A SAS Script Generator To Convert CSV To XPT and SAS7BDAT files*. R package version 0.1.0.
 
 Han, S. (2017) *pkrshiny: Noncompartmental Analysis using pkr R package* Shiny application. URL: <https://asan.shinyapps.io/pkrshiny>
 
@@ -175,6 +181,7 @@ Han, S. (2016) *caff: Monte Carlo Simulation of Caffeine* Shiny application. URL
 
 Han, S. (2016) *noncompart: Noncompartmental Analysis using noncompart R package* Shiny application. URL: <https://asan.shinyapps.io/noncompart>
 
+<!-- Add some Edison softwares (TBD) -->
 GRANTS AND AWARDS
 =================
 
@@ -233,8 +240,7 @@ TEACHING EXPERIENCE
 -   Mentoring college students for the summer through NINDS Summer Internship
 -   *Comprehensive Investigation on Mechanism of CD25-blocking Antibody in human*
 
-**Lecturer and Mentor** Spring, Fall, 2009
-*School of Medicine, Pusan National University* Pusan, Korea
+**Lecturer and Mentor** Spring, Fall 2009 *School of Medicine, Pusan National University* Pusan, Korea
 
 -   Mentoring Jangyoungsil Science High School students through "Creativity" Project, National Research Foundation of Korea
 -   *Mechanism of Action of siRNA*
