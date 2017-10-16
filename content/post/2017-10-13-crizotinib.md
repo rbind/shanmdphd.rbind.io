@@ -1,8 +1,8 @@
 ---
-title: 'NDA 리뷰: crizotiniXalkori, Pfer'
+title: 'NDA 리뷰: crizotini (Xalkori, Pfizer)'
 date: 2017-10-13
-categories: review
-tag: crizotinib
+categories: [review]
+tag: [crizotinib]
 ---
 
 <https://en.wikipedia.org/wiki/Crizotinib>
