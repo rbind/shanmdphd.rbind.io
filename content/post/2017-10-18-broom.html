@@ -14,14 +14,15 @@ output:
 
 
 
-<p><code>broom</code> 패키지를 사용하면 통계 분석을 <code>data.frame</code> 내에서 할 수 있어서 후곳 작업에 큰 잇점이 있습니다. <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom.html" class="uri">https://cran.r-project.org/web/packages/broom/vignettes/broom.html</a></p>
+<p><code>broom</code> 패키지를 사용하면 통계 분석을 <code>data.frame</code> 내에서 할 수 있어서 후속 작업에 큰 잇점이 있습니다. <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom.html" class="uri">https://cran.r-project.org/web/packages/broom/vignettes/broom.html</a></p>
+<pre class="r"><code># packages
+library(tidyverse)
+library(broom)
+library(beginr) </code></pre>
 <div class="section level1">
 <h1>예제</h1>
-<p>다룰 데이타는 <code>dataset::mtcars</code>로 이렇게 생겼습니다.</p>
-<pre class="r"><code># devtools::install_github(&#39;tidyverse/broom&#39;)
-# library(beginr) 
-
-head(mtcars)</code></pre>
+<p>다룰 데이타는 <code>dataset::mtcars</code>입니다. 기술통계값은 다음과 같습니다.</p>
+<pre class="r"><code>head(mtcars)</code></pre>
 <div class="kable-table">
 <table>
 <thead>
@@ -128,8 +129,198 @@ head(mtcars)</code></pre>
 </tbody>
 </table>
 </div>
+<pre class="r"><code>broom::tidy(mtcars)</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">column</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">median</th>
+<th align="right">trimmed</th>
+<th align="right">mad</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">range</th>
+<th align="right">skew</th>
+<th align="right">kurtosis</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mpg</td>
+<td align="right">32</td>
+<td align="right">20.090625</td>
+<td align="right">6.0269481</td>
+<td align="right">19.200</td>
+<td align="right">19.6961538</td>
+<td align="right">5.4114900</td>
+<td align="right">10.400</td>
+<td align="right">33.900</td>
+<td align="right">23.500</td>
+<td align="right">0.6106550</td>
+<td align="right">-0.3727660</td>
+<td align="right">1.0654240</td>
+</tr>
+<tr class="even">
+<td align="left">cyl</td>
+<td align="right">32</td>
+<td align="right">6.187500</td>
+<td align="right">1.7859216</td>
+<td align="right">6.000</td>
+<td align="right">6.2307692</td>
+<td align="right">2.9652000</td>
+<td align="right">4.000</td>
+<td align="right">8.000</td>
+<td align="right">4.000</td>
+<td align="right">-0.1746119</td>
+<td align="right">-1.7621198</td>
+<td align="right">0.3157093</td>
+</tr>
+<tr class="odd">
+<td align="left">disp</td>
+<td align="right">32</td>
+<td align="right">230.721875</td>
+<td align="right">123.9386938</td>
+<td align="right">196.300</td>
+<td align="right">222.5230769</td>
+<td align="right">140.4763500</td>
+<td align="right">71.100</td>
+<td align="right">472.000</td>
+<td align="right">400.900</td>
+<td align="right">0.3816570</td>
+<td align="right">-1.2072119</td>
+<td align="right">21.9094727</td>
+</tr>
+<tr class="even">
+<td align="left">hp</td>
+<td align="right">32</td>
+<td align="right">146.687500</td>
+<td align="right">68.5628685</td>
+<td align="right">123.000</td>
+<td align="right">141.1923077</td>
+<td align="right">77.0952000</td>
+<td align="right">52.000</td>
+<td align="right">335.000</td>
+<td align="right">283.000</td>
+<td align="right">0.7260237</td>
+<td align="right">-0.1355511</td>
+<td align="right">12.1203173</td>
+</tr>
+<tr class="odd">
+<td align="left">drat</td>
+<td align="right">32</td>
+<td align="right">3.596563</td>
+<td align="right">0.5346787</td>
+<td align="right">3.695</td>
+<td align="right">3.5792308</td>
+<td align="right">0.7042350</td>
+<td align="right">2.760</td>
+<td align="right">4.930</td>
+<td align="right">2.170</td>
+<td align="right">0.2659039</td>
+<td align="right">-0.7147006</td>
+<td align="right">0.0945187</td>
+</tr>
+<tr class="even">
+<td align="left">wt</td>
+<td align="right">32</td>
+<td align="right">3.217250</td>
+<td align="right">0.9784574</td>
+<td align="right">3.325</td>
+<td align="right">3.1526923</td>
+<td align="right">0.7672455</td>
+<td align="right">1.513</td>
+<td align="right">5.424</td>
+<td align="right">3.911</td>
+<td align="right">0.4231465</td>
+<td align="right">-0.0227108</td>
+<td align="right">0.1729685</td>
+</tr>
+<tr class="odd">
+<td align="left">qsec</td>
+<td align="right">32</td>
+<td align="right">17.848750</td>
+<td align="right">1.7869432</td>
+<td align="right">17.710</td>
+<td align="right">17.8276923</td>
+<td align="right">1.4158830</td>
+<td align="right">14.500</td>
+<td align="right">22.900</td>
+<td align="right">8.400</td>
+<td align="right">0.3690453</td>
+<td align="right">0.3351142</td>
+<td align="right">0.3158899</td>
+</tr>
+<tr class="even">
+<td align="left">vs</td>
+<td align="right">32</td>
+<td align="right">0.437500</td>
+<td align="right">0.5040161</td>
+<td align="right">0.000</td>
+<td align="right">0.4230769</td>
+<td align="right">0.0000000</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+<td align="right">0.2402577</td>
+<td align="right">-2.0019376</td>
+<td align="right">0.0890983</td>
+</tr>
+<tr class="odd">
+<td align="left">am</td>
+<td align="right">32</td>
+<td align="right">0.406250</td>
+<td align="right">0.4989909</td>
+<td align="right">0.000</td>
+<td align="right">0.3846154</td>
+<td align="right">0.0000000</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+<td align="right">0.3640159</td>
+<td align="right">-1.9247414</td>
+<td align="right">0.0882100</td>
+</tr>
+<tr class="even">
+<td align="left">gear</td>
+<td align="right">32</td>
+<td align="right">3.687500</td>
+<td align="right">0.7378041</td>
+<td align="right">4.000</td>
+<td align="right">3.6153846</td>
+<td align="right">1.4826000</td>
+<td align="right">3.000</td>
+<td align="right">5.000</td>
+<td align="right">2.000</td>
+<td align="right">0.5288545</td>
+<td align="right">-1.0697507</td>
+<td align="right">0.1304266</td>
+</tr>
+<tr class="odd">
+<td align="left">carb</td>
+<td align="right">32</td>
+<td align="right">2.812500</td>
+<td align="right">1.6152000</td>
+<td align="right">2.000</td>
+<td align="right">2.6538462</td>
+<td align="right">1.4826000</td>
+<td align="right">1.000</td>
+<td align="right">8.000</td>
+<td align="right">7.000</td>
+<td align="right">1.0508738</td>
+<td align="right">1.2570431</td>
+<td align="right">0.2855297</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>차의 중량과 연비와의 관계를 그림으로 그리면 다음과 같습니다.</p>
 <pre class="r"><code>beginr::plotlm(x = mtcars$wt, y = mtcars$mpg, xlab = &#39;wt&#39;, ylab = &#39;mpg&#39;, plot.title = &#39;mtcars&#39;)</code></pre>
-<p><img src="/post/2017-10-18-broom_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="/post/2017-10-18-broom_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre><code>## [[1]]
 ##              Estimate Std. Error   t value     Pr(&gt;|t|)
 ## (Intercept) 37.285126   1.877627 19.857575 8.241799e-19
@@ -137,14 +328,13 @@ head(mtcars)</code></pre>
 ## 
 ## [[2]]
 ## [1] 0.7528328</code></pre>
-<pre class="r"><code>library(ggplot2)
-p &lt;- ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) 
+<pre class="r"><code>p &lt;- ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) 
 
 p + 
   geom_point() +
   geom_text(vjust = 0, nudge_y = 0.5) +
   geom_text(aes(label = paste0(wt, &quot;^(&quot;, mpg, &quot;)&quot;)), parse = TRUE)</code></pre>
-<p><img src="/post/2017-10-18-broom_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2017-10-18-broom_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <pre class="r"><code>lmfit &lt;- stats::lm(formula = mpg ~ wt, data = mtcars)
 lmfit</code></pre>
 <pre><code>## 
