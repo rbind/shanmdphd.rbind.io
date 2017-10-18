@@ -1,0 +1,652 @@
+---
+slug: broom
+title: broom 패키지
+date: 2017-10-18
+author: null
+categories: [Data Science]
+tags: [broom, data science]
+output:
+  blogdown::html_page:
+    df_print: kable
+#editor_options: 
+#  chunk_output_type: console
+---
+
+
+
+<p><code>broom</code> 패키지를 사용하면 통계 분석을 <code>data.frame</code> 내에서 할 수 있어서 후곳 작업에 큰 잇점이 있습니다. <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom.html" class="uri">https://cran.r-project.org/web/packages/broom/vignettes/broom.html</a></p>
+<div class="section level1">
+<h1>예제</h1>
+<p>다룰 데이타는 <code>dataset::mtcars</code>로 이렇게 생겼습니다.</p>
+<pre class="r"><code># devtools::install_github(&#39;tidyverse/broom&#39;)
+# library(beginr) 
+
+head(mtcars)</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+<th align="right">drat</th>
+<th align="right">wt</th>
+<th align="right">qsec</th>
+<th align="right">vs</th>
+<th align="right">am</th>
+<th align="right">gear</th>
+<th align="right">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.620</td>
+<td align="right">16.46</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td>Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+<td align="right">3.90</td>
+<td align="right">2.875</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td>Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+<td align="right">3.85</td>
+<td align="right">2.320</td>
+<td align="right">18.61</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+<td align="right">3.08</td>
+<td align="right">3.215</td>
+<td align="right">19.44</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+<td align="right">3.15</td>
+<td align="right">3.440</td>
+<td align="right">17.02</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td>Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+<td align="right">2.76</td>
+<td align="right">3.460</td>
+<td align="right">20.22</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>beginr::plotlm(x = mtcars$wt, y = mtcars$mpg, xlab = &#39;wt&#39;, ylab = &#39;mpg&#39;, plot.title = &#39;mtcars&#39;)</code></pre>
+<p><img src="/post/2017-10-18-broom_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre><code>## [[1]]
+##              Estimate Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) 37.285126   1.877627 19.857575 8.241799e-19
+## x           -5.344472   0.559101 -9.559044 1.293959e-10
+## 
+## [[2]]
+## [1] 0.7528328</code></pre>
+<pre class="r"><code>library(ggplot2)
+p &lt;- ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) 
+
+p + 
+  geom_point() +
+  geom_text(vjust = 0, nudge_y = 0.5) +
+  geom_text(aes(label = paste0(wt, &quot;^(&quot;, mpg, &quot;)&quot;)), parse = TRUE)</code></pre>
+<p><img src="/post/2017-10-18-broom_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>lmfit &lt;- stats::lm(formula = mpg ~ wt, data = mtcars)
+lmfit</code></pre>
+<pre><code>## 
+## Call:
+## stats::lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Coefficients:
+## (Intercept)           wt  
+##      37.285       -5.344</code></pre>
+<pre class="r"><code>summary(lmfit)</code></pre>
+<pre><code>## 
+## Call:
+## stats::lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5432 -2.3647 -0.1252  1.4096  6.8727 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***
+## wt           -5.3445     0.5591  -9.559 1.29e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.046 on 30 degrees of freedom
+## Multiple R-squared:  0.7528, Adjusted R-squared:  0.7446 
+## F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
+<pre class="r"><code>broom::tidy(lmfit)</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">term</th>
+<th align="right">estimate</th>
+<th align="right">std.error</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">37.285126</td>
+<td align="right">1.877627</td>
+<td align="right">19.857575</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">wt</td>
+<td align="right">-5.344472</td>
+<td align="right">0.559101</td>
+<td align="right">-9.559044</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>broom::augment(lmfit)</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">.rownames</th>
+<th align="right">mpg</th>
+<th align="right">wt</th>
+<th align="right">.fitted</th>
+<th align="right">.se.fit</th>
+<th align="right">.resid</th>
+<th align="right">.hat</th>
+<th align="right">.sigma</th>
+<th align="right">.cooksd</th>
+<th align="right">.std.resid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">2.620</td>
+<td align="right">23.282611</td>
+<td align="right">0.6335798</td>
+<td align="right">-2.2826106</td>
+<td align="right">0.0432690</td>
+<td align="right">3.067494</td>
+<td align="right">0.0132741</td>
+<td align="right">-0.7661677</td>
+</tr>
+<tr class="even">
+<td align="left">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">2.875</td>
+<td align="right">21.919770</td>
+<td align="right">0.5714319</td>
+<td align="right">-0.9197704</td>
+<td align="right">0.0351968</td>
+<td align="right">3.093068</td>
+<td align="right">0.0017240</td>
+<td align="right">-0.3074305</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">2.320</td>
+<td align="right">24.885952</td>
+<td align="right">0.7359177</td>
+<td align="right">-2.0859521</td>
+<td align="right">0.0583757</td>
+<td align="right">3.072127</td>
+<td align="right">0.0154394</td>
+<td align="right">-0.7057525</td>
+</tr>
+<tr class="even">
+<td align="left">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">3.215</td>
+<td align="right">20.102650</td>
+<td align="right">0.5384424</td>
+<td align="right">1.2973499</td>
+<td align="right">0.0312502</td>
+<td align="right">3.088268</td>
+<td align="right">0.0030206</td>
+<td align="right">0.4327511</td>
+</tr>
+<tr class="odd">
+<td align="left">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">3.440</td>
+<td align="right">18.900144</td>
+<td align="right">0.5526562</td>
+<td align="right">-0.2001440</td>
+<td align="right">0.0329218</td>
+<td align="right">3.097722</td>
+<td align="right">0.0000760</td>
+<td align="right">-0.0668188</td>
+</tr>
+<tr class="even">
+<td align="left">Valiant</td>
+<td align="right">18.1</td>
+<td align="right">3.460</td>
+<td align="right">18.793254</td>
+<td align="right">0.5552829</td>
+<td align="right">-0.6932545</td>
+<td align="right">0.0332355</td>
+<td align="right">3.095184</td>
+<td align="right">0.0009211</td>
+<td align="right">-0.2314831</td>
+</tr>
+<tr class="odd">
+<td align="left">Duster 360</td>
+<td align="right">14.3</td>
+<td align="right">3.570</td>
+<td align="right">18.205363</td>
+<td align="right">0.5734244</td>
+<td align="right">-3.9053627</td>
+<td align="right">0.0354426</td>
+<td align="right">3.008664</td>
+<td align="right">0.0313139</td>
+<td align="right">-1.3055222</td>
+</tr>
+<tr class="even">
+<td align="left">Merc 240D</td>
+<td align="right">24.4</td>
+<td align="right">3.190</td>
+<td align="right">20.236262</td>
+<td align="right">0.5386565</td>
+<td align="right">4.1637381</td>
+<td align="right">0.0312750</td>
+<td align="right">2.996697</td>
+<td align="right">0.0311392</td>
+<td align="right">1.3888971</td>
+</tr>
+<tr class="odd">
+<td align="left">Merc 230</td>
+<td align="right">22.8</td>
+<td align="right">3.150</td>
+<td align="right">20.450041</td>
+<td align="right">0.5397522</td>
+<td align="right">2.3499593</td>
+<td align="right">0.0314024</td>
+<td align="right">3.066058</td>
+<td align="right">0.0099619</td>
+<td align="right">0.7839269</td>
+</tr>
+<tr class="even">
+<td align="left">Merc 280</td>
+<td align="right">19.2</td>
+<td align="right">3.440</td>
+<td align="right">18.900144</td>
+<td align="right">0.5526562</td>
+<td align="right">0.2998560</td>
+<td align="right">0.0329218</td>
+<td align="right">3.097435</td>
+<td align="right">0.0001706</td>
+<td align="right">0.1001080</td>
+</tr>
+<tr class="odd">
+<td align="left">Merc 280C</td>
+<td align="right">17.8</td>
+<td align="right">3.440</td>
+<td align="right">18.900144</td>
+<td align="right">0.5526562</td>
+<td align="right">-1.1001440</td>
+<td align="right">0.0329218</td>
+<td align="right">3.090979</td>
+<td align="right">0.0022962</td>
+<td align="right">-0.3672871</td>
+</tr>
+<tr class="even">
+<td align="left">Merc 450SE</td>
+<td align="right">16.4</td>
+<td align="right">4.070</td>
+<td align="right">15.533127</td>
+<td align="right">0.7191881</td>
+<td align="right">0.8668731</td>
+<td align="right">0.0557518</td>
+<td align="right">3.093520</td>
+<td align="right">0.0025325</td>
+<td align="right">0.2928865</td>
+</tr>
+<tr class="odd">
+<td align="left">Merc 450SL</td>
+<td align="right">17.3</td>
+<td align="right">3.730</td>
+<td align="right">17.350247</td>
+<td align="right">0.6100029</td>
+<td align="right">-0.0502472</td>
+<td align="right">0.0401086</td>
+<td align="right">3.097938</td>
+<td align="right">0.0000059</td>
+<td align="right">-0.0168379</td>
+</tr>
+<tr class="even">
+<td align="left">Merc 450SLC</td>
+<td align="right">15.2</td>
+<td align="right">3.780</td>
+<td align="right">17.083024</td>
+<td align="right">0.6236291</td>
+<td align="right">-1.8830236</td>
+<td align="right">0.0419205</td>
+<td align="right">3.077286</td>
+<td align="right">0.0087273</td>
+<td align="right">-0.6315997</td>
+</tr>
+<tr class="odd">
+<td align="left">Cadillac Fleetwood</td>
+<td align="right">10.4</td>
+<td align="right">5.250</td>
+<td align="right">9.226650</td>
+<td align="right">1.2576087</td>
+<td align="right">1.1733496</td>
+<td align="right">0.1704766</td>
+<td align="right">3.088702</td>
+<td align="right">0.0183826</td>
+<td align="right">0.4229607</td>
+</tr>
+<tr class="even">
+<td align="left">Lincoln Continental</td>
+<td align="right">10.4</td>
+<td align="right">5.424</td>
+<td align="right">8.296712</td>
+<td align="right">1.3461693</td>
+<td align="right">2.1032876</td>
+<td align="right">0.1953319</td>
+<td align="right">3.067203</td>
+<td align="right">0.0719252</td>
+<td align="right">0.7697987</td>
+</tr>
+<tr class="odd">
+<td align="left">Chrysler Imperial</td>
+<td align="right">14.7</td>
+<td align="right">5.345</td>
+<td align="right">8.718926</td>
+<td align="right">1.3058069</td>
+<td align="right">5.9810744</td>
+<td align="right">0.1837942</td>
+<td align="right">2.843585</td>
+<td align="right">0.5319056</td>
+<td align="right">2.1735331</td>
+</tr>
+<tr class="even">
+<td align="left">Fiat 128</td>
+<td align="right">32.4</td>
+<td align="right">2.200</td>
+<td align="right">25.527289</td>
+<td align="right">0.7831923</td>
+<td align="right">6.8727113</td>
+<td align="right">0.0661166</td>
+<td align="right">2.802362</td>
+<td align="right">0.1929858</td>
+<td align="right">2.3349021</td>
+</tr>
+<tr class="odd">
+<td align="left">Honda Civic</td>
+<td align="right">30.4</td>
+<td align="right">1.615</td>
+<td align="right">28.653805</td>
+<td align="right">1.0451849</td>
+<td align="right">1.7461954</td>
+<td align="right">0.1177498</td>
+<td align="right">3.078657</td>
+<td align="right">0.0248603</td>
+<td align="right">0.6103569</td>
+</tr>
+<tr class="even">
+<td align="left">Toyota Corolla</td>
+<td align="right">33.9</td>
+<td align="right">1.835</td>
+<td align="right">27.478021</td>
+<td align="right">0.9418946</td>
+<td align="right">6.4219792</td>
+<td align="right">0.0956265</td>
+<td align="right">2.832808</td>
+<td align="right">0.2598750</td>
+<td align="right">2.2170827</td>
+</tr>
+<tr class="odd">
+<td align="left">Toyota Corona</td>
+<td align="right">21.5</td>
+<td align="right">2.465</td>
+<td align="right">24.111004</td>
+<td align="right">0.6832345</td>
+<td align="right">-2.6110037</td>
+<td align="right">0.0503168</td>
+<td align="right">3.057740</td>
+<td align="right">0.0204982</td>
+<td align="right">-0.8796401</td>
+</tr>
+<tr class="even">
+<td align="left">Dodge Challenger</td>
+<td align="right">15.5</td>
+<td align="right">3.520</td>
+<td align="right">18.472586</td>
+<td align="right">0.5644203</td>
+<td align="right">-2.9725862</td>
+<td align="right">0.0343383</td>
+<td align="right">3.046600</td>
+<td align="right">0.0175365</td>
+<td align="right">-0.9931363</td>
+</tr>
+<tr class="odd">
+<td align="left">AMC Javelin</td>
+<td align="right">15.2</td>
+<td align="right">3.435</td>
+<td align="right">18.926866</td>
+<td align="right">0.5520329</td>
+<td align="right">-3.7268663</td>
+<td align="right">0.0328476</td>
+<td align="right">3.016967</td>
+<td align="right">0.0262873</td>
+<td align="right">-1.2441801</td>
+</tr>
+<tr class="even">
+<td align="left">Camaro Z28</td>
+<td align="right">13.3</td>
+<td align="right">3.840</td>
+<td align="right">16.762355</td>
+<td align="right">0.6412083</td>
+<td align="right">-3.4623553</td>
+<td align="right">0.0443172</td>
+<td align="right">3.027336</td>
+<td align="right">0.0313496</td>
+<td align="right">-1.1627910</td>
+</tr>
+<tr class="odd">
+<td align="left">Pontiac Firebird</td>
+<td align="right">19.2</td>
+<td align="right">3.845</td>
+<td align="right">16.735633</td>
+<td align="right">0.6427306</td>
+<td align="right">2.4643670</td>
+<td align="right">0.0445279</td>
+<td align="right">3.062374</td>
+<td align="right">0.0159643</td>
+<td align="right">0.8277197</td>
+</tr>
+<tr class="even">
+<td align="left">Fiat X1-9</td>
+<td align="right">27.3</td>
+<td align="right">1.935</td>
+<td align="right">26.943574</td>
+<td align="right">0.8965906</td>
+<td align="right">0.3564263</td>
+<td align="right">0.0866487</td>
+<td align="right">3.097178</td>
+<td align="right">0.0007112</td>
+<td align="right">0.1224441</td>
+</tr>
+<tr class="odd">
+<td align="left">Porsche 914-2</td>
+<td align="right">26.0</td>
+<td align="right">2.140</td>
+<td align="right">25.847957</td>
+<td align="right">0.8078823</td>
+<td align="right">0.1520430</td>
+<td align="right">0.0703510</td>
+<td align="right">3.097814</td>
+<td align="right">0.0001014</td>
+<td align="right">0.0517719</td>
+</tr>
+<tr class="even">
+<td align="left">Lotus Europa</td>
+<td align="right">30.4</td>
+<td align="right">1.513</td>
+<td align="right">29.198941</td>
+<td align="right">1.0944578</td>
+<td align="right">1.2010593</td>
+<td align="right">0.1291136</td>
+<td align="right">3.088720</td>
+<td align="right">0.0132349</td>
+<td align="right">0.4225427</td>
+</tr>
+<tr class="odd">
+<td align="left">Ford Pantera L</td>
+<td align="right">15.8</td>
+<td align="right">3.170</td>
+<td align="right">20.343151</td>
+<td align="right">0.5390886</td>
+<td align="right">-4.5431513</td>
+<td align="right">0.0313252</td>
+<td align="right">2.977005</td>
+<td align="right">0.0371361</td>
+<td align="right">-1.5154971</td>
+</tr>
+<tr class="even">
+<td align="left">Ferrari Dino</td>
+<td align="right">19.7</td>
+<td align="right">2.770</td>
+<td align="right">22.480940</td>
+<td align="right">0.5936730</td>
+<td align="right">-2.7809399</td>
+<td align="right">0.0379899</td>
+<td align="right">3.052884</td>
+<td align="right">0.0171095</td>
+<td align="right">-0.9308693</td>
+</tr>
+<tr class="odd">
+<td align="left">Maserati Bora</td>
+<td align="right">15.0</td>
+<td align="right">3.570</td>
+<td align="right">18.205363</td>
+<td align="right">0.5734244</td>
+<td align="right">-3.2053627</td>
+<td align="right">0.0354426</td>
+<td align="right">3.038092</td>
+<td align="right">0.0210945</td>
+<td align="right">-1.0715194</td>
+</tr>
+<tr class="even">
+<td align="left">Volvo 142E</td>
+<td align="right">21.4</td>
+<td align="right">2.780</td>
+<td align="right">22.427495</td>
+<td align="right">0.5913398</td>
+<td align="right">-1.0274952</td>
+<td align="right">0.0376919</td>
+<td align="right">3.091840</td>
+<td align="right">0.0023159</td>
+<td align="right">-0.3438822</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>broom::glance(lmfit)</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="right">r.squared</th>
+<th align="right">adj.r.squared</th>
+<th align="right">sigma</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+<th align="right">df</th>
+<th align="right">logLik</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">deviance</th>
+<th align="right">df.residual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.7528328</td>
+<td align="right">0.7445939</td>
+<td align="right">3.045882</td>
+<td align="right">91.37533</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">-80.01471</td>
+<td align="right">166.0294</td>
+<td align="right">170.4266</td>
+<td align="right">278.3219</td>
+<td align="right">30</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="reference" class="section level1">
+<h1>Reference</h1>
+<ul>
+<li>Robinson D (2016). <em>broom: Convert Statistical Analysis Objects into Tidy Data Frames</em>. R package version 0.4.2, &lt;URL: <a href="http://github.com/tidyverse/broom" class="uri">http://github.com/tidyverse/broom</a>&gt;.</li>
+</ul>
+</div>

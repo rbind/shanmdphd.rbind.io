@@ -1,0 +1,53 @@
+---
+slug: broom
+title: broom 패키지
+date: 2017-10-18
+author: null
+categories: [Data Science]
+tags: [broom, data science]
+output:
+  blogdown::html_page:
+    df_print: kable
+#editor_options: 
+#  chunk_output_type: console
+---
+
+`broom` 패키지를 사용하면 통계 분석을 `data.frame` 내에서 할 수 있어서 후곳 작업에 큰 잇점이 있습니다. <https://cran.r-project.org/web/packages/broom/vignettes/broom.html>
+
+# 예제
+
+다룰 데이타는 `dataset::mtcars`로 이렇게 생겼습니다.
+
+
+```{r}
+# devtools::install_github('tidyverse/broom')
+# library(beginr) 
+
+head(mtcars)
+beginr::plotlm(x = mtcars$wt, y = mtcars$mpg, xlab = 'wt', ylab = 'mpg', plot.title = 'mtcars')
+```
+
+
+```{r}
+library(ggplot2)
+p <- ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) 
+
+p + 
+  geom_point() +
+  geom_text(vjust = 0, nudge_y = 0.5) +
+  geom_text(aes(label = paste0(wt, "^(", mpg, ")")), parse = TRUE)
+```
+
+```{r}
+lmfit <- stats::lm(formula = mpg ~ wt, data = mtcars)
+lmfit
+
+summary(lmfit)
+broom::tidy(lmfit)
+broom::augment(lmfit)
+broom::glance(lmfit)
+``` 
+
+# Reference
+
+- `r format(citation('broom'), style = 'text')`
