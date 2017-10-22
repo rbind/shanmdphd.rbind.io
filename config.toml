@@ -15,7 +15,7 @@ footnotereturnlinkcontents = "↩"
 
 [permalinks]
     post = "/post/:filename/"
-    featured = "/featured/:filename/"
+    news = "/news/:filename/"
     personal = "/personal/:filename/"
     # post = "/post/:year/:month/:day/:slug/"
     # featured = "/featured/:year/:month/:day/:slug/"
@@ -31,7 +31,7 @@ footnotereturnlinkcontents = "↩"
     weight = 2
 [[menu.main]]
     name = "Featured"
-    url = "/featured/"
+    url = "/categories/featured/"
     weight = 2
 [[menu.main]]
     name = "Categories"
@@ -46,8 +46,8 @@ footnotereturnlinkcontents = "↩"
     url = "/index.xml"
 
 [params]
-    since = "2016"
+    since = "2000"
     keywords = ["Sungpil Han", "Clinical Pharmacology","Medicine"]
     description = "Sungpil Han's Blog. A website built through Hugo and blogdown using xmin theme."
-    footer = "&copy; [Sungpil Han](./) 2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
+    footer = "&copy; [Sungpil Han](./) 2000-2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
     GithubEdit = "https://github.com/rbind/shanmdphd.rbind.io/edit/master/content/"

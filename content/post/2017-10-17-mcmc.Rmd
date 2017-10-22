@@ -1,0 +1,44 @@
+---
+title: 'MCMC: The Wishart Distribution'
+author: ~
+date: '2017-10-17'
+slug: mcmc
+categories: [Statistics]
+tags: [statistics, Markov Chain]
+---
+
+The Wishart Distribution
+
+Description
+
+Density function and random generation from the Wishart distribution.
+
+dwish(W, v, S)
+rwish(v, S)
+Arguments
+
+W	Positive definite matrix W (p x p).
+v	Wishart degrees of freedom (scalar).
+S	Wishart scale matrix (p x p).
+Value
+
+dwish evaluates the density at positive definite matrix W. rwish generates one random draw from the distribution.
+
+Examples
+
+```{r}
+library(MCMCpack) # install.packages('MCMCpack')
+
+density <- dwish(
+  W = matrix(c(2,-.3,-.3,4),2,2), 
+  v = 3, 
+  S = matrix(c(1,.3,.3,1),2,2)
+)
+density
+
+draw <- rwish(
+  v = 3, 
+  S = matrix(c(1,.3,.3,1),2,2)
+)
+draw
+```
