@@ -20,7 +20,7 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - <https://shan.updog.co/portfolio/>
 - <https://shanmdphd.github.io/conferences/>
 - <https://asancpt.github.io/book-ncar/>
-- <https://asancpt.github.io/book-gab/>
+- <https://shanmdphd.github.io/book-gab/>
 
 
 ## Softwares I love
