@@ -16,8 +16,11 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - <a href="https://orcid.org/0000-0002-4674-7682" class="btn">orcid.org/0000-0002-4674-7682</a>
 
 ## Bookdown Gitbooks I am writing
-- <https://memoir.netlify.com> Pathway to the physician-scientist
-- <https://shan.updog.co>
+- <https://memoir.netlify.com/> Pathway to the physician-scientist
+- <https://shan.updog.co/portfolio/>
+- <https://shanmdphd.github.io/conferences/>
+- <https://asancpt.github.io/book-ncar/>
+- <https://asancpt.github.io/book-gab/>
 
 
 ## Softwares I love
