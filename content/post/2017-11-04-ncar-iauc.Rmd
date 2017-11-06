@@ -11,6 +11,7 @@ editor_options:
 ---
 
 ```{r setup, include = FALSE}
+options(knitr.table.format = 'html')
 knitr::opts_chunk$set(message = FALSE, 
                       #cache = TRUE,
                       warning = FALSE)
@@ -158,7 +159,7 @@ as_tibble(Theoph_tblNCA) %>%
         booktabs = TRUE) 
 ```
 
-Although there's an advantage of customization, the script is quite lengthy, so if you're not preparing a journal paper, I'll just use `broom::tidy()`.
+Although there's an advantage of customization, the script is quite lengthy, so unless you're preparing a journal paper, I just recommend using `broom::tidy()`.
 
 \pagebreak
 
