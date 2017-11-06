@@ -1,0 +1,43 @@
+---
+title: 'MCMC: The Wishart Distribution'
+author: ~
+date: '2017-10-17'
+slug: mcmc
+categories: [Statistics]
+tags: [statistics, Markov Chain]
+---
+
+
+
+<p>The Wishart Distribution</p>
+<p>Description</p>
+<p>Density function and random generation from the Wishart distribution.</p>
+<p>dwish(W, v, S) rwish(v, S) Arguments</p>
+<p>W Positive definite matrix W (p x p). v Wishart degrees of freedom (scalar). S Wishart scale matrix (p x p). Value</p>
+<p>dwish evaluates the density at positive definite matrix W. rwish generates one random draw from the distribution.</p>
+<p>Examples</p>
+<pre class="r"><code>library(MCMCpack) # install.packages(&#39;MCMCpack&#39;)</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: coda</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: MASS</code></pre>
+<pre><code>## ##
+## ## Markov Chain Monte Carlo Package (MCMCpack)</code></pre>
+<pre><code>## ## Copyright (C) 2003-2017 Andrew D. Martin, Kevin M. Quinn, and Jong Hee Park</code></pre>
+<pre><code>## ##
+## ## Support provided by the U.S. National Science Foundation</code></pre>
+<pre><code>## ## (Grants SES-0350646 and SES-0350613)
+## ##</code></pre>
+<pre class="r"><code>density &lt;- dwish(
+  W = matrix(c(2,-.3,-.3,4),2,2), 
+  v = 3, 
+  S = matrix(c(1,.3,.3,1),2,2)
+)
+density</code></pre>
+<pre><code>## [1] 0.003072811</code></pre>
+<pre class="r"><code>draw &lt;- rwish(
+  v = 3, 
+  S = matrix(c(1,.3,.3,1),2,2)
+)
+draw</code></pre>
+<pre><code>##           [,1]      [,2]
+## [1,]  2.159571 -2.428155
+## [2,] -2.428155  3.110081</code></pre>
