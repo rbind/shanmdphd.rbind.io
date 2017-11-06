@@ -2,7 +2,7 @@
 title: About
 ---
 
-## Introduction
+# Introduction
 
 Hi, I’m Sungpil. 
 I received my M.D and Ph.D. in Molecular Cell Biology and Genetics from Pusan National University, Korea. 
@@ -14,9 +14,16 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - Curriculum Vitae [html](/cv) [tufte-styled](https://shanmdphd.github.io/cv)  [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
 - <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Google Scholar</a>
 - <a href="https://orcid.org/0000-0002-4674-7682" class="btn">orcid.org/0000-0002-4674-7682</a>
-- <a href="/about/physicianscientist/" class="btn">Pathway to the physician-scientist</a>
 
-### Softwares I love
+## Bookdown Gitbooks I am writing
+- <https://memoir.netlify.com/> Pathway to the physician-scientist
+- <https://shan.updog.co/portfolio/>
+- <https://shanmdphd.github.io/conferences/>
+- <https://asancpt.github.io/book-ncar/>
+- <https://shanmdphd.github.io/book-gab/>
+
+
+## Softwares I love
 
 - `R` and `Rstudio`
 - `vim` but not `gvim`
@@ -36,3 +43,6 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - Programming (RStudio, LaTeX, SQL, git)
 - Statistics (R, SAS, ANOVA, regression, PCA, time series)
 
+---
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

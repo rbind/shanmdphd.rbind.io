@@ -11,7 +11,10 @@ tags:
 toc: true
 ---
 
-> Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc)
+> Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc
+
+
+
 
 # R
 
@@ -232,6 +235,14 @@ lazygit "Update README.md"
 ---
 
 # Vim
+
+## Dos > Unix conversion
+
+```vim
+se ff=unix
+```
+
+Reference: [mwultong](http://mwultong.blogspot.com/2007/05/vim-vi-dos-cr-lf-to-unix-newline.html)
 
 ## find all the word 'foo' where there is no 'bar' following, we can do:
 
