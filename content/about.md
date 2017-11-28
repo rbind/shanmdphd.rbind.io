@@ -15,13 +15,13 @@ I’m always looking to learn from and collaborate with new people, so feel free
 - <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Google Scholar</a>
 - <a href="https://orcid.org/0000-0002-4674-7682" class="btn">orcid.org/0000-0002-4674-7682</a>
 
-## Bookdown Gitbooks I am writing
+## Bookdown gitbooks I write
 - <https://memoir.netlify.com/> Pathway to the physician-scientist
 - <https://shan.updog.co/portfolio/>
 - <https://shanmdphd.github.io/conferences/>
 - <https://asancpt.github.io/book-ncar/>
-- <https://shanmdphd.github.io/book-gab/>
-
+- <https://asancpt.github.io/book-gabrielsson/>
+- [Modeling and Simulation을 이용한 Special population에서의 약물 인허가 현황과 관련규정](https://shanmdphd.github.io/book-special-population)
 
 ## Softwares I love
 

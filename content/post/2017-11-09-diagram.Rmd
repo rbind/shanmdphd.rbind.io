@@ -1,0 +1,23 @@
+---
+slug: diagrammer
+title: 'DiagrammeR에서 png 파일 생성하는 방법'
+date: '2017-11-09'
+categories: [R]
+tags: [R, DiagrammeR]
+---
+
+
+이 글^[https://github.com/rich-iannone/DiagrammeR/issues/133]에서 배웠습니다.
+
+```{r}
+library(DiagrammeR)
+
+seq <- grViz('digraph{c->a; c->b; c->d;}')
+
+DiagrammeRsvg::export_svg(seq) %>% 
+  charToRaw %>% 
+  rsvg::rsvg_png(file = 'seq.png', width = 1000)
+knitr::include_graphics('seq.png')
+```
+
+
