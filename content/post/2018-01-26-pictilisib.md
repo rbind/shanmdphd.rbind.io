@@ -1,6 +1,6 @@
 ---
-title: ''
-date: ''
+title: 'pictilisib'
+date: '2018-01-26'
 slug: ''
 categories: []
 tags: []
