@@ -1,0 +1,17 @@
+---
+date: 2016-12-12
+title: R에서 텍스트를 파일처럼 읽는 법 - textConnection
+categories: []
+tag: [R]
+---
+
+
+R에서 텍스트를 파일처럼 읽는 법을 고민하다가 드디어 해결책을 찾았습니다. `textConnection`, `readr::read_csv`을 사용하면 가능합니다.
+Data dictionary 내에 coding되어 있는 파일을 decoding할때 유용히 사용할 수 있을 것 같습니다.
+
+```{r}
+Dictionary <- tibble::tibble(content = "1, Test\n2,Ref", last = "3")
+read.csv(textConnection(Dictionary$content), header = FALSE, col.names = c("Code", "Decode"))
+readr::read_csv(Dictionary$content, col_names = c("Code", "Decode"))
+```
+
