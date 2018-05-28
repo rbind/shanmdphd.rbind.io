@@ -1,7 +1,7 @@
 ---
 title: "기계학습(Machine Learning) - caret R package"
 date: 2018-05-29
-tag: machine learning, R
+tag: [machine learning, R]
 ---
 
 기계학습이 여기저기서 들려오는데 막상 R을 사용하면서도 아직 개념을 잘 이해하지 못하고 있어서 여기에 정리해 본다. 
@@ -35,3 +35,4 @@ rf_fit
 ```
 
 ![](/caret-package.jpg)
+
