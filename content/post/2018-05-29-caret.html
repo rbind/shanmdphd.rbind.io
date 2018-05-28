@@ -1,0 +1,134 @@
+---
+title: "기계학습(Machine Learning) - caret R package"
+date: 2018-05-29
+tag: machine learning, R
+---
+
+
+
+<p>기계학습이 여기저기서 들려오는데 막상 R을 사용하면서도 아직 개념을 잘 이해하지 못하고 있어서 여기에 정리해 본다.</p>
+<ul>
+<li><a href="https://lovetoken.github.io/r/2017/04/23/caret_package.html" class="uri">https://lovetoken.github.io/r/2017/04/23/caret_package.html</a></li>
+<li><a href="http://topepo.github.io/caret/" class="uri">http://topepo.github.io/caret/</a></li>
+</ul>
+<p>위 두개의 링크를 참고하였다.</p>
+<pre class="r"><code>library(tidyverse) # for tidy tools (pipe operation, tibble, etc..)</code></pre>
+<pre><code>## -- Attaching packages ---------------------------------- tidyverse 1.2.1 --</code></pre>
+<pre><code>## √ ggplot2 2.2.1.9000     √ purrr   0.2.4     
+## √ tibble  1.4.2          √ dplyr   0.7.5     
+## √ tidyr   0.8.1          √ stringr 1.3.1     
+## √ readr   1.1.1          √ forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts ------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## x dplyr::vars()   masks ggplot2::vars()</code></pre>
+<pre class="r"><code>library(caret)</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: lattice</code></pre>
+<pre><code>## 
+## 다음의 패키지를 부착합니다: &#39;caret&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     lift</code></pre>
+<pre class="r"><code>set.seed(1234) # for reproducibility
+
+data(Sonar, package = &quot;mlbench&quot;)
+Sonar &lt;- Sonar %&gt;% tbl_df
+Sonar</code></pre>
+<pre><code>## # A tibble: 208 x 61
+##        V1     V2     V3     V4     V5     V6     V7     V8     V9    V10
+##  *  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 0.02   0.0371 0.0428 0.0207 0.0954 0.0986 0.154  0.160  0.311  0.211 
+##  2 0.0453 0.0523 0.0843 0.0689 0.118  0.258  0.216  0.348  0.334  0.287 
+##  3 0.0262 0.0582 0.110  0.108  0.0974 0.228  0.243  0.377  0.560  0.619 
+##  4 0.01   0.0171 0.0623 0.0205 0.0205 0.0368 0.110  0.128  0.0598 0.126 
+##  5 0.0762 0.0666 0.0481 0.0394 0.059  0.0649 0.121  0.247  0.356  0.446 
+##  6 0.0286 0.0453 0.0277 0.0174 0.0384 0.099  0.120  0.183  0.210  0.304 
+##  7 0.0317 0.0956 0.132  0.141  0.167  0.171  0.0731 0.140  0.208  0.351 
+##  8 0.0519 0.0548 0.0842 0.0319 0.116  0.0922 0.103  0.0613 0.146  0.284 
+##  9 0.0223 0.0375 0.0484 0.0475 0.0647 0.0591 0.0753 0.0098 0.0684 0.149 
+## 10 0.0164 0.0173 0.0347 0.007  0.0187 0.0671 0.106  0.0697 0.0962 0.0251
+## # ... with 198 more rows, and 51 more variables: V11 &lt;dbl&gt;, V12 &lt;dbl&gt;,
+## #   V13 &lt;dbl&gt;, V14 &lt;dbl&gt;, V15 &lt;dbl&gt;, V16 &lt;dbl&gt;, V17 &lt;dbl&gt;, V18 &lt;dbl&gt;,
+## #   V19 &lt;dbl&gt;, V20 &lt;dbl&gt;, V21 &lt;dbl&gt;, V22 &lt;dbl&gt;, V23 &lt;dbl&gt;, V24 &lt;dbl&gt;,
+## #   V25 &lt;dbl&gt;, V26 &lt;dbl&gt;, V27 &lt;dbl&gt;, V28 &lt;dbl&gt;, V29 &lt;dbl&gt;, V30 &lt;dbl&gt;,
+## #   V31 &lt;dbl&gt;, V32 &lt;dbl&gt;, V33 &lt;dbl&gt;, V34 &lt;dbl&gt;, V35 &lt;dbl&gt;, V36 &lt;dbl&gt;,
+## #   V37 &lt;dbl&gt;, V38 &lt;dbl&gt;, V39 &lt;dbl&gt;, V40 &lt;dbl&gt;, V41 &lt;dbl&gt;, V42 &lt;dbl&gt;,
+## #   V43 &lt;dbl&gt;, V44 &lt;dbl&gt;, V45 &lt;dbl&gt;, V46 &lt;dbl&gt;, V47 &lt;dbl&gt;, V48 &lt;dbl&gt;,
+## #   V49 &lt;dbl&gt;, V50 &lt;dbl&gt;, V51 &lt;dbl&gt;, V52 &lt;dbl&gt;, V53 &lt;dbl&gt;, V54 &lt;dbl&gt;,
+## #   V55 &lt;dbl&gt;, V56 &lt;dbl&gt;, V57 &lt;dbl&gt;, V58 &lt;dbl&gt;, V59 &lt;dbl&gt;, V60 &lt;dbl&gt;,
+## #   Class &lt;fct&gt;</code></pre>
+<pre class="r"><code>indexTrain &lt;- sample(1:nrow(Sonar), round(nrow(Sonar) * .7))
+training &lt;- Sonar[ indexTrain, ]
+testing  &lt;- Sonar[-indexTrain, ]
+training</code></pre>
+<pre><code>## # A tibble: 146 x 61
+##        V1     V2     V3     V4     V5     V6     V7     V8     V9    V10
+##     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 0.0115 0.015  0.0136 0.0076 0.0211 0.106  0.102  0.044  0.0931 0.0734
+##  2 0.0374 0.0586 0.0628 0.0534 0.0255 0.142  0.207  0.273  0.307  0.260 
+##  3 0.0228 0.0853 0.1    0.0428 0.112  0.165  0.160  0.212  0.330  0.352 
+##  4 0.0209 0.0261 0.012  0.0768 0.106  0.168  0.302  0.346  0.331  0.412 
+##  5 0.0294 0.0123 0.0117 0.0113 0.0497 0.0998 0.133  0.112  0.298  0.347 
+##  6 0.137  0.123  0.138  0.148  0.178  0.143  0.177  0.216  0.163  0.207 
+##  7 0.0453 0.0523 0.0843 0.0689 0.118  0.258  0.216  0.348  0.334  0.287 
+##  8 0.0308 0.0339 0.0202 0.0889 0.157  0.175  0.092  0.135  0.159  0.280 
+##  9 0.079  0.0707 0.0352 0.166  0.133  0.0226 0.0771 0.268  0.566  0.661 
+## 10 0.0587 0.121  0.127  0.150  0.144  0.0561 0.0832 0.0672 0.137  0.235 
+## # ... with 136 more rows, and 51 more variables: V11 &lt;dbl&gt;, V12 &lt;dbl&gt;,
+## #   V13 &lt;dbl&gt;, V14 &lt;dbl&gt;, V15 &lt;dbl&gt;, V16 &lt;dbl&gt;, V17 &lt;dbl&gt;, V18 &lt;dbl&gt;,
+## #   V19 &lt;dbl&gt;, V20 &lt;dbl&gt;, V21 &lt;dbl&gt;, V22 &lt;dbl&gt;, V23 &lt;dbl&gt;, V24 &lt;dbl&gt;,
+## #   V25 &lt;dbl&gt;, V26 &lt;dbl&gt;, V27 &lt;dbl&gt;, V28 &lt;dbl&gt;, V29 &lt;dbl&gt;, V30 &lt;dbl&gt;,
+## #   V31 &lt;dbl&gt;, V32 &lt;dbl&gt;, V33 &lt;dbl&gt;, V34 &lt;dbl&gt;, V35 &lt;dbl&gt;, V36 &lt;dbl&gt;,
+## #   V37 &lt;dbl&gt;, V38 &lt;dbl&gt;, V39 &lt;dbl&gt;, V40 &lt;dbl&gt;, V41 &lt;dbl&gt;, V42 &lt;dbl&gt;,
+## #   V43 &lt;dbl&gt;, V44 &lt;dbl&gt;, V45 &lt;dbl&gt;, V46 &lt;dbl&gt;, V47 &lt;dbl&gt;, V48 &lt;dbl&gt;,
+## #   V49 &lt;dbl&gt;, V50 &lt;dbl&gt;, V51 &lt;dbl&gt;, V52 &lt;dbl&gt;, V53 &lt;dbl&gt;, V54 &lt;dbl&gt;,
+## #   V55 &lt;dbl&gt;, V56 &lt;dbl&gt;, V57 &lt;dbl&gt;, V58 &lt;dbl&gt;, V59 &lt;dbl&gt;, V60 &lt;dbl&gt;,
+## #   Class &lt;fct&gt;</code></pre>
+<pre class="r"><code>testing</code></pre>
+<pre><code>## # A tibble: 62 x 61
+##        V1     V2      V3     V4     V5     V6     V7     V8     V9    V10
+##     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 0.02   0.0371 0.0428  0.0207 0.0954 0.0986 0.154  0.160  0.311  0.211 
+##  2 0.0762 0.0666 0.0481  0.0394 0.059  0.0649 0.121  0.247  0.356  0.446 
+##  3 0.0286 0.0453 0.0277  0.0174 0.0384 0.099  0.120  0.183  0.210  0.304 
+##  4 0.0039 0.0063 0.0152  0.0336 0.031  0.0284 0.0396 0.0272 0.0323 0.0452
+##  5 0.0124 0.0433 0.0604  0.0449 0.0597 0.0355 0.0531 0.0343 0.105  0.212 
+##  6 0.027  0.0092 0.0145  0.0278 0.0412 0.0757 0.103  0.114  0.0794 0.152 
+##  7 0.0177 0.03   0.0288  0.0394 0.063  0.0526 0.0688 0.0633 0.0624 0.0613
+##  8 0.01   0.0275 0.019   0.0371 0.0416 0.0201 0.0314 0.0651 0.190  0.267 
+##  9 0.024  0.0218 0.0324  0.0569 0.033  0.0513 0.0897 0.0713 0.0569 0.0389
+## 10 0.0195 0.0213 0.00580 0.019  0.0319 0.0571 0.100  0.0668 0.0691 0.0242
+## # ... with 52 more rows, and 51 more variables: V11 &lt;dbl&gt;, V12 &lt;dbl&gt;,
+## #   V13 &lt;dbl&gt;, V14 &lt;dbl&gt;, V15 &lt;dbl&gt;, V16 &lt;dbl&gt;, V17 &lt;dbl&gt;, V18 &lt;dbl&gt;,
+## #   V19 &lt;dbl&gt;, V20 &lt;dbl&gt;, V21 &lt;dbl&gt;, V22 &lt;dbl&gt;, V23 &lt;dbl&gt;, V24 &lt;dbl&gt;,
+## #   V25 &lt;dbl&gt;, V26 &lt;dbl&gt;, V27 &lt;dbl&gt;, V28 &lt;dbl&gt;, V29 &lt;dbl&gt;, V30 &lt;dbl&gt;,
+## #   V31 &lt;dbl&gt;, V32 &lt;dbl&gt;, V33 &lt;dbl&gt;, V34 &lt;dbl&gt;, V35 &lt;dbl&gt;, V36 &lt;dbl&gt;,
+## #   V37 &lt;dbl&gt;, V38 &lt;dbl&gt;, V39 &lt;dbl&gt;, V40 &lt;dbl&gt;, V41 &lt;dbl&gt;, V42 &lt;dbl&gt;,
+## #   V43 &lt;dbl&gt;, V44 &lt;dbl&gt;, V45 &lt;dbl&gt;, V46 &lt;dbl&gt;, V47 &lt;dbl&gt;, V48 &lt;dbl&gt;,
+## #   V49 &lt;dbl&gt;, V50 &lt;dbl&gt;, V51 &lt;dbl&gt;, V52 &lt;dbl&gt;, V53 &lt;dbl&gt;, V54 &lt;dbl&gt;,
+## #   V55 &lt;dbl&gt;, V56 &lt;dbl&gt;, V57 &lt;dbl&gt;, V58 &lt;dbl&gt;, V59 &lt;dbl&gt;, V60 &lt;dbl&gt;,
+## #   Class &lt;fct&gt;</code></pre>
+<pre class="r"><code>fitControl &lt;- trainControl(method = &quot;repeatedcv&quot;, number = 10, repeats = 5)
+
+# RandomForest 로 학습시켜보기
+rf_fit &lt;- train(Class ~ ., data = training, method = &quot;rf&quot;, trControl = fitControl, verbose = F)
+rf_fit</code></pre>
+<pre><code>## Random Forest 
+## 
+## 146 samples
+##  60 predictor
+##   2 classes: &#39;M&#39;, &#39;R&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 5 times) 
+## Summary of sample sizes: 132, 132, 131, 131, 130, 132, ... 
+## Resampling results across tuning parameters:
+## 
+##   mtry  Accuracy   Kappa    
+##    2    0.8197381  0.6378550
+##   31    0.7972381  0.5938628
+##   60    0.7805714  0.5598370
+## 
+## Accuracy was used to select the optimal model using the largest value.
+## The final value used for the model was mtry = 2.</code></pre>
+<p><img src="/caret-package.jpg" /></p>

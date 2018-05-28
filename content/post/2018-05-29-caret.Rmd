@@ -1,0 +1,37 @@
+---
+title: "기계학습(Machine Learning) - caret R package"
+date: 2018-05-29
+tag: machine learning, R
+---
+
+기계학습이 여기저기서 들려오는데 막상 R을 사용하면서도 아직 개념을 잘 이해하지 못하고 있어서 여기에 정리해 본다. 
+
+- <https://lovetoken.github.io/r/2017/04/23/caret_package.html>
+- <http://topepo.github.io/caret/>
+
+위 두개의 링크를 참고하였다.
+
+```{r}
+library(tidyverse) # for tidy tools (pipe operation, tibble, etc..)
+library(caret)
+
+set.seed(1234) # for reproducibility
+
+data(Sonar, package = "mlbench")
+Sonar <- Sonar %>% tbl_df
+Sonar
+
+indexTrain <- sample(1:nrow(Sonar), round(nrow(Sonar) * .7))
+training <- Sonar[ indexTrain, ]
+testing  <- Sonar[-indexTrain, ]
+training
+testing
+
+fitControl <- trainControl(method = "repeatedcv", number = 10, repeats = 5)
+
+# RandomForest 로 학습시켜보기
+rf_fit <- train(Class ~ ., data = training, method = "rf", trControl = fitControl, verbose = F)
+rf_fit
+```
+
+![](/caret-package.jpg)

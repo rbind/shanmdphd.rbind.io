@@ -11,11 +11,12 @@ I enjoy studying medicine, and am especially interested in new drug development.
 I release most of my work as open source software under my GitHub profile. 
 I’m always looking to learn from and collaborate with new people, so feel free to contact me via twitter (@shanmdphd) or email (pil.han AT gmail.com).
 
-- Curriculum Vitae [html](/cv) [tufte-styled](https://shanmdphd.github.io/cv)  [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
+- Curriculum Vitae [html](/cv) | [tufte-styled](https://shanmdphd.github.io/cv) | [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
 - <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Google Scholar</a>
 - <a href="https://orcid.org/0000-0002-4674-7682" class="btn">orcid.org/0000-0002-4674-7682</a>
 
 ## Bookdown gitbooks I write
+
 - <https://memoir.netlify.com/> Pathway to the physician-scientist
 - <https://shan.updog.co/portfolio/>
 - <https://shanmdphd.github.io/conferences/>
@@ -26,7 +27,7 @@ I’m always looking to learn from and collaborate with new people, so feel free
 ## Softwares I love
 
 - `R` and `Rstudio`
-- `vim` but not `gvim`
+- `vim` but not `gvim` 
 - `git` and `github`
 - `MacOS` and `Ubuntu`
 
@@ -46,3 +47,4 @@ I’m always looking to learn from and collaborate with new people, so feel free
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
