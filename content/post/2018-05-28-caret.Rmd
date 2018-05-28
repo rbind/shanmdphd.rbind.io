@@ -1,13 +1,16 @@
 ---
 title: "기계학습(Machine Learning) - caret R package"
-date: 2018-05-29
+date: 2018-05-28
 tag: [machine learning, R]
+category: [R]
 ---
 
 기계학습이 여기저기서 들려오는데 막상 R을 사용하면서도 아직 개념을 잘 이해하지 못하고 있어서 여기에 정리해 본다. 
 
 - <https://lovetoken.github.io/r/2017/04/23/caret_package.html>
 - <http://topepo.github.io/caret/>
+
+![Gitbook](/caret-package.jpg)
 
 위 두개의 링크를 참고하였다.
 
@@ -34,5 +37,4 @@ rf_fit <- train(Class ~ ., data = training, method = "rf", trControl = fitContro
 rf_fit
 ```
 
-![](/caret-package.jpg)
 
