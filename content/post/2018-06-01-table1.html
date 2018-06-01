@@ -2,11 +2,12 @@
 title: "table1 패키지"
 date: 2018-06-01
 tag: [r, data science]
+bibliography: table1.bib
 ---
 
 
 
-<p>HTML 형식의 표를 쉽게 만들어 주는 패키지로 보고서 작성할 때 유용할 것 같습니다.</p>
+<p>table1은 HTML 형식의 표를 쉽게 만들어 주는 패키지로 보고서 작성할 때 유용할 것 같습니다. <span class="citation">(Rich 2018)</span></p>
 <pre class="r"><code>library(table1)
 dat &lt;- expand.grid(id=1:10, sex=c(&quot;Male&quot;, &quot;Female&quot;), treat=c(&quot;Treated&quot;, &quot;Placebo&quot;))
 dat$age &lt;- runif(nrow(dat), 10, 50)
@@ -95,13 +96,13 @@ Female
 Mean (SD)
 </td>
 <td>
-28.4 (15.1)
+28.8 (13.0)
 </td>
 <td>
-32.9 (12.0)
+30.5 (13.9)
 </td>
 <td>
-30.7 (13.6)
+29.7 (13.3)
 </td>
 </tr>
 <tr>
@@ -109,13 +110,13 @@ Mean (SD)
 Median [Min, Max]
 </td>
 <td>
-23.3 [10.6, 49.0]
+27.3 [11.8, 49.8]
 </td>
 <td>
-35.9 [10.5, 49.7]
+27.3 [10.2, 48.6]
 </td>
 <td>
-30.9 [10.5, 49.7]
+27.3 [10.2, 49.8]
 </td>
 </tr>
 <tr>
@@ -148,13 +149,13 @@ Missing
 Mean (SD)
 </td>
 <td>
-73.2 (11.8)
+71.6 (14.6)
 </td>
 <td>
-70.2 (15.1)
+70.8 (14.6)
 </td>
 <td>
-71.7 (13.5)
+71.2 (14.4)
 </td>
 </tr>
 <tr>
@@ -162,14 +163,249 @@ Mean (SD)
 Median [Min, Max]
 </td>
 <td class="lastrow">
-73.2 [53.9, 105]
+68.9 [51.0, 106]
 </td>
 <td class="lastrow">
-68.6 [49.4, 102]
+66.9 [44.6, 102]
 </td>
 <td class="lastrow">
-70.6 [49.4, 105]
+68.0 [44.6, 106]
 </td>
 </tr>
 </tbody>
 </table>
+<p>아래는 Theoph 농도 자료를 NonCompart <span class="citation">(Bae 2018)</span> 패키지를 사용하여 약동학 파라메터를 구하고 표를 만든 것입니다.</p>
+<pre class="r"><code>library(tidyverse)
+library(NonCompart)
+dat_Theoph &lt;- tblNCA(Theoph, key=&quot;Subject&quot;, dose=320, concUnit=&quot;mg/L&quot;) %&gt;% 
+  as.tibble() %&gt;% 
+  mutate_all(funs(as.numeric)) %&gt;% 
+  mutate(treat = ifelse(Subject &lt;= 6, &#39;Treated&#39;, &#39;Placebo&#39;)) %&gt;% 
+  select(Subject, CMAX, TMAX, AUCLST, LAMZHL, CLFO, treat)
+
+table1(~ CMAX + TMAX + AUCLST + LAMZHL + CLFO | treat, data = dat_Theoph)</code></pre>
+<table class="Rtable1">
+<thead>
+<tr>
+<th class="rowlabel firstrow lastrow">
+</th>
+<th class="firstrow lastrow">
+<span class="stratlabel">Placebo<br><span class="stratn">(n=6)</span></span>
+</th>
+<th class="firstrow lastrow">
+<span class="stratlabel">Treated<br><span class="stratn">(n=6)</span></span>
+</th>
+<th class="firstrow lastrow">
+<span class="stratlabel">Overall<br><span class="stratn">(n=12)</span></span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">CMAX</span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+8.61 (1.25)
+</td>
+<td>
+8.91 (1.78)
+</td>
+<td>
+8.76 (1.47)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Median [Min, Max]
+</td>
+<td class="lastrow">
+8.52 [7.09, 10.2]
+</td>
+<td class="lastrow">
+8.47 [6.44, 11.4]
+</td>
+<td class="lastrow">
+8.47 [6.44, 11.4]
+</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">TMAX</span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+2.36 (1.34)
+</td>
+<td>
+1.21 (0.351)
+</td>
+<td>
+1.79 (1.11)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Median [Min, Max]
+</td>
+<td class="lastrow">
+2.75 [0.630, 3.55]
+</td>
+<td class="lastrow">
+1.10 [1.00, 1.92]
+</td>
+<td class="lastrow">
+1.14 [0.630, 3.55]
+</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">AUCLST</span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+101 (23.1)
+</td>
+<td>
+107 (25.9)
+</td>
+<td>
+104 (23.6)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Median [Min, Max]
+</td>
+<td class="lastrow">
+89.7 [80.1, 138]
+</td>
+<td class="lastrow">
+103 [73.8, 149]
+</td>
+<td class="lastrow">
+95.4 [73.8, 149]
+</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">LAMZHL</span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+7.93 (1.04)
+</td>
+<td>
+8.43 (2.93)
+</td>
+<td>
+8.18 (2.12)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Median [Min, Max]
+</td>
+<td class="lastrow">
+8.13 [6.29, 9.25]
+</td>
+<td class="lastrow">
+7.44 [6.66, 14.3]
+</td>
+<td class="lastrow">
+7.87 [6.29, 14.3]
+</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">CLFO</span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+2.88 (0.614)
+</td>
+<td>
+2.73 (0.794)
+</td>
+<td>
+2.81 (0.681)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Median [Min, Max]
+</td>
+<td class="lastrow">
+3.08 [1.88, 3.59]
+</td>
+<td class="lastrow">
+2.81 [1.48, 3.80]
+</td>
+<td class="lastrow">
+3.00 [1.48, 3.80]
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section level2 unnumbered">
+<h2>참고문헌</h2>
+<div id="refs" class="references">
+<div id="ref-R-NonCompart">
+<p>Bae, Kyun-Seop. 2018. <em>NonCompart: Noncompartmental Analysis for Pharmacokinetic Data</em>. <a href="https://CRAN.R-project.org/package=NonCompart" class="uri">https://CRAN.R-project.org/package=NonCompart</a>.</p>
+</div>
+<div id="ref-R-table1">
+<p>Rich, Benjamin. 2018. <em>Table1: Tables of Descriptive Statistics in Html</em>. <a href="https://CRAN.R-project.org/package=table1" class="uri">https://CRAN.R-project.org/package=table1</a>.</p>
+</div>
+</div>
+</div>

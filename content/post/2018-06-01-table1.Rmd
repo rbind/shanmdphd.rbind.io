@@ -2,9 +2,10 @@
 title: "table1 패키지"
 date: 2018-06-01
 tag: [r, data science]
+bibliography: table1.bib
 ---
 
-HTML 형식의 표를 쉽게 만들어 주는 패키지로 보고서 작성할 때 유용할 것 같습니다.
+table1은 HTML 형식의 표를 쉽게 만들어 주는 패키지로 보고서 작성할 때 유용할 것 같습니다. [@R-table1]
 
 ```{r results = 'asis', message = FALSE}
 library(table1)
@@ -24,3 +25,21 @@ units(dat$wt) <- "kg"
 # One level of stratification
 table1(~ sex + age + wt | treat, data=dat)
 ```
+
+아래는 Theoph 농도 자료를 NonCompart [@R-NonCompart] 패키지를 사용하여 약동학 파라메터를 구하고 표를 만든 것입니다.
+
+```{r results = 'asis', message = FALSE}
+library(tidyverse)
+library(NonCompart)
+dat_Theoph <- tblNCA(Theoph, key="Subject", dose=320, concUnit="mg/L") %>% 
+  as.tibble() %>% 
+  mutate_all(funs(as.numeric)) %>% 
+  mutate(treat = ifelse(Subject <= 6, 'Treated', 'Placebo')) %>% 
+  select(Subject, CMAX, TMAX, AUCLST, LAMZHL, CLFO, treat)
+
+table1(~ CMAX + TMAX + AUCLST + LAMZHL + CLFO | treat, data = dat_Theoph)
+```
+
+## 참고문헌
+
+`r knitr::write_bib(file = 'table1.bib')`
