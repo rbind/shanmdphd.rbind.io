@@ -1,0 +1,175 @@
+---
+title: "table1 패키지"
+date: 2018-06-01
+tag: [r, data science]
+---
+
+
+
+<p>HTML 형식의 표를 쉽게 만들어 주는 패키지로 보고서 작성할 때 유용할 것 같습니다.</p>
+<pre class="r"><code>library(table1)
+dat &lt;- expand.grid(id=1:10, sex=c(&quot;Male&quot;, &quot;Female&quot;), treat=c(&quot;Treated&quot;, &quot;Placebo&quot;))
+dat$age &lt;- runif(nrow(dat), 10, 50)
+dat$age[3] &lt;- NA  # Add a missing value
+dat$wt &lt;- exp(rnorm(nrow(dat), log(70), 0.2))
+
+label(dat$sex) &lt;- &quot;Sex&quot;
+label(dat$age) &lt;- &quot;Age&quot;
+label(dat$treat) &lt;- &quot;Treatment Group&quot;
+label(dat$wt) &lt;- &quot;Weight&quot;
+
+units(dat$age) &lt;- &quot;years&quot;
+units(dat$wt) &lt;- &quot;kg&quot;
+
+# One level of stratification
+table1(~ sex + age + wt | treat, data=dat)</code></pre>
+<table class="Rtable1">
+<thead>
+<tr>
+<th class="rowlabel firstrow lastrow">
+</th>
+<th class="firstrow lastrow">
+<span class="stratlabel">Treated<br><span class="stratn">(n=20)</span></span>
+</th>
+<th class="firstrow lastrow">
+<span class="stratlabel">Placebo<br><span class="stratn">(n=20)</span></span>
+</th>
+<th class="firstrow lastrow">
+<span class="stratlabel">Overall<br><span class="stratn">(n=40)</span></span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">Sex</span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Male
+</td>
+<td>
+10 (50.0%)
+</td>
+<td>
+10 (50.0%)
+</td>
+<td>
+20 (50.0%)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Female
+</td>
+<td class="lastrow">
+10 (50.0%)
+</td>
+<td class="lastrow">
+10 (50.0%)
+</td>
+<td class="lastrow">
+20 (50.0%)
+</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">Age<span class="varunits"> (years)</span></span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+28.4 (15.1)
+</td>
+<td>
+32.9 (12.0)
+</td>
+<td>
+30.7 (13.6)
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Median [Min, Max]
+</td>
+<td>
+23.3 [10.6, 49.0]
+</td>
+<td>
+35.9 [10.5, 49.7]
+</td>
+<td>
+30.9 [10.5, 49.7]
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Missing
+</td>
+<td class="lastrow">
+1 (5.0%)
+</td>
+<td class="lastrow">
+0 (0.0%)
+</td>
+<td class="lastrow">
+1 (2.5%)
+</td>
+</tr>
+<tr>
+<td class="rowlabel firstrow">
+<span class="varlabel">Weight<span class="varunits"> (kg)</span></span>
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+<td class="firstrow">
+</td>
+</tr>
+<tr>
+<td class="rowlabel">
+Mean (SD)
+</td>
+<td>
+73.2 (11.8)
+</td>
+<td>
+70.2 (15.1)
+</td>
+<td>
+71.7 (13.5)
+</td>
+</tr>
+<tr>
+<td class="rowlabel lastrow">
+Median [Min, Max]
+</td>
+<td class="lastrow">
+73.2 [53.9, 105]
+</td>
+<td class="lastrow">
+68.6 [49.4, 102]
+</td>
+<td class="lastrow">
+70.6 [49.4, 105]
+</td>
+</tr>
+</tbody>
+</table>

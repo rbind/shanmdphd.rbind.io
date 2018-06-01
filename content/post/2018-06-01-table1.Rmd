@@ -1,0 +1,26 @@
+---
+title: "table1 패키지"
+date: 2018-06-01
+tag: [r, data science]
+---
+
+HTML 형식의 표를 쉽게 만들어 주는 패키지로 보고서 작성할 때 유용할 것 같습니다.
+
+```{r results = 'asis', message = FALSE}
+library(table1)
+dat <- expand.grid(id=1:10, sex=c("Male", "Female"), treat=c("Treated", "Placebo"))
+dat$age <- runif(nrow(dat), 10, 50)
+dat$age[3] <- NA  # Add a missing value
+dat$wt <- exp(rnorm(nrow(dat), log(70), 0.2))
+
+label(dat$sex) <- "Sex"
+label(dat$age) <- "Age"
+label(dat$treat) <- "Treatment Group"
+label(dat$wt) <- "Weight"
+
+units(dat$age) <- "years"
+units(dat$wt) <- "kg"
+
+# One level of stratification
+table1(~ sex + age + wt | treat, data=dat)
+```
