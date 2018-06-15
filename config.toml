@@ -4,6 +4,7 @@ baseURL = "http://shanmdphd.rbind.io/"
 title = "Sungpil Han, M.D/Ph.D"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 disqusShortname = "hugoshanmdphd"
+buildFuture = true
 
 # Sungpil Han added: end ----
 
