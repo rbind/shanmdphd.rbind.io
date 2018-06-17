@@ -1,0 +1,10 @@
+---
+title: 'NonCompart 패키지 발표'
+date: '2018-06-16'
+categories: ['R']
+tags: ['R', 'NonCompart']
+bibliography: ../../static/manual.bib # table1.bib # 
+---
+
+NonCompart [@R-NonCompart] 패키지 관련 발표자료를 올립니다.
+
