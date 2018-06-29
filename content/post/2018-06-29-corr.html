@@ -1,0 +1,34 @@
+---
+title: Correlation Plot
+date: 2018-06-29
+tag: [R, data science]
+---
+
+
+
+<p>Correlation plot을 그리는 R 코드입니다. <code>panel.cor()</code>는 correlation coefficient를 구하는 함수입니다. ETA와 covariate와의 관계를 나타낼 때도 쓰일 수 있습니다.</p>
+<pre class="r"><code>library(dplyr)
+library(tibble)
+
+# calculation of cor
+panel.cor &lt;- function(x, y, digits=2, prefix=&quot;&quot;, cex.cor) {
+  usr &lt;- par(&quot;usr&quot;); on.exit(par(usr))
+  par(usr = c(0, 1, 0, 1))
+  r = (cor(x, y))
+  txt &lt;- format(c(r, 0.123456789), digits=digits)[1]
+  txt &lt;- paste(prefix, txt, sep=&quot;&quot;)
+  if(missing(cex.cor)) cex &lt;- 1.5
+  text(0.5, 0.5, txt, cex = 1.5)
+}
+
+# Theoph dataset
+Theoph_nca &lt;- NonCompart::tblNCA(Theoph, key=c(&quot;Subject&quot;, &quot;Wt&quot;), dose=320, concUnit=&quot;mg/L&quot;) %&gt;% 
+  as.tibble() %&gt;%
+  mutate_all(funs(as.numeric)) %&gt;% 
+  select(Wt, CMAX, TMAX, AUCLST)
+
+# Pair plot
+pairs(Theoph_nca, 
+      lower.panel=panel.smooth, 
+      upper.panel=panel.cor) </code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
