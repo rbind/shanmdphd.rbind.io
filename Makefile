@@ -15,3 +15,4 @@ src:
 
 color:
 	vim ./themes/even/src/css/_variables.scss
+

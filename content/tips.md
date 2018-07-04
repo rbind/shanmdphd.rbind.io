@@ -13,9 +13,6 @@ toc: true
 
 > Here I present some random R, Git, Bash tips and tricks I have learned from various resources. (Stackoverflow, Google, Wikia etc
 
-
-
-
 # R
 
 ## Remove columns with all NAs or all blank values
