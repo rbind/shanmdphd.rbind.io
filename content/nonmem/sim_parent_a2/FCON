@@ -1,0 +1,61 @@
+FILE    FSTREAM                                                                 
+PROB    Parent drug, using ADVAN2                                               
+DATA       1   0   7   9   0   0   0   1                                        
+ITEM       1   5   7  11   1   1   9   0   0   0   0   0   0   0   0            
+INDX       8   2   3   0   0   0   6   0   0   0   0                            
+XVID       0   0   0   0   0                                                    
+MSDT     0.00000000000000E+000
+LABL                             ID,                          TIME              
+                                AMT,                          UVOL              
+                                 DV,                           CMT              
+                                MDV,                          EVID              
+                                 L2,                          SIMP              
+                                RES,                          WRES              
+LBW1 IWRS,IPRD                                                                  
+     IRS,NPRED                                                                  
+     NRES,NWRES                                                                 
+     NIWRES,NIPRED                                                              
+     NIRES,CPRED                                                                
+     CRES,CWRES                                                                 
+     CIWRES,CIPRED                                                              
+     CIRES,PREDI                                                                
+     RESI,WRESI                                                                 
+     IWRESI,IPREDI                                                              
+     IRESI,CPREDI                                                               
+     CRESI,CWRESI                                                               
+     CIWRESI,CIPREDI                                                            
+     CIRESI,EPRED                                                               
+     ERES,EWRES                                                                 
+     EIWRES,EIPRED                                                              
+     EIRES,NPDE                                                                 
+     ECWRES,NPD                                                                 
+     OBJI                                                                       
+LRES SIGMA                                                                      
+LTHT                                                                            
+LETA                                                                            
+LEPS                                                                            
+FORM                                                                            
+(2E6.0,E10.0,E8.0,E6.0,E7.0,2E6.0,E2.0)                                         
+STRC       4   2   4   0   0   1   0   1   0                                    
+THCN       1   0   0   0                                                        
+THTA     8.000000000000000E-01, 4.300000000000000E+01, 2.000000000000000E+01    
+         1.500000000000000E+01                                                  
+LOWR     1.000000000000000E-02, 1.000000000000000E-02, 1.000000000000000E-04    
+         1.000000000000000E-02                                                  
+UPPR     6.000000000000000E+00, 1.000000000000000E+03, 1.900000000000000E+02    
+         9.000000000000000E+01                                                  
+DIAG     5.000000000000000E-02, 5.000000000000000E-02                           
+DIAG     1.000000000000000E-02, 1.000000000000000E-02, 1.000000000000000E-02    
+         1.000000000000000E-02                                                  
+SIML     0  1 0            0 1 0 0 0 0            0     0     0                 
+SFIL              -1
+SORC          111111               0                                            
+DFLT      -1                                                                    
+TABL       1   1                                                                
+PPAR              -1
+TABL   1  10     1 0     2 0     3 0     4 0     5 0    10 0     6 0     7 0    
+           0     8 0     9 0                                                    
+           0   2   0   0   1           0           0             0-1 0
+FRML    
+FRMR    
+FETA    

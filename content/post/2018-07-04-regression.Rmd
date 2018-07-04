@@ -1,0 +1,28 @@
+---
+title: regression
+author: ~
+date: '2018-07-04'
+slug: regression
+categories: []
+tags: []
+---
+
+간단한 linear regression에 대한 R 코드.
+
+참고자료
+
+- <http://r-statistics.co/Linear-Regression.html>
+
+```{r}
+x <- c(30, 20, 60, 80, 40, 50, 60, 30, 70, 60)
+y <- c(73, 50, 128, 170, 87, 108, 135, 69, 148, 132)
+
+plot(x, y)
+beginr::plotlm(x, y)
+
+r8.lm <- lm(y ~ x)
+summary(r8.lm)
+confint(r8.lm)
+
+plot(ellipse::ellipse(r8.lm), type="l")
+```
