@@ -1,12 +1,16 @@
 ---
+draft: yes
 title: Correlation Plot
 date: 2018-06-29
 tag: [R, data science]
+categories: [R tips]
 ---
 
 
 
-<p>Correlation plot을 그리는 R 코드입니다. <code>panel.cor()</code>는 correlation coefficient를 구하는 함수입니다. ETA와 covariate와의 관계를 나타낼 때도 쓰일 수 있습니다.</p>
+<p>Correlation plot을 그리는 R 코드입니다.
+<code>panel.cor()</code>는 correlation coefficient를 구하는 함수입니다.
+ETA와 covariate와의 관계를 나타낼 때도 쓰일 수 있습니다.</p>
 <pre class="r"><code>library(dplyr)
 library(tibble)
 
@@ -32,3 +36,39 @@ pairs(Theoph_nca,
       lower.panel=panel.smooth, 
       upper.panel=panel.cor) </code></pre>
 <p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><code>psych</code> 패키지를 사용해서 그릴 수도 있습니다.</p>
+<pre class="r"><code>library(psych)
+pairs.panels(attitude)   #see the graphics window</code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>data(iris)
+pairs.panels(iris[1:4],bg=c(&quot;red&quot;,&quot;yellow&quot;,&quot;blue&quot;)[iris$Species],
+        pch=21,main=&quot;Fisher Iris data by Species&quot;) #to show color grouping</code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<pre class="r"><code>pairs.panels(iris[1:4],bg=c(&quot;red&quot;,&quot;yellow&quot;,&quot;blue&quot;)[iris$Species],
+  pch=21+as.numeric(iris$Species),main=&quot;Fisher Iris data by Species&quot;,hist.col=&quot;red&quot;) </code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<pre class="r"><code>   #to show changing the diagonal
+   
+#to show &#39;significance&#39;
+   pairs.panels(iris[1:4],bg=c(&quot;red&quot;,&quot;yellow&quot;,&quot;blue&quot;)[iris$Species],
+  pch=21+as.numeric(iris$Species),main=&quot;Fisher Iris data by Species&quot;,hist.col=&quot;red&quot;,stars=TRUE) </code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
+<pre class="r"><code>#demonstrate not showing the data points
+data(sat.act)
+pairs.panels(sat.act,show.points=FALSE)</code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-5.png" width="672" /></p>
+<pre class="r"><code>#better yet is to show the points as a period
+pairs.panels(sat.act,pch=&quot;.&quot;)</code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-6.png" width="672" /></p>
+<pre class="r"><code>#show many variables with 0 gap between scatterplots
+# data(bfi)
+# pairs.panels(bfi,show.points=FALSE,gap=0)
+
+#plot raw data points and then the weighted correlations.
+#output from statsBy
+sb &lt;- statsBy(sat.act,&quot;education&quot;)
+pairs.panels(sb$mean,wt=sb$n)  #report the weighted correlations</code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-7.png" width="672" /></p>
+<pre class="r"><code>#compare with 
+pairs.panels(sb$mean) #unweighed correlations</code></pre>
+<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-8.png" width="672" /></p>
