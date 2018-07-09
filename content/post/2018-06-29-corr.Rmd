@@ -1,8 +1,6 @@
 ---
 title: Correlation Plot
 date: 2018-06-29
-tag: [R, data science]
-categories: [R]
 ---
 
 Correlation plot을 그리는 R 코드입니다. 
