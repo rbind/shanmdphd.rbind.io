@@ -1,6 +1,6 @@
 ---
-title: Correlation Plot
-date: 2018-06-29
+title: "Correlation Plot"
+date: "2018-06-30"
 ---
 
 Correlation plot을 그리는 R 코드입니다. 
@@ -67,5 +67,4 @@ pairs.panels(sb$mean,wt=sb$n)  #report the weighted correlations
 #compare with 
 pairs.panels(sb$mean) #unweighed correlations
 ```
-
 

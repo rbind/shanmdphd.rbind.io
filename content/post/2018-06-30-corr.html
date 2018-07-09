@@ -1,7 +1,7 @@
 ---
 draft: yes
-title: Correlation Plot
-date: 2018-06-29
+title: "Correlation Plot"
+date: "2018-06-30"
 ---
 
 
@@ -33,31 +33,31 @@ Theoph_nca &lt;- NonCompart::tblNCA(Theoph, key=c(&quot;Subject&quot;, &quot;Wt&
 pairs(Theoph_nca, 
       lower.panel=panel.smooth, 
       upper.panel=panel.cor) </code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p><code>psych</code> 패키지를 사용해서 그릴 수도 있습니다.</p>
 <pre class="r"><code>library(psych)
 pairs.panels(attitude)   #see the graphics window</code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>data(iris)
 pairs.panels(iris[1:4],bg=c(&quot;red&quot;,&quot;yellow&quot;,&quot;blue&quot;)[iris$Species],
         pch=21,main=&quot;Fisher Iris data by Species&quot;) #to show color grouping</code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 <pre class="r"><code>pairs.panels(iris[1:4],bg=c(&quot;red&quot;,&quot;yellow&quot;,&quot;blue&quot;)[iris$Species],
   pch=21+as.numeric(iris$Species),main=&quot;Fisher Iris data by Species&quot;,hist.col=&quot;red&quot;) </code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
 <pre class="r"><code>   #to show changing the diagonal
    
 #to show &#39;significance&#39;
    pairs.panels(iris[1:4],bg=c(&quot;red&quot;,&quot;yellow&quot;,&quot;blue&quot;)[iris$Species],
   pch=21+as.numeric(iris$Species),main=&quot;Fisher Iris data by Species&quot;,hist.col=&quot;red&quot;,stars=TRUE) </code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-4.png" width="672" /></p>
 <pre class="r"><code>#demonstrate not showing the data points
 data(sat.act)
 pairs.panels(sat.act,show.points=FALSE)</code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-5.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-5.png" width="672" /></p>
 <pre class="r"><code>#better yet is to show the points as a period
 pairs.panels(sat.act,pch=&quot;.&quot;)</code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-6.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-6.png" width="672" /></p>
 <pre class="r"><code>#show many variables with 0 gap between scatterplots
 # data(bfi)
 # pairs.panels(bfi,show.points=FALSE,gap=0)
@@ -66,7 +66,7 @@ pairs.panels(sat.act,pch=&quot;.&quot;)</code></pre>
 #output from statsBy
 sb &lt;- statsBy(sat.act,&quot;education&quot;)
 pairs.panels(sb$mean,wt=sb$n)  #report the weighted correlations</code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-7.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-7.png" width="672" /></p>
 <pre class="r"><code>#compare with 
 pairs.panels(sb$mean) #unweighed correlations</code></pre>
-<p><img src="/post/2018-06-29-corr_files/figure-html/unnamed-chunk-2-8.png" width="672" /></p>
+<p><img src="/post/2018-06-30-corr_files/figure-html/unnamed-chunk-2-8.png" width="672" /></p>
