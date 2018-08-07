@@ -343,3 +343,14 @@ Reference: [superuser](http://superuser.com/questions/940771/how-can-i-resize-mu
 
 ![](/assets-math/continuous.png)
 
+---
+
+# NONMEM
+
+## covariate-screening
+
+```bash
+for file in *.ctl; do
+    sh ../../run.sh ${file%.ctl}
+done
+```
