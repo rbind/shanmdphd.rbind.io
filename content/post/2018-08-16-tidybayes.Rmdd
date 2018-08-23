@@ -1,0 +1,52 @@
+---
+title: 'tidy'
+author: ~
+date: ''
+slug: ''
+categories: []
+tags: []
+banner: ''
+description: ''
+images: []
+menu: ''
+draft: yes
+---
+
+
+`tidyvayes` 패키지가 CRAN에 공개되었다.
+Bayesian 분석을 tidy data를 사용해서 쉽게 할 수 있고, 이에 맞춰 추가된 ggplot의 geom을 사용할 수 있다.
+
+`r blogdown::shortcode('tweet', '1025070892907421699')`
+
+```{r}
+library(tidyverse)
+library(ggstance)
+library(rstan)
+library(tidybayes)
+library(emmeans)
+library(broom)
+library(brms)
+library(modelr)
+
+set.seed(5)
+n = 10
+n_condition = 5
+ABC =
+  data_frame(
+    condition = rep(c("A","B","C","D","E"), n),
+    response = rnorm(n * 5, c(0,1,2,1,-1), 0.5)
+  )
+
+ABC
+
+ABC %>%
+  ggplot(aes(x = response, y = fct_rev(condition))) +
+  geom_point(alpha = 0.5) +
+  ylab("condition")
+
+compose_data(ABC)
+
+m = sampling(ABC_stan, data = compose_data(ABC), control = list(adapt_delta=0.99))
+
+```
+

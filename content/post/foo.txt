@@ -3,11 +3,6 @@ title: ''
 author: ~
 date: ''
 slug: ''
-categories: []
-tags: []
-banner: ''
-description: ''
-images: []
-menu: ''
+categories: [Personal]
+tags: [Personal]
 ---
-
