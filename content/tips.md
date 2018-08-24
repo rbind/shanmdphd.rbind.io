@@ -1,13 +1,8 @@
 ---
 title: Tips
-date: 2017-09-15
 author: ~
-categories:
-  - Featured
-tags: 
-  - mathematics
-  - R
-  - bash
+categories: [Featured]
+tags: [mathematics, R, bash]
 toc: true
 ---
 
