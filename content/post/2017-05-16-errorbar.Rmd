@@ -2,7 +2,7 @@
 title: '에러바 만드는 법'
 slug: plot-errorbar
 date: '2017-05-26'
-categories: [R]
+categories: [R, Featured]
 tags: [R, ggplot2]
 output:
   blogdown::html_page:
