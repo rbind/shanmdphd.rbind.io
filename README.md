@@ -11,4 +11,7 @@ The writer of this blog, Sungpil (<http://shanmdphd.rbind.io>) is a street-skate
 - Data Science
 - Medicine
 - English
-- Personal: Mostly low-quality scribbles
+- Personal
+
+
+

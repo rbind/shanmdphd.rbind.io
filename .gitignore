@@ -1,5 +1,6 @@
 *.exe
 temp_dir
+*un~
 
 public
 requirements.txt
