@@ -7,7 +7,8 @@ tag: [R]
 
 
 
-<p>R에서 텍스트를 파일처럼 읽는 법을 고민하다가 드디어 해결책을 찾았습니다. <code>textConnection</code>, <code>readr::read_csv</code>을 사용하면 가능합니다. Data dictionary 내에 coding되어 있는 파일을 decoding할때 유용히 사용할 수 있을 것 같습니다.</p>
+<p>R에서 텍스트를 파일처럼 읽는 법을 고민하다가 드디어 해결책을 찾았습니다. <code>textConnection</code>, <code>readr::read_csv</code>을 사용하면 가능합니다.
+Data dictionary 내에 coding되어 있는 파일을 decoding할때 유용히 사용할 수 있을 것 같습니다.</p>
 <pre class="r"><code>Dictionary &lt;- tibble::tibble(content = &quot;1, Test\n2,Ref&quot;, last = &quot;3&quot;)
 read.csv(textConnection(Dictionary$content), header = FALSE, col.names = c(&quot;Code&quot;, &quot;Decode&quot;))</code></pre>
 <pre><code>##   Code Decode

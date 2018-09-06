@@ -1,0 +1,76 @@
+---
+title: "ggplot2에서 dual y축 사용하기"
+date: 2018-09-06
+slug: dualy
+tag: [ggplot, visualization, R]
+categories: [R]
+---
+
+ggplot에서 두개의 y축을 사용하는 방법이다.오랫동안 불가능하다고 생각했던 기능인데 의외로 2016년 부터 지원되었던 것 같다.
+
+`PKPDdatasets::sd_iv_rich_pkpd` 데이타를 사용해서 살펴보았다.
+
+# 전체 그림
+
+```{r, message = FALSE}
+library(tidyverse)
+library(PKPDdatasets) # devtools::install_github("dpastoor/PKPDdatasets")
+
+# import data
+obs <- PKPDdatasets::sd_iv_rich_pkpd %>% as_tibble()
+
+# show first observations
+head(obs)
+
+# plot PK
+p <- ggplot(obs, aes(x = TIME, group = ID)) +
+  geom_line(aes(y = COBS, color = 'PK')) +
+  labs(y = "Concentration (PK) or Effect (PD)", 
+       x = "Time (h)",
+       colour = "Parameter") +
+  theme_light()
+
+# add PD
+p <- p + geom_line(aes(y = EOBS, color = 'PD'))
+p
+```
+
+대략 PK 값의 최대치 (~28) 가 PD 값의 최대치 (~9) 보다 3배 정도 높아보인다.
+
+```{r}
+p2 <- ggplot(obs, aes(x = TIME, group = ID)) +
+  geom_line(aes(y = COBS, colour = "PK"))
+
+# adding the relative PD data, transformed to match roughly the range of PK
+p2 <- p2 + geom_line(aes(y = EOBS*3, colour = "PD"))
+
+# now adding the secondary axis, following the example in the help file ?scale_y_continuous
+# and, very important, reverting the above transformation
+p2 <- p2 + scale_y_continuous(sec.axis = sec_axis(~./3, name = "Effect (PD)"))
+
+# modifying colours and theme options
+p2 <- p2 + 
+  #scale_colour_manual(values = c("blue", "red")) +
+  labs(y = "Concentration (PK)",
+       x = "Time (h)",
+       colour = "Parameter") +
+  theme_light()
+  #theme(legend.position = c(0.85, 0.85))
+p2
+```
+
+큰 차이가 없어보이긴 한다. 그렇지만 PK와 PD의 값 범위가 크게 차이나면 이렇게 그려주는 것이 의미 있는 해석을 이끌어 낼 수도 있다.
+
+
+# 개인별 그림
+
+```{r}
+p +
+  facet_grid(DOSE ~ RACE)
+```
+
+
+```{r}
+p2 +
+  facet_grid(DOSE ~ RACE)
+```
