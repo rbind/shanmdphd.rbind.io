@@ -1,6 +1,7 @@
 ---
 title: CV
 author: Sungpil Han
+toc: yes
 ---
 
 [CV PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
@@ -111,29 +112,29 @@ MD
 [*Link to Google
 Scholar*](https://scholar.google.com/citations?user=TUK927cAAAAJ&hl=en)
 
-Kim, H, S. Han, Y. Cho, S. Yoon and K. Bae (2018). “Development of R
-packages: ‘NonCompart’ and ncar for noncompartmental analysis (NCA)”.
+Kim, H, **S. Han**, Y. Cho, S. Yoon and K. Bae (2018). “Development of R
+packages: `NonCompart' and`ncar’ for noncompartmental analysis (NCA)”.
 In: *Translational and Clinical Pharmacology* 26.1, p. 10. DOI:
 [10.12793/tcp.2018.26.1.10](https://doi.org/10.12793/tcp.2018.26.1.10).
 URL: <https://doi.org/10.12793/tcp.2018.26.1.10>.
 
-Han, S, Y. Cho, S. Yoon, H. Kim and K. Bae (2017). “Caffsim: simulation
-of plasma caffeine concentrations implemented as an R package and
-Web-applications”. In: *Translational and Clinical Pharmacology* 25.3,
-p. 141. DOI:
-[10.12793/tcp.2017.25.3.141](https://doi.org/10.12793/tcp.2017.25.3.141).
-URL: <https://doi.org/10.12793/tcp.2017.25.3.141>.
-
-Waters, R. S, J. S. A. Perry, S. Han, B. Bielekova and T. Gedeon (2017).
-“The effects of interleukin-2 on immune response regulation”. Eng. In:
-*Mathematical medicine and biology : a journal of the IMA*. ISSN:
-1477-8602. DOI:
+Waters, R. S, J. S. A. Perry, **S. Han**, B. Bielekova and T. Gedeon
+(2018). “The effects of interleukin-2 on immune response regulation”.
+Eng. In: *Mathematical medicine and biology : a journal of the IMA*
+35.1, pp. 79-119. ISSN: 1477-8602. DOI:
 [10.1093/imammb/dqw021](https://doi.org/10.1093/imammb/dqw021). PMID:
 [28339682](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=28339682).
 
-Han, S, Y. C. Lin, T. Wu, A. D. Salgado, I. Mexhitaj, S. C. Wuest, E.
-Romm, J. Ohayon, R. Goldbach-Mansky, A. Vanderver, A. Marques, C. Toro,
-P. Williamson, I. Cortese and B. Bielekova (2014). “Comprehensive
+**Han, S**, Y. Cho, S. Yoon, H. Kim and K. Bae (2017). “Caffsim:
+simulation of plasma caffeine concentrations implemented as an R package
+and Web-applications”. In: *Translational and Clinical Pharmacology*
+25.3, p. 141. DOI:
+[10.12793/tcp.2017.25.3.141](https://doi.org/10.12793/tcp.2017.25.3.141).
+URL: <https://doi.org/10.12793/tcp.2017.25.3.141>.
+
+**Han, S**, Y. C. Lin, T. Wu, A. D. Salgado, I. Mexhitaj, S. C. Wuest,
+E. Romm, J. Ohayon, R. Goldbach-Mansky, A. Vanderver, A. Marques, C.
+Toro, P. Williamson, I. Cortese and B. Bielekova (2014). “Comprehensive
 immunophenotyping of cerebrospinal fluid cells in patients with
 neuroimmunological diseases”. Eng. In: *Journal of immunology
 (Baltimore, Md. : 1950)* 192.6, pp. 2551-63. ISSN: 1550-6606. DOI:
@@ -141,8 +142,8 @@ neuroimmunological diseases”. Eng. In: *Journal of immunology
 PMID:
 [24510966](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=24510966).
 
-Perry, J. S. A, S. Han, Q. Xu, M. L. Herman, L. B. Kennedy, G. Csako and
-B. Bielekova (2012). “Inhibition of LTi cell development by CD25
+Perry, J. S. A, **S. Han**, Q. Xu, M. L. Herman, L. B. Kennedy, G. Csako
+and B. Bielekova (2012). “Inhibition of LTi cell development by CD25
 blockade is associated with decreased intrathecal inflammation in
 multiple sclerosis”. Eng. In: *Science translational medicine* 4.145,
 p. 145ra106. ISSN: 1946-6242. DOI:
@@ -150,16 +151,16 @@ p. 145ra106. ISSN: 1946-6242. DOI:
 PMID:
 [22855463](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=22855463).
 
-Han, S, J. Kim, M. Han, H. Sim, K. Kim, S. Yoon, S. Baek, B. Kim and S.
-Oh (2011). “SNAI1 is involved in the proliferation and migration of
+**Han, S**, J. Kim, M. Han, H. Sim, K. Kim, S. Yoon, S. Baek, B. Kim and
+S. Oh (2011). “SNAI1 is involved in the proliferation and migration of
 glioblastoma cells”. Eng. In: *Cellular and molecular neurobiology*
 31.3, pp. 489-96. ISSN: 1573-6830. DOI:
 [10.1007/s10571-010-9643-4](https://doi.org/10.1007/s10571-010-9643-4).
 PMID:
 [21225336](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&cmd=prlinks&retmode=ref&id=21225336).
 
-Wuest, S. C, J. H. Edwan, J. F. Martin, S. Han, J. S. A. Perry, C. M.
-Cartagena, E. Matsuura, D. Maric, T. A. Waldmann and B. Bielekova
+Wuest, S. C, J. H. Edwan, J. F. Martin, **S. Han**, J. S. A. Perry, C.
+M. Cartagena, E. Matsuura, D. Maric, T. A. Waldmann and B. Bielekova
 (2011). “A role for interleukin-2 trans-presentation in dendritic
 cell-mediated T cell activation in humans, as revealed by daclizumab
 therapy”. Eng. In: *Nature medicine* 17.5, pp. 604-9. ISSN: 1546-170X.
@@ -168,66 +169,67 @@ DOI: [10.1038/nm.2365](https://doi.org/10.1038/nm.2365). PMID:
 
 # PUBLISHED PROCEEDINGS
 
-Han, S, Y. Kim, H. Y. Choi, D. Soh, J. Kim, J. Nam, J. Kim, K. Bae and
-H. Lim (2017). “Safety, Tolerability, and Pharmacokinetics of Single and
-Multiple Dose JPI-289, A Novel Poly (ADP-Ribose) Polymerase-1 Inhibitor
-in First-In-Human Study of Healthy Volunteers”. In: *Clinical
+**Han, S**, Y. Kim, H. Y. Choi, D. Soh, J. Kim, J. Nam, J. Kim, K. Bae
+and H. Lim (2017). “Safety, Tolerability, and Pharmacokinetics of Single
+and Multiple Dose JPI-289, A Novel Poly (ADP-Ribose) Polymerase-1
+Inhibitor in First-In-Human Study of Healthy Volunteers”. In: *Clinical
 Therapeutics* 39.8, p. e48. DOI:
 [10.1016/j.clinthera.2017.05.148](https://doi.org/10.1016/j.clinthera.2017.05.148).
 
-Han, S, H. Y. Choi, Y. H. Kim, W. J. Kim, K. Bae and H. Lim (2017).
+**Han, S**, H. Y. Choi, Y. H. Kim, W. J. Kim, K. Bae and H. Lim (2017).
 “Pharmacokinetic and Pharmacodynamic Modeling and Simulation Analysis
 of CTB-001, Recently Developed Bivalirudin”. In: *Clinical Therapeutics*
 39.8, p. e54. DOI:
 [10.1016/j.clinthera.2017.05.169](https://doi.org/10.1016/j.clinthera.2017.05.169).
 
-Han, S, H. Y. Choi, Y. H. Kim, J. Y. Nam, G. S. Song, H. Lim and K. Bae
-(2017). “Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of
-Escalating Single and Multiple Oral Doses of CJ-12420 (Tegoprazan), A
-Novel Potassium-Competitive Acid Blocker (P-CAB) in Healthy Male
-Subjects”. In: *Clinical Therapeutics* 39.8, pp. e97-e98. DOI:
+**Han, S**, H. Y. Choi, Y. H. Kim, J. Y. Nam, G. S. Song, H. Lim and K.
+Bae (2017). “Safety, Tolerability, Pharmacokinetics, and
+Pharmacodynamics of Escalating Single and Multiple Oral Doses of
+CJ-12420 (Tegoprazan), A Novel Potassium-Competitive Acid Blocker
+(P-CAB) in Healthy Male Subjects”. In: *Clinical Therapeutics* 39.8,
+pp. e97-e98. DOI:
 [10.1016/j.clinthera.2017.05.306](https://doi.org/10.1016/j.clinthera.2017.05.306).
 
-Han, S, K. Lim, S. Cho, J. Kim, S. Choe, J. Jung, J. Ghim, H. Jeong, T.
-Yoo, S. Kim and others (2016). “Effects of single oral administration of
-SKI2670, gonadotropin-releasing hormone (GnRH) antagonist, in healthy
+**Han, S**, K. Lim, S. Cho, J. Kim, S. Choe, J. Jung, J. Ghim, H. Jeong,
+T. Yoo, S. Kim and others (2016). “Effects of single oral administration
+of SKI2670, gonadotropin-releasing hormone (GnRH) antagonist, in healthy
 pre-menopausal women”. In: *Fertility and Sterility* 106.3, p. e273.
 DOI:
 [10.1016/j.fertnstert.2016.07.785](https://doi.org/10.1016/j.fertnstert.2016.07.785).
 
-Han, S, A. D. Salgado, E. Romm and B. Bielekova (2012). “Comprehensive
-monitoring of intrathecal immune cells in patients with multiple
-sclerosis by 12-color flow cytometric immunophenotyping”. In: *Journal
-of Neuroimmunology* 253.1-2, pp. 98-98. DOI:
+**Han, S**, A. D. Salgado, E. Romm and B. Bielekova (2012).
+“Comprehensive monitoring of intrathecal immune cells in patients with
+multiple sclerosis by 12-color flow cytometric immunophenotyping”. In:
+*Journal of Neuroimmunology* 253.1-2, pp. 98-98. DOI:
 [10.1016/j.jneuroim.2012.10.001](https://doi.org/10.1016/j.jneuroim.2012.10.001).
 
-Han, S, J. S. Perry, Q. Xu, L. B. Kennedy and B. Bielekova (2012).
+**Han, S**, J. S. Perry, Q. Xu, L. B. Kennedy and B. Bielekova (2012).
 “Inhibitory effects of CD25 blockade on development of
 pro-inflammatory innate lymphoid cells is associated with decreased
 intrathecal inflammation in MS”. In: *Journal of Neuroimmunology*
 253.1-2, pp. 67-67. DOI:
 [10.1016/j.jneuroim.2012.10.001](https://doi.org/10.1016/j.jneuroim.2012.10.001).
 
-Han, S, A. Salgado, T. Alfahad and B. Bielekova (2012). “Flow Cytometric
-Immunophenotyping of the Blood and CSF of Patients with Multiple
-Sclerosis”. In: *Neurology* 78.1 Supplement, pp. P02-081.
+**Han, S**, A. Salgado, T. Alfahad and B. Bielekova (2012). “Flow
+Cytometric Immunophenotyping of the Blood and CSF of Patients with
+Multiple Sclerosis”. In: *Neurology* 78.1 Supplement, pp. P02-081.
 
-Wuest, S, S. Han, J. Martin, D. Maric and B. Bielekova (2011).
+Wuest, S, **S. Han**, J. Martin, D. Maric and B. Bielekova (2011).
 “Daclizumab Inhibits Expansion of Antigen (Ag)-Specific T Cells by
 Blocking IL-2 Transpresentation by Dendritic Cells”. In: *Neurology*
 76.9, pp. A240-A240.
 
-Han, S, I. Cortese and B. Bielekova “Effects of Long-Term (\> 5 Years)
-Daclizumab Therapy on Lymphocyte Subpopulations - Comparison of
+**Han, S**, I. Cortese and B. Bielekova “Effects of Long-Term (\> 5
+Years) Daclizumab Therapy on Lymphocyte Subpopulations - Comparison of
 Immediate Ex-Vivo Immunophenotyping with Commercially-Available Assay”.
 English. In: *NEUROLOGY* 76.9, 4. 63rd AAN Annual Meeting, Honolulu, HI,
 APR 09-16, 2011, pp. A239-A240. ISSN: 0028-3878.
 
-Perry, J, S. Han, L. B. Kennedy and B. Bielekova “Opposing regulation
-between lymphoid tissue inducer cells and immunoregulatory CD56bright NK
-cells underlies therapeutic benefit of daclizumab in MS”. English. In:
-*JOURNAL OF NEUROIMMUNOLOGY* 228.1-2, SI. 10th Congress of the
-International-Society-of-Neuroimmunology (ISNI), Sitges, SPAIN, OCT
+Perry, J, **S. Han**, L. B. Kennedy and B. Bielekova “Opposing
+regulation between lymphoid tissue inducer cells and immunoregulatory
+CD56bright NK cells underlies therapeutic benefit of daclizumab in MS”.
+English. In: *JOURNAL OF NEUROIMMUNOLOGY* 228.1-2, SI. 10th Congress of
+the International-Society-of-Neuroimmunology (ISNI), Sitges, SPAIN, OCT
 26-30, 2010, pp. 111-112. ISSN: 0165-5728. DOI:
 [10.1016/j.jneuroim.2010.08.001](https://doi.org/10.1016/j.jneuroim.2010.08.001).
 
@@ -309,17 +311,17 @@ neurodevelopment*
 
 # STATISTICAL SOFTWARES
 
-Han, S. (2017). *caffsim: Simulation of Plasma Caffeine Concentrations
-by Using Population Pharmacokinetic Model*. R package version 0.2.2.
-URL: <https://CRAN.R-project.org/package=caffsim>.
+Han, S. (2018a). *caffsim: Simulation of Plasma Caffeine Concentrations
+by Using Population Pharmacokinetic Model*. R package version
+0.2.4.9000. URL: <https://github.com/asancpt/caffsim>.
 
-Han, S. (2018a). *crftools: CRF tools for Asan CPT*. R package version
+Han, S. (2018b). *crftools: CRF tools for Asan CPT*. R package version
 0.2.0. URL: <https://github.com/asancpt/crftools>.
 
-Han, S. (2018b). *glasgowcoma: Glasgow Coma Scale Report*. R package
+Han, S. (2018c). *glasgowcoma: Glasgow Coma Scale Report*. R package
 version 0.0.0.9000.
 
-Han, S. (2018c). *puresas: A SAS Script Generator To Convert CSV To XPT
+Han, S. (2018d). *puresas: A SAS Script Generator To Convert CSV To XPT
 and SAS7BDAT files*. R package version 0.1.0.
 
 Han, S. (2017) *pkrshiny: Noncompartmental Analysis using pkr R package*
@@ -432,30 +434,31 @@ National University* Pusan, Korea
 
 Professor **Kyun-Seop Bae, M.D., Ph.D.**  
 Department of Clinical Pharmacology of Therapeutics  
-Asan Medical Center, Seoul, School of Medicine, University of Ulsan  
-Tel : +82-2-3010-4645, E-mail : <ksbae@acp.kr>
+School of Medicine, Asan Medical Center, Seoul, University of Ulsan  
+Tel : +82-2-3010-4645, E-mail : `ksbae@amc.seoul.kr`
 
 Professor **Hyeong-seok Lim, M.D., Ph.D.**  
 Chief of Department of Clinical Pharmacology of Therapeutics  
-Asan Medical Center, Seoul, School of Medicine, University of Ulsan  
-Tel : +82-2-3010-4613, E-mail : <mdlhs@amc.seoul.kr>
+School of Medicine, Asan Medical Center, Seoul, University of Ulsan  
+Tel : +82-2-3010-4613, E-mail : `mdlhs@amc.seoul.kr`
 
-Investigator **Bibiana Bielekova, M.D.**  
-Chief of Neuroimmunological Diseases Unit (NDU)  
-Neuroimmunology Branch, National Institute of Neurological Disorders and
-Stroke, National Institutes of Health, Bethesda, Maryland, USA.  
-Tel : (301) 402-4488, E-mail : <Bibi.Bielekova@nih.gov>
+Senior Investigator **Bibiana Bielekova, M.D.**  
+Chief of Neuroimmunological Diseases Section  
+National Institute of Allergy and Infectious Diseases, National
+Institutes of Health, Bethesda, Maryland, USA.  
+Tel : (240) 669-2724, E-mail : `Bibi.Bielekova@nih.gov`
 
 Professor **Charles G. Eberhart, M.D./Ph.D.**  
-Professor of Departments of Pathology, Ophthalmology, and Oncology  
-Johns Hopkins University School of Medicine  
-Tel : (410) 955-3455, E-mail : <ceberha@jhmi.edu>
+Departments of Pathology, Ophthalmology, and Oncology  
+School of Medicine, Johns Hopkins University, Baltimore, Maryland,
+USA.  
+Tel : (410) 955-3455, E-mail : `ceberha@jhmi.edu`
 
 Professor **Saeock Oh, M.D., Ph.D.**  
-Professor of Department of Anatomy  
+Department of Anatomy  
 School of Medicine, Pusan National University, Mulgeum-Eup, Beomeo-Ri,
 Yangsan, South Korea 626770  
-Tel : +82-51-510-8045, E-mail : <hedgehog@pusan.ac.kr>
+Tel : +82-51-510-8045, E-mail : `hedgehog@pusan.ac.kr`
 
 The up-to-date CV is available
 [here](https://shanmdphd.github.io/cv/cv-shan.pdf).
