@@ -59,18 +59,20 @@ p2 <- p2 +
 p2
 ```
 
-큰 차이가 없어보이긴 한다. 그렇지만 PK와 PD의 값 범위가 크게 차이나면 이렇게 그려주는 것이 의미 있는 해석을 이끌어 낼 수도 있다.
-
+왼쪽에는 PK, 오른쪽에는 PD가 표시되어 있다. 큰 차이가 없어보이긴 한다. 그렇지만 PK와 PD의 값 범위가 크게 차이나면 이렇게 그려주는 것이 의미 있는 해석을 이끌어 낼 수도 있다.
 
 # 개인별 그림
 
+투약 용량과 인종별로 facet을 구성해서 그려보았다.
+
 ```{r}
 p +
-  facet_grid(DOSE ~ RACE)
+  facet_grid(paste(DOSE, 'mg') ~ RACE)
 ```
 
 
 ```{r}
 p2 +
-  facet_grid(DOSE ~ RACE)
+  facet_grid(paste(DOSE, 'mg') ~ RACE)
 ```
+
