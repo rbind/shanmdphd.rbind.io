@@ -8,3 +8,4 @@ bibliography: ../../static/manual.bib # table1.bib #
 
 NonCompart [@R-NonCompart] 패키지 관련 발표자료를 올립니다.
 
+![](/assets/nca-by-r-2018-06-full.png)
