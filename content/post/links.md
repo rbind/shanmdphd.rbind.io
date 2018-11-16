@@ -13,6 +13,10 @@ tags: [toxicology, pk, cro, early-drug-development]
 
 ([Asan CND](http://asancnd.com), [Daijiang's blog](https://daijiang.name) etc). 
 
+## Medicine
+
+- [삼성서울병원 소화기내과 이준행 교수님](http://endotoday.com)
+- [만화로 읽는 의학상식 70](http://www.khmc.or.kr/04/06.php)
 
 ## R
 
