@@ -11,9 +11,13 @@ I enjoy studying medicine, and am especially interested in new drug development.
 I release most of my work as open source software under my GitHub profile. 
 I’m always looking to learn from and collaborate with new people, so feel free to contact me via twitter (@shanmdphd) or email (pil.han AT gmail.com).
 
+[<img src="/assets/ORCID.png" style="max-width:15%;min-width:40px;float:right;" alt="ORCID" />](https://orcid.org/0000-0002-4674-7682)
+
 - Curriculum Vitae [html](/cv) | [tufte-styled](https://shanmdphd.github.io/cv) | [PDF](https://shanmdphd.github.io/cv/cv-shan.pdf)
 - <a href="https://scholar.google.com/citations?user=TUK927cAAAAJ" class="btn">Google Scholar</a>
 - <a href="https://orcid.org/0000-0002-4674-7682" class="btn">orcid.org/0000-0002-4674-7682</a>
+
+
 
 ## Bookdown gitbooks I write
 
