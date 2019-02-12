@@ -58,5 +58,5 @@ footnotereturnlinkcontents = "↩"
     since = "2000"
     keywords = ["Sungpil Han", "Clinical Pharmacology","Medicine"]
     description = "Sungpil Han's Blog. A website built through Hugo and blogdown using xmin theme."
-    footer = "&copy; [Sungpil Han](./) 2000-2017 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
+    footer = "&copy; [Sungpil Han](./) 2000-2019 | [Github](https://github.com/shanmdphd) | [Twitter](https://twitter.com/shanmdphd)"
     GithubEdit = "https://github.com/rbind/shanmdphd.rbind.io/edit/master/content/"
