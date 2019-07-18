@@ -25,4 +25,4 @@ Schutz et al. (2014), “Reference Datasets for 2-Treatment, 2-Sequence, 2-Perio
 
 사용하다가 어려운 점 있으면 언제든 연락주세요.
 
-[](https://imgur.com/download/LH4RGCD)
+![img](https://i.imgur.com/LH4RGCD.png)
