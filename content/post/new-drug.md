@@ -30,12 +30,9 @@ images: []
 
 # Pharmacometrics
 
-- [2008 모델 기반학적 신약개발에서 약동/약력학 모델링 및 시뮬레이션의 역할](http://www.kccp.or.kr/erp/erpmenus/journal_contents/upLoadFiles/18(2)-84(08-25)(p.84~96).pdf)
+- [2008 모델 기반학적 신약개발에서 약동/약력학 모델링 및 시뮬레이션의 역할](https://pdfs.semanticscholar.org/eb0a/cc03ec6b71ce63ae69b5b3b45e7a1964b25a.pdf)
 
 # Pipelines
 
 - [Drug Pipeline](https://en.wikipedia.org/wiki/Drug_pipeline)
 - [National OncoVenture](http://nov.ncc.re.kr/joint-development/pipeline/#;)
-
-
-
