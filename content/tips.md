@@ -10,6 +10,20 @@ toc: true
 
 # R
 
+## `purrr::map_dfr()` 사용하기
+
+여러개의 tibble object를 하나로 합치면서 .id를 추가하면 mutate() 처리가 되어 새로운 행이 하나 생기게 됩니다. 좋은 팁이라고 생각됩니다.
+
+```r
+data_dir <- "my_target_directory"
+
+data_dir %>% 
+  dir_ls(regexp = "\\.csv$") %>% 
+  map_dfr(read_csv, .id = "source") 
+```
+
+Reference: [mrchypark 블로그](https://mrchypark.github.io/post/%EB%B2%88%EC%97%AD-%ED%8F%B4%EB%8D%94%EC%95%88%EC%9D%98-csv-%ED%8C%8C%EC%9D%BC%EB%93%A4%EC%9D%84-purrr-%EC%99%80-readr-%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%ED%95%9C%EB%B0%A9%EC%97%90-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0)
+
 ## Remove columns with all NAs or all blank values
 
 ```
