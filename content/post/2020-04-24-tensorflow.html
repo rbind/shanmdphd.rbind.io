@@ -1,0 +1,83 @@
+---
+title: 'R에서 머신러닝'
+author: ~
+date: '2020-04-24'
+slug: 'r-machine-learning'
+categories: [R]
+tags: [machine learning, R]
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>머신러닝을 배울 때, 가장 중요한 도구는 tensorflow이다. Rstudio에서는 tensorflow를 더 쉽게 쓸 수 있도록 keras를 비롯한 패키지를 지속적으로 업데이트 하고 있다.</p>
+<ul>
+<li><a href="https://tensorflow.rstudio.com/" class="uri">https://tensorflow.rstudio.com/</a></li>
+</ul>
+<p><a href="https://tensorflow.rstudio.com/tutorials/beginners/">Quickstart</a>에서 제공하는 가장 간단한 예를 아래와 같이 실행해 보았다.</p>
+<pre class="r"><code># Tensorflow
+
+library(tensorflow)
+library(keras)
+library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## √ ggplot2 3.3.0     √ purrr   0.3.4
+## √ tibble  3.0.1     √ dplyr   0.8.5
+## √ tidyr   1.0.2     √ stringr 1.4.0
+## √ readr   1.3.1     √ forcats 0.5.0</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>mnist &lt;- dataset_mnist()
+mnist$train$x &lt;- mnist$train$x/255
+mnist$test$x &lt;- mnist$test$x/255
+
+model &lt;- keras_model_sequential() %&gt;% 
+  layer_flatten(input_shape = c(28, 28)) %&gt;% 
+  layer_dense(units = 128, activation = &quot;relu&quot;) %&gt;% 
+  layer_dropout(0.2) %&gt;% 
+  layer_dense(10, activation = &quot;softmax&quot;)
+summary(model)</code></pre>
+<pre><code>## Model: &quot;sequential&quot;
+## ________________________________________________________________________________
+## Layer (type)                        Output Shape                    Param #     
+## ================================================================================
+## flatten (Flatten)                   (None, 784)                     0           
+## ________________________________________________________________________________
+## dense (Dense)                       (None, 128)                     100480      
+## ________________________________________________________________________________
+## dropout (Dropout)                   (None, 128)                     0           
+## ________________________________________________________________________________
+## dense_1 (Dense)                     (None, 10)                      1290        
+## ================================================================================
+## Total params: 101,770
+## Trainable params: 101,770
+## Non-trainable params: 0
+## ________________________________________________________________________________</code></pre>
+<pre class="r"><code>model %&gt;% 
+  compile(
+    loss = &quot;sparse_categorical_crossentropy&quot;,
+    optimizer = &quot;adam&quot;,
+    metrics = &quot;accuracy&quot;
+  )
+
+model %&gt;% 
+  fit(
+    x = mnist$train$x, y = mnist$train$y,
+    epochs = 5,
+    validation_split = 0.3,
+    verbose = 2
+  )
+
+model %&gt;% 
+  evaluate(mnist$test$x, mnist$test$y, verbose = 0)</code></pre>
+<pre><code>## $loss
+## [1] 0.08423539
+## 
+## $accuracy
+## [1] 0.9753</code></pre>
+<pre class="r"><code>save_model_tf(object = model, filepath = &quot;model&quot;)
+
+reloaded_model &lt;- load_model_tf(&quot;model&quot;)
+all.equal(predict(model, mnist$test$x), predict(reloaded_model, mnist$test$x))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
