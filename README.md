@@ -12,6 +12,10 @@ The writer of this blog, Sungpil (<http://shanmdphd.rbind.io>) is a street-skate
 - Medicine
 - English
 - Personal
+- R
 
+To build the website locally, you must clone this repo with its submodule (use the `--recursive` argument), e.g.,
 
-
+```bash
+git clone --recursive https://github.com/rbind/shanmdphd.rbind.io.git
+```
