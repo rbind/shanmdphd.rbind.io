@@ -17,7 +17,7 @@ published: true
 * [R과 Knitr를 활용한 데이터 연동형 문서 만들기](http://www.yes24.com/24/goods/12802994?scode=032&OzSrank=2)
 * [R과 Shiny 패키지를 활용한 웹 애플리케이션 개발](http://www.yes24.com/24/goods/12187240?scode=032&OzSrank=3)
 
-고석범 선생님은 현재 자리를 옮기셔서 ㈜지노바이오를 창업하셨더군요. 신경과 전문의로서 영역을 넘나드는 활동을 하시고 계셔서 존경스럽습니다.
+고석범 선생님은 현재 자리를 옮기셔서 [㈜지노바이오](https://www.genobio.co.kr/)를 창업하셨더군요. 신경과 전문의로서 영역을 넘나드는 활동을 하시고 계셔서 존경스럽습니다.
 
 ![](http://www.dvnnews.com/news/photo/201510/13770_42596_3243.png)
 
