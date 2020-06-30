@@ -4,11 +4,11 @@ title: About
 
 # Introduction
 
-Hi, I’m Sungpil. 
+Hi, I’m Sungpil, a research assistant professor of the Catholic University of Korea and St.Mary Seoul Hospital. 
 I received my M.D and Ph.D. in Molecular Cell Biology and Genetics from Pusan National University, Korea. 
 My doctoral thesis was on Comprehensive Flow Cytometric Immunophenotyping of Peripheral Blood and Cerebrospinal Fluid Cells in Patients with Neuroimmunological Diseases. 
-I enjoy studying medicine, and am especially interested in new drug development. I am also enjoying developing software and building products that make data analysis more appealing, accessible, and efficient. 
-I release most of my work as open source software under my GitHub profile. 
+I enjoy studying medicine, and am especially interested in clinical pharmacology and early drug development. I am also enjoying developing softwares and building products that make data analysis more appealing, accessible, and efficient. 
+I release most of my work as open source software under my [GitHub profile](https://github.com/shanmdphd). 
 I’m always looking to learn from and collaborate with new people, so feel free to contact me via twitter (@shanmdphd) or email (pil.han AT gmail.com).
 
 [<img src="/assets/ORCID.png" style="max-width:15%;min-width:40px;float:right;" alt="ORCID" />](https://orcid.org/0000-0002-4674-7682)
