@@ -1,0 +1,21 @@
+---
+title: 'sasLM R package'
+author: ~
+date: '2020-07-02'
+slug: ''
+categories: [R]
+tags: [R, ANOVA, GLM, SAS]
+---
+
+배교수님께서 일반선형모델 분석을 위해 "sasLM" R패키지를 개발하셨다.
+
+Type I, II, III SS를 SAS PROC GLM과 동일한 방식으로 계산하여  동일한 얻을 수 있다.
+이런 기능을 제공하는 유일한 R패키지인 셈이다.
+
+```{r}
+library(sasLM) # install.packages('sasLM')
+ANOVA(uptake ~ Plant + Type + Treatment + conc, CO2) # SAS PROC ANOVA
+GLM(uptake ~ Plant + Type + Treatment + conc, CO2) # SAS PROC GLM
+REG(uptake ~ Plant + Type + Treatment + conc, CO2) # SAS PROC REG
+```
+
